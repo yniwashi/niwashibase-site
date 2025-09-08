@@ -19,21 +19,40 @@
   <meta name="twitter:description" content="Ambulance is a fast, offline-first Android app built around HMCAS workflows with CPG-integrated tools, RSI checklists, pediatric dosing, CPR logs, and rapid search." />
   <meta name="twitter:image" content="assets/images/og-cover.jpg" />
 
-  <!-- Favicons (theme-aware) -->
-  <link id="favicon" rel="icon" href="assets/images/favicon-light.ico?v=1" />
+  <!-- Favicons (replace these files later) -->
+  <link rel="icon" href="assets/images/favicon.ico?v=1" />
+  
+
+  <!-- Schema.org (basic) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Niwashi Base — Ambulance",
+    "url": "https://www.niwashibase.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.niwashibase.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 
   <style>
-    /* =============== Design tokens =============== */
+    /* =====================
+       Design System
+       ===================== */
     :root {
       --bg: #ffffff;
       --text: #111827; /* gray-900 */
       --muted: #6b7280; /* gray-500 */
-      --ink: #0b1220;
+      --ink: #0b1220; /* deep */
       --card: #f8fafc; /* slate-50 */
       --accent: #2563eb; /* cobalt */
+      --accent-ink: #1e40af; /* dark cobalt */
+      --ring: rgba(37, 99, 235, 0.35);
       --border: #e5e7eb; /* gray-200 */
       --shadow: 0 8px 28px rgba(2, 6, 23, 0.08);
-      --ring: rgba(37,99,235,.35);
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -42,7 +61,7 @@
         --muted: #9ca3af;
         --card: #111827;
         --border: #1f2937;
-        --shadow: 0 12px 36px rgba(0,0,0,.35);
+        --shadow: 0 10px 32px rgba(0,0,0,0.35);
       }
     }
 
@@ -50,18 +69,24 @@
     html, body { height: 100%; }
     body {
       margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       background: var(--bg);
       color: var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
+
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    /* Layout helpers */
     .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 1px, 1px); border: 0; white-space: nowrap; }
 
-    /* =============== Nav =============== */
+    /* =====================
+       Top Navigation
+       ===================== */
     .nav {
       position: sticky; top: 0; z-index: 50;
       backdrop-filter: saturate(180%) blur(8px);
@@ -69,76 +94,81 @@
       border-bottom: 1px solid var(--border);
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
-    .brand img {
-      width: 32px; height: 32px;
-      /* White tile so transparent logos always show on dark */
-      background: #ffffff;
-      padding: 4px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.2px; }
+    .brand img { width: 28px; height: 28px; border-radius: 6px; }
     .nav ul { list-style: none; margin: 0; padding: 0; display: none; gap: 18px; }
-    .nav a { color: var(--text); font-weight: 600; opacity: .9; }
+    .nav a { color: var(--text); font-weight: 600; opacity: 0.9; }
     .nav a:hover { opacity: 1; }
-    .menu-btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 40px; height: 40px; border-radius: 10px;
-      border: 1px solid var(--border); background: var(--bg);
+    .menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); }
+
+    @media (min-width: 900px) {
+      .nav ul { display: flex; }
+      .menu-btn { display: none; }
     }
-    @media (min-width: 900px) { .nav ul { display: flex; } .menu-btn { display: none; } }
+
     .mobile-menu { display: none; border-bottom: 1px solid var(--border); background: var(--bg); }
     .mobile-menu.open { display: block; }
     .mobile-menu a { display: block; padding: 14px 20px; border-top: 1px solid var(--border); color: var(--text); font-weight: 600; }
 
-    /* =============== Hero =============== */
+    /* =====================
+       Hero
+       ===================== */
     .hero { padding: 56px 0 24px; }
     .hero-inner { display: grid; gap: 24px; align-items: center; }
     .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 12px; }
     .h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; letter-spacing: -0.02em; margin: 8px 0; }
     .sub { font-size: clamp(16px, 2.5vw, 20px); color: var(--muted); max-width: 52ch; }
+
     .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
     .btn { appearance: none; border: 0; cursor: pointer; font-weight: 700; border-radius: 14px; padding: 12px 18px; transition: transform .06s ease, box-shadow .2s ease, background .2s ease; }
     .btn:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
-    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px rgba(37,99,235,.25); }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(37,99,235,.35); }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px rgba(37,99,235,0.25); }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(37,99,235,0.35); }
     .btn-secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
     .btn-secondary:hover { background: #eef2ff; border-color: color-mix(in srgb, var(--accent) 35%, var(--border)); }
+
     .trust { margin-top: 10px; color: var(--muted); font-size: 14px; }
 
-    /* =============== Sections / cards =============== */
+    /* =====================
+       Feature Grid
+       ===================== */
     .section { padding: 48px 0; border-top: 1px solid var(--border); }
     .section:first-of-type { border-top: 0; }
     .section h2 { font-size: clamp(22px, 2.8vw, 28px); margin: 0 0 14px; }
     .grid { display: grid; gap: 16px; }
     @media (min-width: 720px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
     @media (min-width: 720px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+
     .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); }
     .card h3 { margin: 0 0 6px; font-size: 16px; }
     .card p { margin: 0; color: var(--muted); font-size: 14px; }
 
-    /* =============== Screenshots =============== */
+    /* =====================
+       Screenshots
+       ===================== */
     .shots { display: grid; gap: 16px; }
     @media (min-width: 720px) { .shots { grid-template-columns: repeat(3, 1fr); } }
     .phone {
-      position: relative; aspect-ratio: 9/19.5; background: #0f172a;
-      border-radius: 24px; border: 10px solid #111827; overflow: hidden; box-shadow: var(--shadow);
+      position: relative; aspect-ratio: 9/19.5; background: #0f172a; border-radius: 24px; border: 10px solid #111827; overflow: hidden; box-shadow: var(--shadow);
     }
     .phone img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .shot-cap { margin-top: 8px; color: var(--muted); font-size: 13px; }
 
-    /* =============== Support & footer =============== */
+    /* =====================
+       Support / Footer
+       ===================== */
     .support-links { display: flex; gap: 10px; flex-wrap: wrap; }
+
     footer { padding: 32px 0 48px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
     footer .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
     footer nav a { color: var(--muted); margin-right: 14px; }
 
+    /* Small niceties */
     .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; border: 1px solid var(--border); border-bottom-width: 2px; padding: 2px 6px; border-radius: 6px; }
   </style>
 </head>
 <body>
-  <!-- ===== NAV ===== -->
+  <!-- ===================== NAV ===================== -->
   <header class="nav" role="banner">
     <div class="container nav-inner">
       <a class="brand" href="/" aria-label="Niwashi Base home">
@@ -149,22 +179,22 @@
       <nav aria-label="Primary">
         <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
         <ul class="desktop-menu">
-          <li><a href="download.html">Download</a></li>
-          <li><a href="whats-new.html">What’s New</a></li>
-          <li><a href="videos.html">Videos</a></li>
-          <li><a href="legal.html">Legal</a></li>
+          <li><a href="/download.html">Download</a></li>
+          <li><a href="/whats-new.html">What’s New</a></li>
+          <li><a href="/videos.html">Videos</a></li>
+          <li><a href="/legal.html">Legal</a></li>
         </ul>
       </nav>
     </div>
     <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile">
-      <a href="download.html">Download</a>
-      <a href="whats-new.html">What’s New</a>
-      <a href="videos.html">Videos</a>
-      <a href="legal.html">Legal</a>
+      <a href="/download.html">Download</a>
+      <a href="/whats-new.html">What’s New</a>
+      <a href="/videos.html">Videos</a>
+      <a href="/legal.html">Legal</a>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
+  <!-- ===================== HERO ===================== -->
   <section class="hero">
     <div class="container hero-inner">
       <div>
@@ -172,15 +202,15 @@
         <h1 class="h1">Ambulance — fast, offline-first clinical tools for paramedics</h1>
         <p class="sub">Built around HMCAS workflows. Updated with the latest CPG.</p>
         <div class="cta-row" role="group" aria-label="Primary actions">
-          <a class="btn btn-primary" href="download.html">Download for Android</a>
-          <a class="btn btn-secondary" href="whats-new.html">What’s New</a>
+          <a class="btn btn-primary" href="/download.html">Download for Android</a>
+          <a class="btn btn-secondary" href="/whats-new.html">What’s New</a>
         </div>
         <p class="trust">Works on Android 8+ · Private · No ads</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== FEATURES ===== -->
+  <!-- ===================== FEATURES ===================== -->
   <section class="section" id="features">
     <div class="container">
       <h2>Built for the way you work</h2>
@@ -213,7 +243,7 @@
     </div>
   </section>
 
-  <!-- ===== SCREENSHOTS ===== -->
+  <!-- ===================== SCREENSHOTS ===================== -->
   <section class="section" id="screenshots">
     <div class="container">
       <h2>See it in action</h2>
@@ -240,7 +270,7 @@
     </div>
   </section>
 
-  <!-- ===== UPDATES ===== -->
+  <!-- ===================== UPDATES ===================== -->
   <section class="section" id="updates">
     <div class="container">
       <h2>Fast, reliable updates</h2>
@@ -250,13 +280,13 @@
         </div>
         <div class="card">
           <p><strong>Tip:</strong> On some devices, downloads work best in Chrome. If Samsung Internet pauses, try Chrome or the Mirror on the Download page.</p>
-          <p>Have questions? Visit <a href="download.html">Download</a> for install steps and troubleshooting.</p>
+          <p>Have questions? Visit <a href="/download.html">Download</a> for install steps and troubleshooting.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== SUPPORT ===== -->
+  <!-- ===================== SUPPORT ===================== -->
   <section class="section" id="support">
     <div class="container">
       <h2>Need help?</h2>
@@ -270,21 +300,20 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer role="contentinfo">
     <div class="container row">
       <div>© <span id="year"></span> Niwashi Base</div>
       <nav aria-label="Footer">
-        <a href="download.html">Download</a>
-        <a href="whats-new.html">What’s New</a>
-        <a href="videos.html">Videos</a>
-        <a href="legal.html">Legal</a>
+        <a href="/download.html">Download</a>
+        <a href="/whats-new.html">What’s New</a>
+        <a href="/videos.html">Videos</a>
+        <a href="/legal.html">Legal</a>
       </nav>
     </div>
   </footer>
 
   <script>
-    // Footer year
+    // Year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Mobile menu toggle
@@ -301,21 +330,6 @@
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelectorAll('*').forEach(el => { el.style.transition = 'none'; });
     }
-
-    // Favicon theme swap (requires favicon-light.ico and favicon-dark.ico)
-    (function () {
-      var link = document.getElementById('favicon');
-      if (!link) return;
-
-      var light = 'assets/images/favicon-light.ico?v=1';
-      var dark  = 'assets/images/favicon-dark.ico?v=1';
-      var mq    = window.matchMedia('(prefers-color-scheme: dark)');
-
-      function apply() { link.href = mq.matches ? dark : light; }
-      apply();
-      if (mq.addEventListener) mq.addEventListener('change', apply);
-      else if (mq.addListener) mq.addListener(apply);
-    })();
   </script>
 </body>
 </html>
