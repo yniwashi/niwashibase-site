@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Ambulance — fast, clear, offline-first clinical tools for paramedics</title>
+  <title>Ambulance — Fast, offline-first clinical tools for paramedics</title>
   <meta name="description" content="Ambulance is a fast, offline-first Android app built around HMCAS workflows with CPG-integrated tools, RSI checklists, pediatric dosing, CPR logs, and rapid search." />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ambulance — fast, offline-first clinical tools for paramedics" />
+  <meta property="og:title" content="Ambulance — Fast, offline-first clinical tools for paramedics" />
   <meta property="og:description" content="Ambulance is a fast, offline-first Android app built around HMCAS workflows with CPG-integrated tools, RSI checklists, pediatric dosing, CPR logs, and rapid search." />
   <meta property="og:image" content="assets/images/og-cover.jpg" />
   <meta property="og:url" content="https://www.niwashibase.com/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ambulance — fast, offline-first clinical tools for paramedics" />
+  <meta name="twitter:title" content="Ambulance — Fast, offline-first clinical tools for paramedics" />
   <meta name="twitter:description" content="Ambulance is a fast, offline-first Android app built around HMCAS workflows with CPG-integrated tools, RSI checklists, pediatric dosing, CPR logs, and rapid search." />
   <meta name="twitter:image" content="assets/images/og-cover.jpg" />
 
@@ -42,23 +42,23 @@
        Design System
        ===================== */
     :root {
-      --bg: #050815;
-      --bg-soft: #0b1021;
-      --gradient: radial-gradient(circle at 18% 20%, rgba(37, 99, 235, 0.18), transparent 32%),
-                  radial-gradient(circle at 80% 12%, rgba(16, 185, 129, 0.18), transparent 32%),
-                  linear-gradient(180deg, rgba(6, 9, 18, 0.95) 0%, rgba(5, 8, 21, 0.98) 45%, #040712 100%);
-      --text: #e8ecff;
-      --muted: #cbd5e1;
-      --ink: #050712;
-      --card: rgba(10, 13, 26, 0.85);
-      --card-strong: rgba(13, 18, 35, 0.9);
-      --accent: #60a5fa;
-      --accent-ink: #0b1832;
+      --bg: #0b1021;
+      --bg-soft: #0f172a;
+      --gradient: radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.22), transparent 32%),
+                  radial-gradient(circle at 85% 10%, rgba(59, 130, 246, 0.18), transparent 30%),
+                  linear-gradient(180deg, rgba(15, 23, 42, 0.92) 0%, rgba(11, 16, 33, 0.98) 38%, #0b1021 100%);
+      --text: #e5e7eb;
+      --muted: #a5b4fc;
+      --ink: #0b1220;
+      --card: #0f172a;
+      --card-strong: #111827;
+      --accent: #4f46e5;
+      --accent-ink: #312e81;
       --success: #22c55e;
-      --warning: #f59e0b;
-      --ring: rgba(96, 165, 250, 0.45);
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+      --warning: #fbbf24;
+      --ring: rgba(79, 70, 229, 0.35);
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 14px 50px rgba(0, 0, 0, 0.35);
     }
 
     * { box-sizing: border-box; }
@@ -85,7 +85,12 @@
     /* =====================
        Top Navigation
        ===================== */
-    .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(180%) blur(18px); background: rgba(7, 10, 18, 0.9); border-bottom: 1px solid var(--border); }
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(180%) blur(18px);
+      background: rgba(11, 16, 33, 0.8);
+      border-bottom: 1px solid var(--border);
+    }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
     .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: 0.2px; color: #fff; }
     .brand img { width: 88px; height: 88px; padding: 2px; }
@@ -106,38 +111,33 @@
     /* =====================
        Hero
        ===================== */
-    .hero { padding: 84px 0 32px; }
-    .hero-inner { display: grid; gap: 32px; align-items: center; }
-    @media (min-width: 1024px) { .hero-inner { grid-template-columns: 1.2fr 0.9fr; gap: 46px; } }
+    .hero { padding: 72px 0 32px; }
+    .hero-inner { display: grid; gap: 28px; align-items: center; }
+    @media (min-width: 960px) { .hero-inner { grid-template-columns: 1.2fr 0.9fr; gap: 40px; } }
 
-    .eyebrow { color: #bae6fd; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: rgba(96,165,250,0.08); }
-    .h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.08; letter-spacing: -0.02em; margin: 10px 0; color: #fff; text-shadow: 0 6px 24px rgba(0,0,0,0.4); }
+    .eyebrow { color: #c7d2fe; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.04); }
+    .h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.08; letter-spacing: -0.02em; margin: 10px 0; color: #fff; }
     .sub { font-size: clamp(17px, 2.5vw, 20px); color: var(--muted); max-width: 62ch; }
 
     .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-    .btn { appearance: none; border: 0; cursor: pointer; font-weight: 800; border-radius: 14px; padding: 12px 18px; transition: transform .08s ease, box-shadow .2s ease, background .2s ease; letter-spacing: -0.01em; }
+    .btn { appearance: none; border: 0; cursor: pointer; font-weight: 800; border-radius: 14px; padding: 12px 18px; transition: transform .08s ease, box-shadow .2s ease, background .2s ease; }
     .btn:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
-    .btn-primary { background: linear-gradient(135deg, #60a5fa, #8b5cf6); color: #fff; box-shadow: 0 14px 30px rgba(96,165,250,0.35); }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 40px rgba(96,165,250,0.45); }
+    .btn-primary { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; box-shadow: 0 10px 30px rgba(99,102,241,0.35); }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 36px rgba(99,102,241,0.45); }
     .btn-secondary { background: rgba(255,255,255,0.06); color: #e5e7eb; border: 1px solid var(--border); }
     .btn-secondary:hover { background: rgba(255,255,255,0.1); }
     .btn-ghost { background: transparent; color: #c7d2fe; border: 1px dashed var(--border); }
 
-    .trust { margin-top: 10px; color: var(--muted); font-size: 14px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .trust { margin-top: 10px; color: var(--muted); font-size: 14px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
     .trust strong { color: #fff; }
     .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); font-size: 13px; }
 
-    .hero-card { background: linear-gradient(140deg, rgba(96,165,250,0.08), rgba(11,17,36,0.92)); border: 1px solid var(--border); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); }
+    .hero-card { background: linear-gradient(145deg, rgba(79,70,229,0.12), rgba(15,23,42,0.9)); border: 1px solid var(--border); border-radius: 20px; padding: 18px; box-shadow: var(--shadow); }
     .hero-grid { display: grid; gap: 12px; }
-    .stat { display: flex; align-items: center; justify-content: space-between; padding: 14px 14px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); }
+    .stat { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); }
     .stat h3 { margin: 0; font-size: 16px; color: #e0e7ff; }
     .stat span { color: #c7d2fe; font-weight: 700; }
     .status { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: #22c55e; }
-
-    .assurance { display: grid; gap: 12px; margin-top: 18px; }
-    @media (min-width: 720px) { .assurance { grid-template-columns: repeat(3, 1fr); } }
-    .assurance-card { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: grid; gap: 4px; box-shadow: var(--shadow); }
-    .assurance-card strong { color: #e8ecff; }
 
     /* =====================
        Sections
@@ -219,8 +219,8 @@
     <div class="container hero-inner">
       <div>
         <div class="eyebrow">Built with HMCAS crews</div>
-        <h1 class="h1">Ambulance — fast, clear, offline-first clinical tools for paramedics</h1>
-        <p class="sub">Designed to stay legible in rain, dust, and glare. CPG-aligned tools, RSI checklists, pediatric dosing, CPR logs, and search that keeps moving even when signal drops.</p>
+        <h1 class="h1">Ambulance — fast, offline-first clinical tools for paramedics</h1>
+        <p class="sub">Actionable, CPG-aligned guidance with RSI checklists, pediatric dosing, CPR logs, and rapid search. Crafted for real-world shifts where signal drops and seconds matter.</p>
         <div class="cta-row" role="group" aria-label="Primary actions">
           <a class="btn btn-primary" href="/download.html">Download for Android</a>
           <a class="btn btn-secondary" href="/whats-new.html">View what’s new</a>
@@ -230,20 +230,6 @@
           <span class="pill">Offline-first</span>
           <span class="pill">No ads · No trackers</span>
           <span class="pill">Android 8+</span>
-        </div>
-        <div class="assurance" aria-label="Safety and clarity guarantees">
-          <div class="assurance-card">
-            <strong>Always readable</strong>
-            <span>Short sentences, calm typography, and large tap targets for gloved hands.</span>
-          </div>
-          <div class="assurance-card">
-            <strong>Offline by design</strong>
-            <span>Protocols, dosing, timers, and checklists ship with the app. No surprises mid-call.</span>
-          </div>
-          <div class="assurance-card">
-            <strong>Respectful of privacy</strong>
-            <span>No ads, no trackers—your focus stays on patient care.</span>
-          </div>
         </div>
       </div>
       <div class="hero-card" aria-label="Status panel">
