@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ambulance for Android — APK download, release notes, and videos</title>
+  <meta name="description" content="Download Ambulance for Android. APK links, mirror, release notes, screenshots, and how-to videos for medics." />
+  <link rel="icon" href="assets/images/favicon.ico?v=1" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #050815;
+      --gradient: radial-gradient(circle at 20% 18%, rgba(16, 185, 129, 0.16), transparent 30%),
+                  linear-gradient(180deg, rgba(6, 9, 18, 0.92) 0%, rgba(5, 8, 21, 0.96) 45%, #040712 100%);
+      --text: #e8ecff;
+      --muted: #cbd5e1;
+      --card: rgba(10, 13, 26, 0.85);
+      --accent: #34d399;
+      --ring: rgba(52, 211, 153, 0.45);
+      --success: #22c55e;
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6fefb;
+        --gradient: radial-gradient(circle at 18% 18%, rgba(52,211,153,0.15), transparent 32%),
+                    linear-gradient(180deg, #f6fff9 0%, #ecfdf3 50%, #e6f7ed 100%);
+        --text: #0f172a;
+        --muted: #334155;
+        --card: rgba(255,255,255,0.94);
+        --accent: #059669;
+        --ring: rgba(5, 150, 105, 0.35);
+        --border: rgba(15, 23, 42, 0.08);
+        --shadow: 0 18px 50px rgba(15, 23, 42, 0.16);
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; background-image: var(--gradient); }
+    a { color: #a7f3d0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    @media (prefers-color-scheme: light) { a { color: #047857; } }
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 18px; }
+    header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(16px); background: rgba(7,10,18,0.9); border-bottom: 1px solid var(--border); }
+    @media (prefers-color-scheme: light) { header { background: rgba(255,255,255,0.92); } }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .brand { display: inline-flex; gap: 12px; align-items: center; font-weight: 800; color: var(--text); }
+    .brand img { width: 60px; height: 60px; }
+    .nav a { font-weight: 700; }
+    .hero { padding: 70px 0 36px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 18px; box-shadow: var(--shadow); }
+    .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+    .btn { border: 0; border-radius: 14px; padding: 12px 18px; font-weight: 800; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, #34d399, #22c55e); color: #0f172a; }
+    .btn-secondary { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid var(--border); }
+    @media (prefers-color-scheme: light) { .btn-secondary { background: rgba(5,150,105,0.08); color: #0f172a; } }
+    h1 { margin: 8px 0; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.02em; }
+    h2 { margin: 0 0 12px; font-size: clamp(22px, 3vw, 30px); }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); font-size: 13px; color: var(--text); }
+    @media (prefers-color-scheme: light) { .pill { background: rgba(255,255,255,0.84); color: #0f172a; } }
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 720px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 720px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+    .shots { display: grid; gap: 14px; }
+    @media (min-width: 720px) { .shots { grid-template-columns: repeat(3, 1fr); } }
+    .phone { position: relative; aspect-ratio: 9/19.5; background: #0f172a; border-radius: 24px; border: 10px solid #111827; overflow: hidden; box-shadow: var(--shadow); }
+    .phone img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .list { display: grid; gap: 10px; }
+    .list-item { padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); }
+    @media (prefers-color-scheme: light) { .list-item { background: rgba(255,255,255,0.94); } }
+    footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); background: rgba(0,0,0,0.08); }
+    @media (prefers-color-scheme: light) { footer { background: rgba(255,255,255,0.86); } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="assets/images/logo.png?v=1" alt="Niwashi Base logo" />
+        <span>Ambulance — Android</span>
+      </a>
+      <div class="cta-row" style="margin:0;">
+        <a class="btn btn-secondary" href="/ios.html">iOS</a>
+        <a class="btn btn-secondary" href="/">Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container grid cols-2" style="gap:18px; align-items:start;">
+        <div>
+          <h1>Download Ambulance for Android</h1>
+          <p>Edge-delivered APKs with mirror links for slower networks. Mobile-first layouts that follow your phone’s light or dark theme, with offline CPG tools ready anytime.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#download">Get latest APK</a>
+            <a class="btn btn-secondary" href="#videos">How-to videos</a>
+          </div>
+          <div class="cta-row" style="margin-top:10px;">
+            <span class="pill">Latest build: 2.4.0</span>
+            <span class="pill">Downloads: 24,918</span>
+            <span class="pill">Android 8+</span>
+          </div>
+        </div>
+        <div class="card" aria-label="Release notes">
+          <h3 style="margin-top:0;">What's new</h3>
+          <div class="list">
+            <div class="list-item"><strong>2.4.0</strong> — Smoother CPR logging, faster load on midrange devices, and refreshed release badges.</div>
+            <div class="list-item"><strong>2.3.2</strong> — Stability improvements for offline cache and clearer pediatric weight markers.</div>
+            <div class="list-item"><strong>2.3.0</strong> — Added theme auto-detection and larger tap targets for gloved hands.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container card" id="download" style="margin-bottom:28px;">
+      <h2 style="margin-top:0;">Download</h2>
+      <p>Primary APK is delivered through our edge network. Use the mirror if your connection throttles.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#">Download APK</a>
+        <a class="btn btn-secondary" href="#">Open mirror link</a>
+        <a class="btn btn-secondary" href="#">Checksum</a>
+      </div>
+      <p style="margin-top:12px;">If Samsung Internet pauses, try Chrome. Need help? Email <a href="mailto:support@niwashibase.com">support@niwashibase.com</a> and mention “Android download.”</p>
+    </section>
+
+    <section class="container" id="screenshots" style="margin-bottom:28px;">
+      <h2>Screenshots</h2>
+      <p>See the Android experience across critical tasks.</p>
+      <div class="shots">
+        <figure>
+          <div class="phone"><img src="assets/images/screen-rsi.jpg" alt="RSI checklist on Android" /></div>
+          <figcaption class="list-item">RSI checklist &amp; timer</figcaption>
+        </figure>
+        <figure>
+          <div class="phone"><img src="assets/images/screen-pedi.jpg" alt="Pediatric dosing on Android" /></div>
+          <figcaption class="list-item">Pediatric dosing by age/weight</figcaption>
+        </figure>
+        <figure>
+          <div class="phone"><img src="assets/images/screen-search.jpg" alt="Search on Android" /></div>
+          <figcaption class="list-item">Quick CPG search</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="container card" id="videos" style="margin-bottom:28px;">
+      <h2 style="margin-top:0;">How-to videos</h2>
+      <p>Drop your training links here so crews can learn quickly.</p>
+      <div class="grid cols-2" style="gap:12px;">
+        <div class="list-item"><strong>APK install walkthrough</strong><br />Step-by-step install with screenshots. <a href="/videos.html">View all videos</a></div>
+        <div class="list-item"><strong>RSI prep</strong><br />SOAPME checklist and timer setup.</div>
+        <div class="list-item"><strong>Offline caching</strong><br />How the app behaves without signal.</div>
+        <div class="list-item"><strong>CPR logging</strong><br />Capturing timestamps with haptics.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+      <span>© <span id="year"></span> Ambulance Project</span>
+      <span><a href="/">Home</a> · <a href="/ios.html">iOS</a> · <a href="/legal.html">Legal</a></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
