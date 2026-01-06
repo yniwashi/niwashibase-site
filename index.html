@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ambulance — fast, clear clinical tools for iOS & Android</title>
+  <meta name="description" content="Download Ambulance for iOS and Android. Offline-first clinical tools, release notes, screenshots, and how-to videos for medics." />
 
   <title>Ambulance — fast, clear, offline-first clinical tools for paramedics</title>
   <meta name="description" content="Ambulance is a fast, offline-first Android app built around HMCAS workflows with CPG-integrated tools, RSI checklists, pediatric dosing, CPR logs, and rapid search." />
@@ -19,7 +21,6 @@
   <meta name="twitter:description" content="Ambulance is a fast, offline-first Android app built around HMCAS workflows with CPG-integrated tools, RSI checklists, pediatric dosing, CPR logs, and rapid search." />
   <meta name="twitter:image" content="assets/images/og-cover.jpg" />
 
-  <!-- Favicons (replace these files later) -->
   <link rel="icon" href="assets/images/favicon.ico?v=1" />
 
   <!-- Schema.org (basic) -->
@@ -38,9 +39,6 @@
   </script>
 
   <style>
-    /* =====================
-       Design System
-       ===================== */
     :root {
       --bg: #050815;
       --bg-soft: #0b1021;
@@ -77,6 +75,7 @@
 
     a { color: #c7d2fe; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    @media (prefers-color-scheme: light) { a { color: #1d4ed8; } }
 
     /* Layout helpers */
     .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
@@ -155,9 +154,6 @@
     .card p { margin: 0; color: #cbd5e1; font-size: 15px; }
     .tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px; background: rgba(99,102,241,0.1); color: #c7d2fe; font-weight: 700; font-size: 12px; border: 1px solid var(--border); }
 
-    /* =====================
-       Screenshots
-       ===================== */
     .shots { display: grid; gap: 16px; }
     @media (min-width: 720px) { .shots { grid-template-columns: repeat(3, 1fr); } }
     .phone { position: relative; aspect-ratio: 9/19.5; background: #0f172a; border-radius: 24px; border: 10px solid #111827; overflow: hidden; box-shadow: var(--shadow); }
@@ -183,19 +179,16 @@
     footer .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
     footer nav a { color: #cbd5e1; margin-right: 14px; }
 
-    /* Small niceties */
-    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; border: 1px solid var(--border); border-bottom-width: 2px; padding: 2px 6px; border-radius: 6px; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; border: 1px solid var(--border); border-bottom-width: 2px; padding: 2px 6px; border-radius: 6px; color: var(--text); }
   </style>
 </head>
 <body>
-  <!-- ===================== NAV ===================== -->
   <header class="nav" role="banner">
     <div class="container nav-inner">
       <a class="brand" href="/" aria-label="Niwashi Base home">
         <img src="assets/images/logo.png?v=1" alt="Niwashi Base logo" />
         <span>Ambulance</span>
       </a>
-
       <nav aria-label="Primary">
         <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
         <ul class="desktop-menu">
@@ -214,7 +207,6 @@
     </div>
   </header>
 
-  <!-- ===================== HERO ===================== -->
   <section class="hero">
     <div class="container hero-inner">
       <div>
@@ -272,7 +264,6 @@
     </div>
   </section>
 
-  <!-- ===================== FEATURES ===================== -->
   <section class="section" id="features">
     <div class="container">
       <h2>Built for the way you work</h2>
@@ -385,7 +376,6 @@
     </div>
   </section>
 
-  <!-- ===================== UPDATES ===================== -->
   <section class="section" id="updates">
     <div class="container grid cols-2" style="gap:20px; align-items:start;">
       <div>
@@ -425,7 +415,6 @@
     </div>
   </section>
 
-  <!-- ===================== SUPPORT ===================== -->
   <section class="section" id="support">
     <div class="container">
       <h2>Need help?</h2>
@@ -471,8 +460,8 @@
     <div class="container row">
       <div>© <span id="year"></span> Ambulance Project — Built by Niwashi Base</div>
       <nav aria-label="Footer">
-        <a href="/download.html">Download</a>
-        <a href="/whats-new.html">What’s New</a>
+        <a href="/ios.html">iOS</a>
+        <a href="/android.html">Android</a>
         <a href="/videos.html">Videos</a>
         <a href="/legal.html">Legal</a>
       </nav>
@@ -480,10 +469,7 @@
   </footer>
 
   <script>
-    // Year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile menu toggle
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     if (menuBtn && mobileMenu) {
@@ -492,8 +478,6 @@
         menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     }
-
-    // Respect reduced motion
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelectorAll('*').forEach(el => { el.style.transition = 'none'; });
     }
