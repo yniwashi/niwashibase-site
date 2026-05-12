@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Videos — Ambulance App Tutorials</title>
+  <meta name="description" content="Installation guides and how-to tutorials for the Ambulance app on Android and iOS." />
+  <link rel="icon" href="assets/images/favicon.ico?v=1" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #050815;
+      --gradient: radial-gradient(circle at 20% 18%, rgba(37, 99, 235, 0.14), transparent 32%),
+                  radial-gradient(circle at 78% 10%, rgba(139, 92, 246, 0.1), transparent 28%),
+                  linear-gradient(180deg, rgba(6, 9, 18, 0.92) 0%, rgba(5, 8, 21, 0.96) 45%, #040712 100%);
+      --text: #e8ecff;
+      --muted: #cbd5e1;
+      --card: rgba(10, 13, 26, 0.85);
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fd;
+        --gradient: radial-gradient(circle at 18% 18%, rgba(96,165,250,0.15), transparent 34%),
+                    linear-gradient(180deg, #f6f7ff 0%, #eef2ff 50%, #e5e7ff 100%);
+        --text: #0f172a;
+        --muted: #334155;
+        --card: rgba(255,255,255,0.94);
+        --border: rgba(15, 23, 42, 0.08);
+        --shadow: 0 18px 50px rgba(15, 23, 42, 0.16);
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; background-image: var(--gradient); background-attachment: fixed; -webkit-font-smoothing: antialiased; }
+    a { color: #c7d2fe; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    @media (prefers-color-scheme: light) { a { color: #1d4ed8; } }
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 18px; }
+    header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(16px); background: rgba(7,10,18,0.9); border-bottom: 1px solid var(--border); }
+    @media (prefers-color-scheme: light) { header { background: rgba(255,255,255,0.92); } }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .brand { display: inline-flex; gap: 12px; align-items: center; font-weight: 800; color: var(--text); text-decoration: none; }
+    .brand img { width: 60px; height: 60px; }
+    .nav-links { display: flex; gap: 8px; }
+    .btn { border-radius: 14px; padding: 9px 16px; font-weight: 700; cursor: pointer; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border: 0; transition: transform .08s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: linear-gradient(135deg, #60a5fa, #8b5cf6); color: #fff; box-shadow: 0 8px 24px rgba(96,165,250,0.3); }
+    .btn-secondary { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid var(--border); }
+    @media (prefers-color-scheme: light) { .btn-secondary { background: rgba(37,99,235,0.07); color: #1e293b; } }
+    main { padding: 56px 0 80px; }
+    h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.02em; }
+    h2 { margin: 0 0 16px; font-size: clamp(18px, 2.5vw, 24px); }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .platform-label { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 12px; font-weight: 800; font-size: 13px; margin-bottom: 18px; }
+    .android-label { background: rgba(52,211,153,0.1); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
+    .ios-label { background: rgba(96,165,250,0.1); color: #60a5fa; border: 1px solid rgba(96,165,250,0.25); }
+    @media (prefers-color-scheme: light) {
+      .android-label { background: rgba(5,150,105,0.1); color: #059669; border-color: rgba(5,150,105,0.2); }
+      .ios-label { background: rgba(37,99,235,0.1); color: #2563eb; border-color: rgba(37,99,235,0.2); }
+    }
+    .video-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+    .video-thumb { background: linear-gradient(135deg, rgba(96,165,250,0.12), rgba(139,92,246,0.12)); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); }
+    .play-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(96,165,250,0.18); border: 2px solid rgba(96,165,250,0.35); display: flex; align-items: center; justify-content: center; color: #60a5fa; font-size: 20px; }
+    @media (prefers-color-scheme: light) {
+      .video-thumb { background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(109,40,217,0.06)); }
+      .play-icon { background: rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.25); color: #2563eb; }
+    }
+    .video-body { padding: 16px 18px 18px; }
+    .video-body h3 { margin: 0 0 6px; font-size: 15px; }
+    .video-body p { font-size: 14px; margin: 0 0 12px; }
+    .grid { display: grid; gap: 16px; }
+    @media (min-width: 600px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 900px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+    .section { padding: 44px 0; border-top: 1px solid var(--border); }
+    .section:first-of-type { border-top: 0; padding-top: 0; }
+    footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); background: rgba(0,0,0,0.1); }
+    @media (prefers-color-scheme: light) { footer { background: rgba(255,255,255,0.86); } }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="assets/images/logo.png?v=1" alt="Niwashi Base logo" />
+        <span>Ambulance</span>
+      </a>
+      <div class="nav-links">
+        <a class="btn btn-secondary" href="/whats-new.html">What's New</a>
+        <a class="btn btn-primary" href="/download.html">Download</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div style="margin-bottom: 44px;">
+        <h1>How-to Videos</h1>
+        <p>Step-by-step guides for installing and using Ambulance on Android and iOS.</p>
+      </div>
+
+      <!-- Android Videos -->
+      <section class="section">
+        <div class="platform-label android-label">Android</div>
+        <h2>Android tutorials</h2>
+        <p>Installation walkthrough plus in-depth usage guides covering key tools.</p>
+        <div class="grid cols-3" style="margin-top: 8px;">
+
+          <div class="video-card">
+            <div class="video-thumb">
+              <div class="play-icon">▶</div>
+            </div>
+            <div class="video-body">
+              <h3>How to install the app</h3>
+              <p>Step-by-step APK installation guide, including how to enable unknown sources and verify the download.</p>
+              <a class="btn btn-primary" href="https://bit.ly/3XuDaDw" target="_blank" rel="noopener noreferrer">Watch video</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumb">
+              <div class="play-icon">▶</div>
+            </div>
+            <div class="video-body">
+              <h3>How to use the app — Part 1</h3>
+              <p>Overview of navigation, CPG protocols, RSI checklist, and searching for medications.</p>
+              <a class="btn btn-primary" href="https://bit.ly/3XMa7wx" target="_blank" rel="noopener noreferrer">Watch video</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumb">
+              <div class="play-icon">▶</div>
+            </div>
+            <div class="video-body">
+              <h3>How to use the app — Part 2</h3>
+              <p>Pediatric dosing, WAFFLES, offline mode, and advanced features walkthrough.</p>
+              <a class="btn btn-primary" href="https://bit.ly/3ZreE8L" target="_blank" rel="noopener noreferrer">Watch video</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumb">
+              <div class="play-icon">▶</div>
+            </div>
+            <div class="video-body">
+              <h3>How to use the CPR logger</h3>
+              <p>Capturing precise 24-hour timestamps during CPR for clean documentation and handoff.</p>
+              <a class="btn btn-primary" href="https://bit.ly/3B2quMr" target="_blank" rel="noopener noreferrer">Watch video</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- iOS Videos -->
+      <section class="section">
+        <div class="platform-label ios-label">iOS Shortcuts</div>
+        <h2>iOS install guide</h2>
+        <p>How to install the Ambulance iOS Shortcuts using the direct link or RoutineHub.</p>
+        <div class="grid cols-3" style="margin-top: 8px;">
+
+          <div class="video-card">
+            <div class="video-thumb">
+              <div class="play-icon">▶</div>
+            </div>
+            <div class="video-body">
+              <h3>iOS installation guide</h3>
+              <p>Step-by-step walkthrough for installing Ambulance Shortcuts on iPhone, including RoutineHub setup.</p>
+              <a class="btn btn-primary" href="https://bit.ly/3XuDaDw" target="_blank" rel="noopener noreferrer">Watch video</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Ambulance Project — Niwashi Base</span>
+      <nav>
+        <a href="/">Home</a> ·
+        <a href="/android.html">Android</a> ·
+        <a href="/ios.html">iOS</a> ·
+        <a href="/whats-new.html">What's New</a> ·
+        <a href="/legal.html">Legal</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
