@@ -3,204 +3,215 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Legal — Terms, Privacy &amp; Disclaimer</title>
+  <title>Legal — Terms &amp; Privacy</title>
   <meta name="description" content="Terms and Conditions, Privacy Policy, and medical disclaimer for the Ambulance app." />
   <link rel="icon" href="assets/images/favicon.ico?v=1" />
   <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #050815;
-      --gradient: radial-gradient(circle at 20% 18%, rgba(37, 99, 235, 0.12), transparent 30%),
-                  linear-gradient(180deg, rgba(6, 9, 18, 0.92) 0%, rgba(5, 8, 21, 0.96) 45%, #040712 100%);
-      --text: #e8ecff;
-      --muted: #cbd5e1;
-      --card: rgba(10, 13, 26, 0.85);
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7f8fd;
-        --gradient: radial-gradient(circle at 18% 18%, rgba(96,165,250,0.12), transparent 34%),
-                    linear-gradient(180deg, #f6f7ff 0%, #eef2ff 50%, #e5e7ff 100%);
-        --text: #0f172a;
-        --muted: #334155;
-        --card: rgba(255,255,255,0.94);
-        --border: rgba(15, 23, 42, 0.08);
-        --shadow: 0 18px 50px rgba(15, 23, 42, 0.16);
-      }
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; background-image: var(--gradient); background-attachment: fixed; -webkit-font-smoothing: antialiased; }
-    a { color: #c7d2fe; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    @media (prefers-color-scheme: light) { a { color: #1d4ed8; } }
-    .container { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 18px; }
-    header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(16px); background: rgba(7,10,18,0.9); border-bottom: 1px solid var(--border); }
-    @media (prefers-color-scheme: light) { header { background: rgba(255,255,255,0.92); } }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
-    .brand { display: inline-flex; gap: 12px; align-items: center; font-weight: 800; color: var(--text); text-decoration: none; }
-    .brand img { width: 60px; height: 60px; }
-    .nav-links { display: flex; gap: 8px; }
-    .btn { border-radius: 14px; padding: 9px 16px; font-weight: 700; cursor: pointer; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; border: 0; }
-    .btn-secondary { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid var(--border); }
-    @media (prefers-color-scheme: light) { .btn-secondary { background: rgba(37,99,235,0.07); color: #1e293b; } }
-    main { padding: 56px 0 80px; }
+    :root{color-scheme:light dark;--bg:#07091c;--surface:rgba(11,15,38,.82);--surface2:rgba(14,19,46,.92);--text:#e2e8f0;--muted:#94a3b8;--border:rgba(255,255,255,.09);--shadow:0 16px 48px rgba(0,0,0,.45);--blue:#60a5fa;--page-bg:radial-gradient(ellipse 70% 50% at 15% 5%,rgba(59,130,246,.11) 0%,transparent 100%),#07091c;}
+    @media(prefers-color-scheme:light){:root{--bg:#f4f6ff;--surface:rgba(255,255,255,.9);--surface2:rgba(255,255,255,.98);--text:#0f172a;--muted:#475569;--border:rgba(15,23,42,.08);--shadow:0 8px 32px rgba(15,23,42,.1);--blue:#2563eb;--page-bg:radial-gradient(ellipse 70% 50% at 15% 5%,rgba(59,130,246,.06) 0%,transparent 100%),#eef1ff;}}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;background-image:var(--page-bg);background-attachment:fixed;-webkit-font-smoothing:antialiased;min-height:100vh;}
+    img{max-width:100%;display:block;}
+    a{color:var(--blue);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    h1,h2,h3{color:var(--text);letter-spacing:-.02em;line-height:1.15;}
+    p{margin:0 0 14px;color:var(--muted);font-size:15px;}
+    p:last-child{margin-bottom:0;}
+    ul{margin:0 0 14px;padding-left:20px;color:var(--muted);font-size:15px;}
+    ul li{margin-bottom:6px;}
+    .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px;}
+    .content-wrap{max-width:760px;}
 
-    /* Tab nav */
-    .tab-nav { display: flex; gap: 4px; margin-bottom: 32px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 14px; padding: 4px; }
-    @media (prefers-color-scheme: light) { .tab-nav { background: rgba(0,0,0,0.04); } }
-    .tab-btn { flex: 1; text-align: center; padding: 10px 16px; border-radius: 10px; font-weight: 700; font-size: 14px; cursor: pointer; border: 0; background: transparent; color: var(--muted); transition: background .15s, color .15s; }
-    .tab-btn.active { background: rgba(96,165,250,0.12); color: #60a5fa; }
-    @media (prefers-color-scheme: light) {
-      .tab-btn.active { background: rgba(37,99,235,0.1); color: #2563eb; }
-    }
+    .site-header{position:sticky;top:0;z-index:200;background:rgba(5,7,22,.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);}
+    @media(prefers-color-scheme:light){.site-header{background:rgba(238,241,255,.9);}}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px;}
+    .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--text);text-decoration:none;flex-shrink:0;}
+    .brand:hover{text-decoration:none;}
+    .brand img{width:38px;height:38px;border-radius:9px;}
+    .desk-nav{display:none;align-items:center;gap:2px;flex:1;justify-content:flex-end;}
+    .desk-nav a{padding:7px 12px;border-radius:9px;font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;transition:background .12s,color .12s;white-space:nowrap;}
+    .desk-nav a:hover,.desk-nav a[aria-current]{background:rgba(255,255,255,.08);color:var(--text);text-decoration:none;}
+    @media(prefers-color-scheme:light){.desk-nav a:hover,.desk-nav a[aria-current]{background:rgba(0,0,0,.06);}}
+    .nav-cta{margin-left:8px;background:linear-gradient(135deg,#60a5fa,#8b5cf6)!important;color:#fff!important;font-weight:700;padding:8px 16px;border-radius:10px;}
+    .nav-cta:hover{opacity:.88;}
+    .ham{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;padding:0;}
+    .ham span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:transform .22s ease,opacity .18s ease,width .18s ease;transform-origin:center;}
+    .ham[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .ham[aria-expanded=true] span:nth-child(2){opacity:0;width:0;}
+    .ham[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mob-nav{display:none;border-top:1px solid var(--border);background:rgba(4,6,18,.97);}
+    @media(prefers-color-scheme:light){.mob-nav{background:rgba(244,246,255,.98);}}
+    .mob-nav.open{display:block;}
+    .mob-nav a{display:flex;align-items:center;padding:14px 20px;font-weight:600;font-size:15px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);transition:background .1s;}
+    .mob-nav a:last-child{border-bottom:0;}
+    .mob-nav a:hover{background:rgba(255,255,255,.05);text-decoration:none;}
+    @media(prefers-color-scheme:light){.mob-nav a:hover{background:rgba(0,0,0,.04);}}
+    @media(min-width:768px){.desk-nav{display:flex;}.ham{display:none;}}
 
-    /* Legal content */
-    .legal-doc { display: none; }
-    .legal-doc.active { display: block; }
-    h1 { margin: 0 0 6px; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.02em; }
-    .updated { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
-    h2 { margin: 28px 0 10px; font-size: 17px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
-    p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
-    ul { margin: 0 0 14px; padding-left: 20px; color: var(--muted); font-size: 15px; }
-    ul li { margin-bottom: 6px; }
+    main{padding:64px 0 80px;}
+    h1{font-size:clamp(26px,4vw,40px);margin:0 0 6px;}
+    .updated{font-size:13px;color:var(--muted);margin-bottom:28px;}
 
-    .warning-box { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); border-radius: 14px; padding: 16px 18px; margin-bottom: 24px; }
-    .warning-box p { color: #f59e0b; margin: 0; font-size: 14px; font-weight: 600; }
-    @media (prefers-color-scheme: light) {
-      .warning-box { background: rgba(245,158,11,0.06); border-color: rgba(245,158,11,0.2); }
-      .warning-box p { color: #b45309; }
-    }
+    /* Tabs */
+    .tab-bar{display:flex;gap:4px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;padding:4px;margin-bottom:32px;}
+    @media(prefers-color-scheme:light){.tab-bar{background:rgba(0,0,0,.04);}}
+    .tab-btn{flex:1;padding:10px 16px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;border:0;background:transparent;color:var(--muted);transition:background .15s,color .15s;}
+    .tab-btn.active{background:rgba(96,165,250,.12);color:#60a5fa;}
+    @media(prefers-color-scheme:light){.tab-btn.active{background:rgba(37,99,235,.1);color:#2563eb;}}
+    .tab-panel{display:none;}
+    .tab-panel.active{display:block;}
 
-    footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); background: rgba(0,0,0,0.1); }
-    @media (prefers-color-scheme: light) { footer { background: rgba(255,255,255,0.86); } }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    h2{font-size:16px;margin:28px 0 8px;border-bottom:1px solid var(--border);padding-bottom:6px;}
+    .disclaimer{background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.22);border-radius:13px;padding:15px 18px;margin-bottom:24px;}
+    .disclaimer p{color:#f59e0b;margin:0;font-size:14px;font-weight:600;}
+    @media(prefers-color-scheme:light){.disclaimer{background:rgba(245,158,11,.05);}.disclaimer p{color:#b45309;}}
+
+    .site-footer{padding:32px 0 44px;border-top:1px solid var(--border);color:var(--muted);font-size:14px;background:rgba(0,0,0,.1);}
+    @media(prefers-color-scheme:light){.site-footer{background:rgba(255,255,255,.5);}}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+    .footer-links a{color:var(--muted);transition:color .12s;}
+    .footer-links a:hover{color:var(--text);text-decoration:none;}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav" style="max-width: 1080px;">
+
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
       <a class="brand" href="index.html">
-        <img src="assets/images/logo.png?v=1" alt="Niwashi Base logo" />
+        <img src="assets/images/logo.png?v=1" alt="Ambulance" width="38" height="38" />
         <span>Ambulance</span>
       </a>
-      <div class="nav-links">
-        <a class="btn btn-secondary" href="android.html">Android</a>
-        <a class="btn btn-secondary" href="ios.html">iOS</a>
-        <a class="btn btn-secondary" href="index.html">Home</a>
-      </div>
+      <nav class="desk-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="ios.html">iOS</a>
+        <a href="whats-new.html">What's New</a>
+        <a href="videos.html">Videos</a>
+        <a href="download.html" class="nav-cta">Download</a>
+      </nav>
+      <button class="ham" id="hamBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <nav class="mob-nav" id="mobMenu" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="android.html">Android</a>
+      <a href="ios.html">iOS</a>
+      <a href="whats-new.html">What's New</a>
+      <a href="videos.html">Videos</a>
+      <a href="download.html">Download</a>
+    </nav>
   </header>
 
   <main>
     <div class="container">
-      <h1>Legal</h1>
-      <p class="updated">Last updated: October 1, 2025</p>
+      <div class="content-wrap">
+        <h1>Legal</h1>
+        <p class="updated">Last updated: October 1, 2025</p>
 
-      <div class="tab-nav" role="tablist">
-        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tc" onclick="switchTab('tc')">Terms &amp; Conditions</button>
-        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="pp" onclick="switchTab('pp')">Privacy Policy</button>
-      </div>
-
-      <!-- Terms & Conditions -->
-      <div id="tc" class="legal-doc active" role="tabpanel">
-        <div class="warning-box">
-          <p>This app is a clinical reference and educational tool. It does not replace professional medical judgment. Always follow your service's approved protocols and clinical practice guidelines.</p>
+        <div class="tab-bar" role="tablist">
+          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tc" onclick="switchTab('tc', this)">Terms &amp; Conditions</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="pp" onclick="switchTab('pp', this)">Privacy Policy</button>
         </div>
 
-        <h2>1. Acceptance</h2>
-        <p>By installing or using the Ambulance app ("the App"), you agree to these Terms and Conditions. If you do not agree, do not use the App.</p>
+        <!-- Terms -->
+        <div id="tc" class="tab-panel active" role="tabpanel">
+          <div class="disclaimer">
+            <p>This app is a clinical reference and educational tool. It does not replace professional medical judgment. Always follow your service's approved protocols and clinical practice guidelines.</p>
+          </div>
 
-        <h2>2. Purpose and Intended Use</h2>
-        <p>The App is designed as a reference and decision-support tool for trained medical personnel operating under HMCAS-aligned Clinical Practice Guidelines (CPG). It is intended to supplement, not replace, formal training, certification, and professional judgment.</p>
-        <p>The App is not intended for use by the general public and is not a substitute for contacting emergency services or licensed medical professionals.</p>
+          <h2>1. Acceptance</h2>
+          <p>By installing or using the Ambulance app ("the App"), you agree to these Terms. If you do not agree, do not use the App.</p>
 
-        <h2>3. Medical Disclaimer</h2>
-        <p>All clinical content within the App is provided for reference only. Drug dosing, protocols, and guidelines are based on HMCAS CPG at the time of each release. You are responsible for verifying that content reflects your service's current approved protocols before acting on it.</p>
-        <p>The developer accepts no liability for clinical decisions made based on the App's content.</p>
+          <h2>2. Purpose and Intended Use</h2>
+          <p>The App is a reference and decision-support tool for trained medical personnel operating under HMCAS-aligned Clinical Practice Guidelines (CPG). It supplements, but does not replace, formal training, certification, and professional judgment.</p>
+          <p>The App is not intended for the general public and is not a substitute for contacting emergency services or licensed medical professionals.</p>
 
-        <h2>4. Updates and Accuracy</h2>
-        <p>Clinical guidelines change. While the App is updated regularly to reflect current CPG versions, you should always check the What's New page and confirm the App version you are running is current before field use.</p>
+          <h2>3. Medical Disclaimer</h2>
+          <p>All clinical content is provided for reference only. Drug dosing, protocols, and guidelines are based on HMCAS CPG at the time of each release. You are responsible for verifying content against your service's current approved protocols before acting on it.</p>
+          <p>The developer accepts no liability for clinical decisions made based on the App's content.</p>
 
-        <h2>5. Intellectual Property</h2>
-        <p>All content, design, and code within the App are the property of Niwashi Base. The App is provided free of charge for use by medical personnel. Redistribution, reverse-engineering, or commercial use without permission is prohibited.</p>
+          <h2>4. Updates and Accuracy</h2>
+          <p>Clinical guidelines change. Always check the What's New page and confirm the App version is current before field use.</p>
 
-        <h2>6. Limitation of Liability</h2>
-        <p>The App is provided "as is" without warranty of any kind. Niwashi Base shall not be liable for any direct, indirect, or consequential damages arising from the use of or inability to use the App.</p>
+          <h2>5. Intellectual Property</h2>
+          <p>All content, design, and code are the property of Niwashi Base. The App is provided free of charge for use by medical personnel. Redistribution, reverse-engineering, or commercial use without permission is prohibited.</p>
 
-        <h2>7. Changes to These Terms</h2>
-        <p>These Terms may be updated at any time. Continued use of the App after changes are posted constitutes acceptance of the new terms.</p>
+          <h2>6. Limitation of Liability</h2>
+          <p>The App is provided "as is" without warranty of any kind. Niwashi Base shall not be liable for any direct, indirect, or consequential damages arising from the use of or inability to use the App.</p>
 
-        <h2>8. Contact</h2>
-        <p>Questions about these Terms: <a href="mailto:support@niwashibase.com">support@niwashibase.com</a></p>
-      </div>
+          <h2>7. Changes to These Terms</h2>
+          <p>These Terms may be updated at any time. Continued use of the App constitutes acceptance of the updated terms.</p>
 
-      <!-- Privacy Policy -->
-      <div id="pp" class="legal-doc" role="tabpanel">
-        <h2>Overview</h2>
-        <p>Your privacy is fundamental to how the App is built. Ambulance does not collect, store, or transmit any personal data. There are no accounts, no analytics, and no advertising.</p>
+          <h2>8. Contact</h2>
+          <p>Questions: <a href="mailto:support@niwashibase.com">support@niwashibase.com</a></p>
+        </div>
 
-        <h2>1. Data We Do Not Collect</h2>
-        <ul>
-          <li>No personal identification information</li>
-          <li>No location data</li>
-          <li>No usage analytics or crash reporting</li>
-          <li>No advertising identifiers</li>
-          <li>No patient or clinical case data</li>
-        </ul>
+        <!-- Privacy -->
+        <div id="pp" class="tab-panel" role="tabpanel">
+          <h2>Overview</h2>
+          <p>Your privacy is fundamental to how the App is built. Ambulance does not collect, store, or transmit any personal data. There are no accounts, no analytics, and no advertising.</p>
 
-        <h2>2. Local Storage</h2>
-        <p>Any preferences or state stored by the App are kept locally on your device and are never transmitted to any external server.</p>
+          <h2>1. Data We Do Not Collect</h2>
+          <ul>
+            <li>No personal identification information</li>
+            <li>No location data</li>
+            <li>No usage analytics or crash reporting</li>
+            <li>No advertising identifiers</li>
+            <li>No patient or clinical case data</li>
+          </ul>
 
-        <h2>3. Network Access</h2>
-        <p>The App is offline-first. Network access is only used when you manually check for or download an update via the Download page. No background network activity occurs.</p>
+          <h2>2. Local Storage</h2>
+          <p>Any preferences stored by the App are kept locally on your device and are never transmitted to any external server.</p>
 
-        <h2>4. APK Download</h2>
-        <p>When you download the Android APK from <code>update.niwashibase.com</code>, a standard web server log entry is created (IP address, timestamp, file requested). This log is not linked to any personal profile and is retained only for operational purposes.</p>
+          <h2>3. Network Access</h2>
+          <p>The App is offline-first. Network access is only used when you manually download an update. No background network activity occurs.</p>
 
-        <h2>5. Third-Party Services</h2>
-        <p>The App does not embed any third-party SDKs, advertising networks, or analytics services. The Videos page links to external video hosts (bit.ly redirects); those services have their own privacy policies.</p>
+          <h2>4. APK Download</h2>
+          <p>When you download the Android APK from <code>update.niwashibase.com</code>, a standard web server log entry is created (IP address, timestamp, file). This is not linked to any personal profile and is retained only for operational purposes.</p>
 
-        <h2>6. Children's Privacy</h2>
-        <p>The App is intended for use by trained medical professionals. It is not directed at children under 18.</p>
+          <h2>5. Third-Party Services</h2>
+          <p>The App embeds no third-party SDKs, advertising networks, or analytics services. The Videos page links to external video hosts; those services have their own privacy policies.</p>
 
-        <h2>7. Changes to This Policy</h2>
-        <p>This policy may be updated periodically. The "Last updated" date at the top of this page reflects the most recent revision.</p>
+          <h2>6. Children's Privacy</h2>
+          <p>The App is intended for trained medical professionals and is not directed at children under 18.</p>
 
-        <h2>8. Contact</h2>
-        <p>Questions about privacy: <a href="mailto:support@niwashibase.com">support@niwashibase.com</a></p>
+          <h2>7. Changes to This Policy</h2>
+          <p>This policy may be updated periodically. The "Last updated" date at the top reflects the most recent revision.</p>
+
+          <h2>8. Contact</h2>
+          <p>Questions: <a href="mailto:support@niwashibase.com">support@niwashibase.com</a></p>
+        </div>
       </div>
     </div>
   </main>
 
-  <footer>
-    <div class="container footer-inner" style="max-width: 1080px;">
-      <span>© <span id="year"></span> Ambulance Project — Niwashi Base</span>
-      <nav>
-        <a href="index.html">Home</a> ·
-        <a href="android.html">Android</a> ·
-        <a href="ios.html">iOS</a> ·
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span>© <span id="yr"></span> Ambulance — Niwashi Base</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="android.html">Android</a>
+        <a href="ios.html">iOS</a>
+        <a href="whats-new.html">What's New</a>
         <a href="videos.html">Videos</a>
       </nav>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    function switchTab(id) {
-      document.querySelectorAll('.legal-doc').forEach(d => d.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+    document.getElementById('yr').textContent=new Date().getFullYear();
+    function switchTab(id,btn){
+      document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false');});
       document.getElementById(id).classList.add('active');
-      const btn = document.querySelector(`[aria-controls="${id}"]`);
       btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
+      btn.setAttribute('aria-selected','true');
     }
-
-    // Allow direct linking to a tab via hash
-    const hash = location.hash.replace('#', '');
-    if (hash === 'pp' || hash === 'tc') switchTab(hash);
+    var hash=location.hash.replace('#','');
+    if(hash==='pp'){var btn=document.querySelector('[aria-controls="pp"]');if(btn)switchTab('pp',btn);}
+    (function(){var btn=document.getElementById('hamBtn'),nav=document.getElementById('mobMenu');if(!btn||!nav)return;btn.addEventListener('click',function(){var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open);});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!nav.contains(e.target)){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();
   </script>
 </body>
 </html>
