@@ -4,465 +4,471 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ambulance — fast, clear, offline-first clinical tools for paramedics</title>
-  <meta name="description" content="Ambulance is a fast, offline-first Android app built around HMCAS workflows with CPG-integrated tools, RSI checklists, pediatric dosing, CPR logs, and rapid search." />
-
-  <!-- Open Graph / Twitter -->
+  <title>Ambulance — Fast, offline-first clinical tools for paramedics</title>
+  <meta name="description" content="Ambulance is a fast, offline-first app built around HMCAS workflows with CPG-integrated tools, RSI checklists, pediatric dosing, CPR logs, and rapid search." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ambulance — fast, offline-first clinical tools for paramedics" />
-  <meta property="og:description" content="Ambulance is a fast, offline-first Android app built around HMCAS workflows with CPG-integrated tools, RSI checklists, pediatric dosing, CPR logs, and rapid search." />
-  <meta property="og:image" content="assets/images/og-cover.jpg" />
+  <meta property="og:title" content="Ambulance — Offline-first clinical tools for paramedics" />
+  <meta property="og:description" content="CPG-aligned tools, RSI checklists, pediatric dosing, CPR logs, and search that keeps moving even when signal drops." />
   <meta property="og:url" content="https://www.niwashibase.com/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ambulance — fast, offline-first clinical tools for paramedics" />
-  <meta name="twitter:description" content="Ambulance is a fast, offline-first Android app built around HMCAS workflows with CPG-integrated tools, RSI checklists, pediatric dosing, CPR logs, and rapid search." />
-  <meta name="twitter:image" content="assets/images/og-cover.jpg" />
-
   <link rel="icon" href="assets/images/favicon.ico?v=1" />
-
-  <!-- Schema.org (basic) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Niwashi Base — Ambulance",
-    "url": "https://www.niwashibase.com/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.niwashibase.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
   <style>
     :root {
-      --bg: #050815;
-      --bg-soft: #0b1021;
-      --gradient: radial-gradient(circle at 18% 20%, rgba(37, 99, 235, 0.18), transparent 32%),
-                  radial-gradient(circle at 80% 12%, rgba(16, 185, 129, 0.18), transparent 32%),
-                  linear-gradient(180deg, rgba(6, 9, 18, 0.95) 0%, rgba(5, 8, 21, 0.98) 45%, #040712 100%);
-      --text: #e8ecff;
-      --muted: #cbd5e1;
-      --ink: #050712;
-      --card: rgba(10, 13, 26, 0.85);
-      --card-strong: rgba(13, 18, 35, 0.9);
-      --accent: #60a5fa;
-      --accent-ink: #0b1832;
-      --success: #22c55e;
-      --warning: #f59e0b;
-      --ring: rgba(96, 165, 250, 0.45);
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+      color-scheme: light dark;
+      --bg: #07091c;
+      --surface: rgba(11,15,38,.82);
+      --surface2: rgba(14,19,46,.92);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(255,255,255,.09);
+      --shadow: 0 16px 48px rgba(0,0,0,.45);
+      --blue: #60a5fa;
+      --green: #34d399;
+      --page-bg:
+        radial-gradient(ellipse 70% 50% at 15% 5%, rgba(59,130,246,.15) 0%, transparent 100%),
+        radial-gradient(ellipse 55% 45% at 85% 90%, rgba(139,92,246,.12) 0%, transparent 100%),
+        #07091c;
     }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      background-image: var(--gradient);
-      background-attachment: fixed;
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f6ff;
+        --surface: rgba(255,255,255,.9);
+        --surface2: rgba(255,255,255,.98);
+        --text: #0f172a;
+        --muted: #475569;
+        --border: rgba(15,23,42,.08);
+        --shadow: 0 8px 32px rgba(15,23,42,.1);
+        --blue: #2563eb;
+        --green: #059669;
+        --page-bg:
+          radial-gradient(ellipse 70% 50% at 15% 5%, rgba(59,130,246,.07) 0%, transparent 100%),
+          radial-gradient(ellipse 55% 45% at 85% 90%, rgba(139,92,246,.06) 0%, transparent 100%),
+          #eef1ff;
+      }
     }
+    *,*::before,*::after{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;background-image:var(--page-bg);background-attachment:fixed;-webkit-font-smoothing:antialiased;min-height:100vh;}
+    img{max-width:100%;display:block;}
+    a{color:var(--blue);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    h1,h2,h3{color:var(--text);letter-spacing:-.02em;line-height:1.15;}
+    p{margin:0 0 14px;color:var(--muted);}
+    p:last-child{margin-bottom:0;}
+    .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px;}
 
-    a { color: #c7d2fe; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    @media (prefers-color-scheme: light) { a { color: #1d4ed8; } }
+    /* Nav */
+    .site-header{position:sticky;top:0;z-index:200;background:rgba(5,7,22,.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);}
+    @media(prefers-color-scheme:light){.site-header{background:rgba(238,241,255,.9);}}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px;}
+    .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--text);text-decoration:none;flex-shrink:0;}
+    .brand:hover{text-decoration:none;}
+    .brand img{width:38px;height:38px;border-radius:9px;}
+    .desk-nav{display:none;align-items:center;gap:2px;flex:1;justify-content:flex-end;}
+    .desk-nav a{padding:7px 12px;border-radius:9px;font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;transition:background .12s,color .12s;white-space:nowrap;}
+    .desk-nav a:hover,.desk-nav a[aria-current]{background:rgba(255,255,255,.08);color:var(--text);text-decoration:none;}
+    @media(prefers-color-scheme:light){.desk-nav a:hover,.desk-nav a[aria-current]{background:rgba(0,0,0,.06);}}
+    .nav-cta{margin-left:8px;background:linear-gradient(135deg,#60a5fa,#8b5cf6)!important;color:#fff!important;font-weight:700;padding:8px 16px;border-radius:10px;}
+    .nav-cta:hover{opacity:.88;transform:none;}
+    .ham{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;padding:0;}
+    .ham span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:transform .22s ease,opacity .18s ease,width .18s ease;transform-origin:center;}
+    .ham[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .ham[aria-expanded=true] span:nth-child(2){opacity:0;width:0;}
+    .ham[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mob-nav{display:none;border-top:1px solid var(--border);background:rgba(4,6,18,.97);}
+    @media(prefers-color-scheme:light){.mob-nav{background:rgba(244,246,255,.98);}}
+    .mob-nav.open{display:block;}
+    .mob-nav a{display:flex;align-items:center;padding:14px 20px;font-weight:600;font-size:15px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);transition:background .1s;}
+    .mob-nav a:last-child{border-bottom:0;}
+    .mob-nav a:hover{background:rgba(255,255,255,.05);text-decoration:none;}
+    @media(prefers-color-scheme:light){.mob-nav a:hover{background:rgba(0,0,0,.04);}}
+    @media(min-width:768px){.desk-nav{display:flex;}.ham{display:none;}}
 
-    /* Layout helpers */
-    .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
-    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 1px, 1px); border: 0; white-space: nowrap; }
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:12px 22px;border-radius:12px;font-weight:700;font-size:15px;border:0;cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform .08s,opacity .12s,box-shadow .15s;letter-spacing:-.01em;line-height:1;}
+    .btn:hover{text-decoration:none;}
+    .btn:active{transform:scale(.97);}
+    .btn-primary{background:linear-gradient(135deg,#60a5fa,#8b5cf6);color:#fff;box-shadow:0 8px 24px rgba(96,165,250,.3);}
+    .btn-primary:hover{opacity:.9;box-shadow:0 12px 30px rgba(96,165,250,.4);transform:translateY(-1px);}
+    .btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border);}
+    .btn-ghost:hover{background:var(--surface2);}
+    .btn-subtle{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid var(--border);}
+    .btn-subtle:hover{background:rgba(255,255,255,.1);color:var(--text);}
+    @media(prefers-color-scheme:light){.btn-subtle{background:rgba(0,0,0,.05);color:var(--muted);}.btn-subtle:hover{background:rgba(0,0,0,.09);color:var(--text);}}
 
-    /* =====================
-       Top Navigation
-       ===================== */
-    .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(180%) blur(18px); background: rgba(7, 10, 18, 0.9); border-bottom: 1px solid var(--border); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: 0.2px; color: #fff; }
-    .brand img { width: 88px; height: 88px; padding: 2px; }
-    .nav ul { list-style: none; margin: 0; padding: 0; display: none; gap: 20px; }
-    .nav a { color: #e5e7eb; font-weight: 600; opacity: 0.9; }
-    .nav a:hover { opacity: 1; }
-    .menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); color: #e5e7eb; }
+    /* Cards */
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:22px;box-shadow:var(--shadow);}
+    .pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:999px;font-size:12px;font-weight:700;background:var(--surface);border:1px solid var(--border);color:var(--muted);}
+    .tag{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.03em;}
+    .tag-blue{background:rgba(96,165,250,.1);color:#60a5fa;border:1px solid rgba(96,165,250,.2);}
+    .tag-green{background:rgba(52,211,153,.1);color:#34d399;border:1px solid rgba(52,211,153,.2);}
+    @media(prefers-color-scheme:light){.tag-blue{background:rgba(37,99,235,.08);color:#2563eb;border-color:rgba(37,99,235,.18);}.tag-green{background:rgba(5,150,105,.08);color:#059669;border-color:rgba(5,150,105,.18);}}
 
-    @media (min-width: 960px) {
-      .nav ul { display: flex; }
-      .menu-btn { display: none; }
-    }
+    /* Hero */
+    .hero{padding:80px 0 48px;}
+    .hero-grid{display:grid;gap:40px;align-items:center;}
+    @media(min-width:960px){.hero-grid{grid-template-columns:1.15fr 1fr;gap:48px;}}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;border:1px solid var(--border);background:rgba(96,165,250,.08);color:#bae6fd;font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+    .h1{font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:-.025em;margin:0 0 16px;color:#fff;}
+    @media(prefers-color-scheme:light){.h1{color:var(--text);}}
+    .hero-sub{font-size:clamp(16px,2.5vw,19px);color:var(--muted);max-width:56ch;margin:0 0 24px;}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+    .trust-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
+    .hero-panel{background:linear-gradient(140deg,rgba(96,165,250,.08),rgba(11,17,36,.92));border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:var(--shadow);}
+    .stat-grid{display:grid;gap:10px;}
+    .stat-item{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:13px;background:rgba(255,255,255,.05);border:1px solid var(--border);}
+    @media(prefers-color-scheme:light){.stat-item{background:rgba(0,0,0,.03);}}
+    .stat-item h3{margin:0;font-size:15px;font-weight:700;}
+    .stat-item span{font-weight:700;color:var(--muted);font-size:14px;}
+    .online{color:#22c55e;font-weight:800;display:inline-flex;align-items:center;gap:6px;}
+    .assurance{display:grid;gap:10px;margin-top:22px;}
+    @media(min-width:600px){.assurance{grid-template-columns:repeat(3,1fr);}}
+    .assurance-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 16px;}
+    .assurance-card strong{display:block;font-size:13px;margin-bottom:4px;}
+    .assurance-card span{font-size:13px;color:var(--muted);}
 
-    .mobile-menu { display: none; border-bottom: 1px solid var(--border); background: var(--card); }
-    .mobile-menu.open { display: block; }
-    .mobile-menu a { display: block; padding: 14px 20px; border-top: 1px solid var(--border); color: #e5e7eb; font-weight: 600; }
+    /* Sections */
+    .section{padding:72px 0;border-top:1px solid var(--border);}
+    .section-header{margin-bottom:36px;}
+    .section-header h2{font-size:clamp(22px,3vw,34px);margin:0 0 10px;}
+    .section-header p{max-width:60ch;margin:0;}
+    .grid{display:grid;gap:16px;}
+    @media(min-width:640px){.grid.cols-2{grid-template-columns:repeat(2,1fr);}}
+    @media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr);}}
+    @media(min-width:800px){.grid.two-col{grid-template-columns:1fr 1fr;gap:28px;align-items:start;}}
+    .feature-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:0 4px 20px rgba(0,0,0,.25);}
+    .feature-card h3{margin:10px 0 6px;font-size:17px;}
+    .feature-card p{font-size:14px;margin:0;}
 
-    /* =====================
-       Hero
-       ===================== */
-    .hero { padding: 84px 0 32px; }
-    .hero-inner { display: grid; gap: 32px; align-items: center; }
-    @media (min-width: 1024px) { .hero-inner { grid-template-columns: 1.2fr 0.9fr; gap: 46px; } }
+    /* Screenshots */
+    .shots{display:grid;gap:16px;}
+    @media(min-width:640px){.shots{grid-template-columns:repeat(3,1fr);}}
+    .phone-frame{aspect-ratio:9/19.5;background:#0d1225;border-radius:24px;border:8px solid #1a2035;overflow:hidden;box-shadow:var(--shadow);}
+    .phone-frame img{width:100%;height:100%;object-fit:cover;}
+    .phone-placeholder{display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);text-align:center;padding:16px;}
+    figcaption{margin-top:10px;font-size:13px;color:var(--muted);}
 
-    .eyebrow { color: #bae6fd; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: rgba(96,165,250,0.08); }
-    .h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.08; letter-spacing: -0.02em; margin: 10px 0; color: #fff; text-shadow: 0 6px 24px rgba(0,0,0,0.4); }
-    .sub { font-size: clamp(17px, 2.5vw, 20px); color: var(--muted); max-width: 62ch; }
-
-    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-    .btn { appearance: none; border: 0; cursor: pointer; font-weight: 800; border-radius: 14px; padding: 12px 18px; transition: transform .08s ease, box-shadow .2s ease, background .2s ease; letter-spacing: -0.01em; }
-    .btn:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
-    .btn-primary { background: linear-gradient(135deg, #60a5fa, #8b5cf6); color: #fff; box-shadow: 0 14px 30px rgba(96,165,250,0.35); }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 40px rgba(96,165,250,0.45); }
-    .btn-secondary { background: rgba(255,255,255,0.06); color: #e5e7eb; border: 1px solid var(--border); }
-    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-    .btn-ghost { background: transparent; color: #c7d2fe; border: 1px dashed var(--border); }
-
-    .trust { margin-top: 10px; color: var(--muted); font-size: 14px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-    .trust strong { color: #fff; }
-    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); font-size: 13px; }
-
-    .hero-card { background: linear-gradient(140deg, rgba(96,165,250,0.08), rgba(11,17,36,0.92)); border: 1px solid var(--border); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); }
-    .hero-grid { display: grid; gap: 12px; }
-    .stat { display: flex; align-items: center; justify-content: space-between; padding: 14px 14px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); }
-    .stat h3 { margin: 0; font-size: 16px; color: #e0e7ff; }
-    .stat span { color: #c7d2fe; font-weight: 700; }
-    .status { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: #22c55e; }
-
-    .assurance { display: grid; gap: 12px; margin-top: 18px; }
-    @media (min-width: 720px) { .assurance { grid-template-columns: repeat(3, 1fr); } }
-    .assurance-card { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: grid; gap: 4px; box-shadow: var(--shadow); }
-    .assurance-card strong { color: #e8ecff; }
-
-    /* =====================
-       Sections
-       ===================== */
-    .section { padding: 56px 0; border-top: 1px solid var(--border); }
-    .section:first-of-type { border-top: 0; }
-    .section h2 { font-size: clamp(24px, 2.8vw, 32px); margin: 0 0 14px; letter-spacing: -0.01em; color: #fff; }
-    .section p { margin: 0 0 16px; color: #cbd5e1; }
-    .grid { display: grid; gap: 16px; }
-    @media (min-width: 720px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
-    @media (min-width: 720px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
-
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 18px; box-shadow: var(--shadow); }
-    .card h3 { margin: 0 0 8px; font-size: 17px; color: #e0e7ff; }
-    .card p { margin: 0; color: #cbd5e1; font-size: 15px; }
-    .tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px; background: rgba(99,102,241,0.1); color: #c7d2fe; font-weight: 700; font-size: 12px; border: 1px solid var(--border); }
-
-    .shots { display: grid; gap: 16px; }
-    @media (min-width: 720px) { .shots { grid-template-columns: repeat(3, 1fr); } }
-    .phone { position: relative; aspect-ratio: 9/19.5; background: #0f172a; border-radius: 24px; border: 10px solid #111827; overflow: hidden; box-shadow: var(--shadow); }
-    .phone img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .shot-cap { margin-top: 8px; color: #cbd5e1; font-size: 13px; }
-
-    /* Highlighted lists */
-    .icon-list { display: grid; gap: 12px; }
-    .icon-item { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 10px; padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); }
-    .icon-item strong { color: #e0e7ff; }
+    /* Icon list */
+    .icon-list{display:grid;gap:10px;}
+    .icon-item{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:14px;border-radius:13px;background:rgba(255,255,255,.04);border:1px solid var(--border);}
+    @media(prefers-color-scheme:light){.icon-item{background:rgba(0,0,0,.03);}}
+    .icon-item strong{display:block;font-size:14px;margin-bottom:3px;}
+    .icon-item span{font-size:13px;color:var(--muted);}
 
     /* Timeline */
-    .timeline { display: grid; gap: 14px; }
-    .timeline-step { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 14px; }
-    .timeline-badge { width: 42px; height: 42px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; background: rgba(99,102,241,0.12); color: #c7d2fe; font-weight: 800; }
+    .timeline{display:grid;gap:12px;}
+    .tl-step{display:flex;gap:14px;align-items:start;padding:14px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;}
+    @media(prefers-color-scheme:light){.tl-step{background:rgba(0,0,0,.03);}}
+    .tl-badge{min-width:38px;height:38px;border-radius:10px;background:rgba(96,165,250,.1);color:#60a5fa;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+    .tl-step strong{display:block;font-size:14px;margin-bottom:3px;}
+    .tl-step p{font-size:13px;margin:0;}
 
-    /* Testimonials */
-    .quote { font-size: 16px; color: #cbd5e1; margin: 0; }
-    .quote cite { display: block; margin-top: 8px; color: #c7d2fe; font-style: normal; font-weight: 700; }
+    /* Support */
+    .support-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+
+    /* FAQ */
+    .faq-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px;}
+    .faq-card h3{font-size:15px;margin:0 0 8px;}
+    .faq-card p{font-size:14px;margin:0;}
 
     /* Footer */
-    footer { padding: 32px 0 48px; border-top: 1px solid var(--border); color: #cbd5e1; font-size: 14px; background: rgba(0,0,0,0.12); }
-    footer .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-    footer nav a { color: #cbd5e1; margin-right: 14px; }
+    .site-footer{padding:32px 0 44px;border-top:1px solid var(--border);color:var(--muted);font-size:14px;background:rgba(0,0,0,.1);margin-top:0;}
+    @media(prefers-color-scheme:light){.site-footer{background:rgba(255,255,255,.5);}}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+    .footer-links a{color:var(--muted);transition:color .12s;}
+    .footer-links a:hover{color:var(--text);text-decoration:none;}
 
-    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; border: 1px solid var(--border); border-bottom-width: 2px; padding: 2px 6px; border-radius: 6px; color: var(--text); }
+    /* Misc */
+    .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;border:1px solid var(--border);border-bottom-width:2px;padding:2px 6px;border-radius:5px;}
   </style>
 </head>
 <body>
-  <header class="nav" role="banner">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="Niwashi Base home">
-        <img src="assets/images/logo.png?v=1" alt="Niwashi Base logo" />
+
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.png?v=1" alt="Ambulance" width="38" height="38" />
         <span>Ambulance</span>
       </a>
-      <nav aria-label="Primary">
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
-        <ul class="desktop-menu">
-          <li><a href="#features">Features</a></li>
-          <li><a href="android.html">Android</a></li>
-          <li><a href="ios.html">iOS</a></li>
-          <li><a href="whats-new.html">What's New</a></li>
-          <li><a href="videos.html">Videos</a></li>
-          <li><a href="download.html">Download</a></li>
-        </ul>
+      <nav class="desk-nav" aria-label="Site navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="android.html">Android</a>
+        <a href="ios.html">iOS</a>
+        <a href="whats-new.html">What's New</a>
+        <a href="videos.html">Videos</a>
+        <a href="download.html" class="nav-cta">Download</a>
       </nav>
+      <button class="ham" id="hamBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile">
-      <a href="#features">Features</a>
+    <nav class="mob-nav" id="mobMenu" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
       <a href="android.html">Android</a>
       <a href="ios.html">iOS</a>
       <a href="whats-new.html">What's New</a>
       <a href="videos.html">Videos</a>
       <a href="download.html">Download</a>
-    </div>
+    </nav>
   </header>
 
-  <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <div class="eyebrow">Built with HMCAS crews</div>
-        <h1 class="h1">Ambulance — fast, clear, offline-first clinical tools for paramedics</h1>
-        <p class="sub">Designed to stay legible in rain, dust, and glare. CPG-aligned tools, RSI checklists, pediatric dosing, CPR logs, and search that keeps moving even when signal drops.</p>
-        <div class="cta-row" role="group" aria-label="Primary actions">
-          <a class="btn btn-primary" href="download.html">Download for Android</a>
-          <a class="btn btn-secondary" href="whats-new.html">View what’s new</a>
-          <a class="btn btn-ghost" href="#support">Get support</a>
-        </div>
-        <div class="trust">
-          <span class="pill">Offline-first</span>
-          <span class="pill">No ads · No trackers</span>
-          <span class="pill">Android 8+</span>
-        </div>
-        <div class="assurance" aria-label="Safety and clarity guarantees">
-          <div class="assurance-card">
-            <strong>Always readable</strong>
-            <span>Short sentences, calm typography, and large tap targets for gloved hands.</span>
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Built with HMCAS crews</div>
+          <h1 class="h1">Fast, clear, offline-first clinical tools for paramedics</h1>
+          <p class="hero-sub">CPG-aligned tools, RSI checklists, pediatric dosing, CPR logs, and search that keeps moving even when signal drops.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="download.html">Download for Android</a>
+            <a class="btn btn-ghost" href="whats-new.html">What's New</a>
+            <a class="btn btn-subtle" href="#support">Get support</a>
           </div>
-          <div class="assurance-card">
-            <strong>Offline by design</strong>
-            <span>Protocols, dosing, timers, and checklists ship with the app. No surprises mid-call.</span>
+          <div class="trust-row">
+            <span class="pill">Offline-first</span>
+            <span class="pill">No ads · No trackers</span>
+            <span class="pill">Android 8+</span>
           </div>
-          <div class="assurance-card">
-            <strong>Respectful of privacy</strong>
-            <span>No ads, no trackers—your focus stays on patient care.</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-card" aria-label="Status panel">
-        <div class="hero-grid">
-          <div class="stat">
-            <div>
-              <h3>System status</h3>
-              <p class="trust" style="margin:4px 0 0;">Edge delivery for Qatar & abroad</p>
+          <div class="assurance">
+            <div class="assurance-card">
+              <strong>Always readable</strong>
+              <span>Large tap targets and calm typography for gloved hands in any light.</span>
             </div>
-            <span class="status">● Online</span>
-          </div>
-          <div class="stat">
-            <h3>CPG coverage</h3>
-            <span>Latest release</span>
-          </div>
-          <div class="stat">
-            <h3>Trusted tools</h3>
-            <span>RSI · Pediatrics · CPR</span>
-          </div>
-          <div class="stat">
-            <h3>Privacy</h3>
-            <span>Local-first · No ads</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="features">
-    <div class="container">
-      <h2>Built for the way you work</h2>
-      <p>Designed with crews who need reliable, crystal-clear guidance in the field. Every tool is tuned for speed, legibility, and repeatable care.</p>
-      <div class="grid cols-3" role="list">
-        <article class="card" role="listitem">
-          <span class="tag">⚡ Speed</span>
-          <h3>CPG at a glance</h3>
-          <p>Essential protocols in a clean, searchable layout with a frictionless UI that stays out of your way.</p>
-        </article>
-        <article class="card" role="listitem">
-          <span class="tag">🧠 RSI</span>
-          <h3>RSI tools</h3>
-          <p>SOAPME checklist, 1-minute countdowns, and rapid review so your team is aligned before push.</p>
-        </article>
-        <article class="card" role="listitem">
-          <span class="tag">👶 Pediatrics</span>
-          <h3>Pediatric dosing</h3>
-          <p>Age/weight guidance with WAFFLES reminders and quick references that stay readable in low light.</p>
-        </article>
-        <article class="card" role="listitem">
-          <span class="tag">📟 Logging</span>
-          <h3>CPR logs</h3>
-          <p>Precise timestamps in 24-hour format for clear documentation and handoffs.</p>
-        </article>
-        <article class="card" role="listitem">
-          <span class="tag">📡 Offline</span>
-          <h3>Offline-first</h3>
-          <p>Full access with zero signal. Data is local-first and built to work in tunnels, elevators, and rural calls.</p>
-        </article>
-        <article class="card" role="listitem">
-          <span class="tag">🔍 Search</span>
-          <h3>Rapid search</h3>
-          <p>Find the right guidance in seconds with intuitive filters and short, readable summaries.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== HIGHLIGHTS ===================== -->
-  <section class="section" id="highlights">
-    <div class="container grid cols-2" style="gap:24px; align-items:start;">
-      <div>
-        <h2>Why responders choose Ambulance</h2>
-        <p>We obsess over details that crews feel immediately: touch-friendly controls, large tap targets, and layouts that stay legible in rain, dust, and glare.</p>
-        <div class="icon-list">
-          <div class="icon-item">
-            <div class="pill">Human-centered</div>
-            <div><strong>Crafted with medics</strong><br />Built alongside HMCAS workflows so your routines map perfectly into the app.</div>
-          </div>
-          <div class="icon-item">
-            <div class="pill">Reliable</div>
-            <div><strong>Edge delivery</strong><br />Updates stream from <span class="kbd">update.niwashibase.com</span> for dependable downloads in Qatar and abroad.</div>
-          </div>
-          <div class="icon-item">
-            <div class="pill">Calm UI</div>
-            <div><strong>Signal-first typography</strong><br />High contrast, short sentences, and clear spacing reduce cognitive load in critical minutes.</div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <h3 style="margin-top:0;">Field readiness checklist</h3>
-        <div class="icon-list">
-          <div class="icon-item">
-            <div class="pill">✅</div>
-            <div><strong>Works offline</strong><br />Open protocols, dosing, and timers without connectivity.</div>
-          </div>
-          <div class="icon-item">
-            <div class="pill">✅</div>
-            <div><strong>Device-friendly</strong><br />Built for Android 8+ with smooth performance on midrange devices.</div>
-          </div>
-          <div class="icon-item">
-            <div class="pill">✅</div>
-            <div><strong>Privacy first</strong><br />No ads, no trackers—your focus stays on patient care.</div>
-          </div>
-          <div class="icon-item">
-            <div class="pill">✅</div>
-            <div><strong>Actionable updates</strong><br />Release notes highlight exactly what changed so teams stay aligned.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SCREENSHOTS ===================== -->
-  <section class="section" id="screenshots">
-    <div class="container">
-      <h2>See it in action</h2>
-      <p>Purpose-built screens keep high-clarity info front and center, whether you’re prepping for RSI or confirming pediatric dosing.</p>
-      <div class="shots">
-        <figure>
-          <div class="phone">
-            <img src="assets/images/screen-rsi.jpg" alt="RSI checklist and one-minute timer screen" />
-          </div>
-          <figcaption class="shot-cap">RSI checklist &amp; 1-minute timer</figcaption>
-        </figure>
-        <figure>
-          <div class="phone">
-            <img src="assets/images/screen-pedi.jpg" alt="Pediatric dosing by age and weight" />
-          </div>
-          <figcaption class="shot-cap">Pediatric dosing by age/weight</figcaption>
-        </figure>
-        <figure>
-          <div class="phone" style="display:flex; align-items:center; justify-content:center;">
-            <span style="color:#475569; font-size:13px; text-align:center; padding:12px;">More screens<br/>coming soon</span>
-          </div>
-          <figcaption class="shot-cap">More screenshots</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="updates">
-    <div class="container grid cols-2" style="gap:20px; align-items:start;">
-      <div>
-        <h2>Fast, reliable updates</h2>
-        <p>Edge distribution keeps downloads steady, even on congested networks. Verifications are handled on our side before you tap install.</p>
-        <div class="card">
-          <p>Updates are delivered through our edge network at <span class="kbd">update.niwashibase.com</span> for reliable downloads in Qatar and abroad. The APK is streamed securely from our repository and verified on our side.</p>
-          <p style="margin-top:12px;"><strong>Tip:</strong> Use Samsung Internet or Firefox for the best download experience. Google Chrome may block the APK — if it does, copy the link and paste it into another browser.</p>
-        </div>
-      </div>
-      <div class="card">
-        <h3 style="margin-top:0;">Update cadence</h3>
-        <div class="timeline">
-          <div class="timeline-step">
-            <span class="timeline-badge">01</span>
-            <div>
-              <strong>Protocol changes</strong>
-              <p style="margin:6px 0 0;">CPG-aligned updates land first with concise summaries you can trust.</p>
+            <div class="assurance-card">
+              <strong>Offline by design</strong>
+              <span>Protocols, dosing, timers, and checklists ship with the app.</span>
+            </div>
+            <div class="assurance-card">
+              <strong>Privacy first</strong>
+              <span>No ads, no trackers — your focus stays on patient care.</span>
             </div>
           </div>
-          <div class="timeline-step">
-            <span class="timeline-badge">02</span>
-            <div>
-              <strong>Safety sweeps</strong>
-              <p style="margin:6px 0 0;">QA reviews and instrumentation ensure timers, dosing, and checklists stay accurate.</p>
+        </div>
+        <div class="hero-panel" aria-label="Status panel">
+          <div class="stat-grid">
+            <div class="stat-item">
+              <div>
+                <h3>System status</h3>
+                <p style="margin:4px 0 0;font-size:13px;">Edge delivery · Qatar &amp; abroad</p>
+              </div>
+              <span class="online">● Online</span>
             </div>
-          </div>
-          <div class="timeline-step">
-            <span class="timeline-badge">03</span>
-            <div>
-              <strong>Field feedback</strong>
-              <p style="margin:6px 0 0;">Crew feedback loops turn into short, meaningful releases.</p>
+            <div class="stat-item">
+              <h3>CPG coverage</h3>
+              <span>v2.4 — Latest</span>
+            </div>
+            <div class="stat-item">
+              <h3>Trusted tools</h3>
+              <span>RSI · Pediatrics · CPR</span>
+            </div>
+            <div class="stat-item">
+              <h3>Privacy</h3>
+              <span>Local-first · No ads</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="support">
-    <div class="container">
-      <h2>Need help?</h2>
-      <p>Join the community or get direct support. We answer fast.</p>
-      <div class="support-links" role="group" aria-label="Support links">
-        <a class="btn btn-secondary" href="https://discord.gg/qc8fK3yd92">Discord</a>
-        <a class="btn btn-secondary" href="https://t.me/+EAcWKnoaRq05YzY0">Telegram</a>
-        <a class="btn btn-secondary" href="https://whatsapp.com/channel/0029VadgCTH0QeamMlpEvX0x">WhatsApp</a>
-        <a class="btn btn-secondary" href="mailto:support@niwashibase.com">Email support</a>
+    <!-- Features -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Built for the way you work</h2>
+          <p>Every tool is tuned for speed, legibility, and repeatable care — designed with crews who need reliable guidance in the field.</p>
+        </div>
+        <div class="grid cols-3" role="list">
+          <article class="feature-card" role="listitem">
+            <span class="tag tag-blue">⚡ Speed</span>
+            <h3>CPG at a glance</h3>
+            <p>Essential protocols in a clean, searchable layout with a frictionless UI that stays out of your way.</p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <span class="tag tag-blue">🧠 RSI</span>
+            <h3>RSI tools</h3>
+            <p>SOAPME checklist, 1-minute countdowns with voice, and rapid review so your team is aligned before push.</p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <span class="tag tag-blue">👶 Pediatrics</span>
+            <h3>Pediatric dosing</h3>
+            <p>Age/weight guidance with WAFFLES reminders and quick references that stay readable in low light.</p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <span class="tag tag-blue">📟 Logging</span>
+            <h3>CPR logs</h3>
+            <p>Precise 24-hour timestamps for clean documentation and handoffs.</p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <span class="tag tag-blue">📡 Offline</span>
+            <h3>Offline-first</h3>
+            <p>Full access with zero signal — built to work in tunnels, elevators, and rural calls.</p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <span class="tag tag-blue">🔍 Search</span>
+            <h3>Rapid search</h3>
+            <p>Find the right guidance in seconds with intuitive filters and short, readable summaries.</p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===================== FAQ ===================== -->
-  <section class="section" id="faq">
-    <div class="container grid cols-2" style="gap:22px; align-items:start;">
-      <div>
-        <h2>Quick answers</h2>
-        <p>Everything you need to know before rolling Ambulance to your crews.</p>
+    <!-- Highlights -->
+    <section class="section" id="highlights">
+      <div class="container grid two-col">
+        <div>
+          <h2 style="font-size:clamp(22px,3vw,32px);margin:0 0 12px;">Why responders choose Ambulance</h2>
+          <p>Touch-friendly controls, large tap targets, and layouts that stay legible in rain, dust, and glare.</p>
+          <div class="icon-list" style="margin-top:20px;">
+            <div class="icon-item">
+              <span class="pill" style="align-self:start;">Human-centered</span>
+              <div><strong>Crafted with medics</strong><span>Built alongside HMCAS workflows so your routines map perfectly into the app.</span></div>
+            </div>
+            <div class="icon-item">
+              <span class="pill" style="align-self:start;">Reliable</span>
+              <div><strong>Edge delivery</strong><span>Updates stream from <span class="kbd">update.niwashibase.com</span> for dependable downloads in Qatar and abroad.</span></div>
+            </div>
+            <div class="icon-item">
+              <span class="pill" style="align-self:start;">Calm UI</span>
+              <div><strong>Signal-first typography</strong><span>High contrast, short sentences, and clear spacing reduce cognitive load in critical minutes.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 16px;font-size:17px;">Field readiness checklist</h3>
+          <div class="icon-list">
+            <div class="icon-item">
+              <span class="tag tag-green" style="align-self:start;">✓</span>
+              <div><strong>Works offline</strong><span>Open protocols, dosing, and timers without connectivity.</span></div>
+            </div>
+            <div class="icon-item">
+              <span class="tag tag-green" style="align-self:start;">✓</span>
+              <div><strong>Device-friendly</strong><span>Built for Android 8+ with smooth performance on midrange devices.</span></div>
+            </div>
+            <div class="icon-item">
+              <span class="tag tag-green" style="align-self:start;">✓</span>
+              <div><strong>Privacy first</strong><span>No ads, no trackers — your focus stays on patient care.</span></div>
+            </div>
+            <div class="icon-item">
+              <span class="tag tag-green" style="align-self:start;">✓</span>
+              <div><strong>Actionable updates</strong><span>Release notes highlight exactly what changed so teams stay aligned.</span></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="grid" style="gap:14px;">
-        <div class="card">
-          <h3>Does it work offline?</h3>
-          <p>Yes. The full experience is available without connectivity, including protocols, dosing, timers, and checklists.</p>
-        </div>
-        <div class="card">
-          <h3>Which devices are supported?</h3>
-          <p>Optimized for Android 8+ with responsive layouts for phones and tablets. Performance is tuned for midrange hardware.</p>
-        </div>
-        <div class="card">
-          <h3>How do I get updates?</h3>
-          <p>Visit the Download page. If Samsung Internet pauses, try Chrome or the Mirror link—both are served through our edge network.</p>
-        </div>
-        <div class="card">
-          <h3>What about privacy?</h3>
-          <p>No ads, no trackers, and no surprise prompts. Data is kept local-first so you can focus on patient care.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer role="contentinfo">
-    <div class="container row">
-      <div>© <span id="year"></span> Ambulance Project — Built by Niwashi Base</div>
-      <nav aria-label="Footer">
-        <a href="ios.html">iOS</a>
+    <!-- Screenshots -->
+    <section class="section" id="screenshots">
+      <div class="container">
+        <div class="section-header">
+          <h2>See it in action</h2>
+          <p>Purpose-built screens keep high-clarity info front and center, whether you're prepping for RSI or confirming pediatric dosing.</p>
+        </div>
+        <div class="shots">
+          <figure>
+            <div class="phone-frame"><img src="assets/images/screen-rsi.jpg" alt="RSI checklist and one-minute timer" loading="lazy" /></div>
+            <figcaption>RSI checklist &amp; 1-minute timer</figcaption>
+          </figure>
+          <figure>
+            <div class="phone-frame"><img src="assets/images/screen-pedi.jpg" alt="Pediatric dosing by age and weight" loading="lazy" /></div>
+            <figcaption>Pediatric dosing by age/weight</figcaption>
+          </figure>
+          <figure>
+            <div class="phone-frame phone-placeholder">More screenshots<br/>coming soon</div>
+            <figcaption>More screens</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Updates -->
+    <section class="section" id="updates">
+      <div class="container grid two-col">
+        <div>
+          <h2 style="font-size:clamp(22px,3vw,32px);margin:0 0 12px;">Fast, reliable updates</h2>
+          <p>Edge distribution keeps downloads steady, even on congested networks.</p>
+          <div class="card" style="margin-top:20px;">
+            <p>Updates are delivered through our edge network at <span class="kbd">update.niwashibase.com</span>.</p>
+            <p style="margin-top:10px;"><strong style="color:var(--text);">Tip:</strong> Use Samsung Internet or Firefox. Google Chrome may block APK installs — copy the link and paste it into another browser if needed.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 16px;font-size:17px;">Update cadence</h3>
+          <div class="timeline">
+            <div class="tl-step">
+              <span class="tl-badge">01</span>
+              <div><strong>Protocol changes</strong><p>CPG-aligned updates land first with concise summaries you can trust.</p></div>
+            </div>
+            <div class="tl-step">
+              <span class="tl-badge">02</span>
+              <div><strong>Safety sweeps</strong><p>QA reviews ensure timers, dosing, and checklists stay accurate.</p></div>
+            </div>
+            <div class="tl-step">
+              <span class="tl-badge">03</span>
+              <div><strong>Field feedback</strong><p>Crew feedback turns into short, meaningful releases.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support -->
+    <section class="section" id="support">
+      <div class="container">
+        <div class="section-header">
+          <h2>Need help?</h2>
+          <p>Join the community or get direct support — we answer fast.</p>
+        </div>
+        <div class="support-links">
+          <a class="btn btn-ghost" href="https://discord.gg/qc8fK3yd92" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a class="btn btn-ghost" href="https://t.me/+EAcWKnoaRq05YzY0" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a class="btn btn-ghost" href="https://whatsapp.com/channel/0029VadgCTH0QeamMlpEvX0x" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:support@niwashibase.com">Email support</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quick answers</h2>
+          <p>Everything you need to know before rolling Ambulance to your crews.</p>
+        </div>
+        <div class="grid cols-2">
+          <div class="faq-card">
+            <h3>Does it work offline?</h3>
+            <p>Yes. The full experience is available without connectivity, including protocols, dosing, timers, and checklists.</p>
+          </div>
+          <div class="faq-card">
+            <h3>Which devices are supported?</h3>
+            <p>Optimized for Android 8+ with responsive layouts for phones and tablets. Performance is tuned for midrange hardware.</p>
+          </div>
+          <div class="faq-card">
+            <h3>How do I get updates?</h3>
+            <p>Visit the Download page. Use Samsung Internet or Firefox — Google Chrome may block the APK download.</p>
+          </div>
+          <div class="faq-card">
+            <h3>What about privacy?</h3>
+            <p>No ads, no trackers, and no surprise prompts. Data is kept local-first so you can focus on patient care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span>© <span id="yr"></span> Ambulance — Niwashi Base</span>
+      <nav class="footer-links" aria-label="Footer navigation">
         <a href="android.html">Android</a>
+        <a href="ios.html">iOS</a>
+        <a href="whats-new.html">What's New</a>
         <a href="videos.html">Videos</a>
         <a href="legal.html">Legal</a>
       </nav>
@@ -470,17 +476,23 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', () => {
-        const open = mobileMenu.classList.toggle('open');
-        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    (function(){
+      var btn=document.getElementById('hamBtn'),nav=document.getElementById('mobMenu');
+      if(!btn||!nav)return;
+      btn.addEventListener('click',function(){
+        var open=nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded',open);
       });
-    }
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('*').forEach(el => { el.style.transition = 'none'; });
+      document.addEventListener('click',function(e){
+        if(!btn.contains(e.target)&&!nav.contains(e.target)){
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+        }
+      });
+    })();
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('*').forEach(function(el){el.style.transition='none';});
     }
   </script>
 </body>
