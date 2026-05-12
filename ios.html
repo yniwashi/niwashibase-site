@@ -3,175 +3,234 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ambulance for iOS — downloads, release notes, and videos</title>
-  <meta name="description" content="Download Ambulance for iOS. See what's new, screenshots, download counts, and how-to videos for medics." />
+  <title>Ambulance for iOS — Download &amp; install guide</title>
+  <meta name="description" content="Get Ambulance for iOS. Installs directly to your iPhone Home Screen — no App Store required." />
   <link rel="icon" href="assets/images/favicon.ico?v=1" />
   <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #050815;
-      --bg-soft: #0b1021;
-      --gradient: radial-gradient(circle at 20% 18%, rgba(37, 99, 235, 0.16), transparent 32%),
-                  linear-gradient(180deg, rgba(6, 9, 18, 0.92) 0%, rgba(5, 8, 21, 0.96) 45%, #040712 100%);
-      --text: #e8ecff;
-      --muted: #cbd5e1;
-      --card: rgba(10, 13, 26, 0.85);
-      --card-strong: rgba(13, 18, 35, 0.9);
-      --accent: #60a5fa;
-      --success: #22c55e;
-      --ring: rgba(96, 165, 250, 0.45);
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7f8fd;
-        --bg-soft: #eef2ff;
-        --gradient: radial-gradient(circle at 18% 18%, rgba(96,165,250,0.15), transparent 34%),
-                    linear-gradient(180deg, #f6f7ff 0%, #eef2ff 50%, #e5e7ff 100%);
-        --text: #0f172a;
-        --muted: #334155;
-        --card: rgba(255,255,255,0.94);
-        --card-strong: rgba(255,255,255,0.98);
-        --accent: #2563eb;
-        --success: #16a34a;
-        --ring: rgba(37, 99, 235, 0.35);
-        --border: rgba(15, 23, 42, 0.08);
-        --shadow: 0 18px 50px rgba(15, 23, 42, 0.16);
-      }
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; background-image: var(--gradient); }
-    a { color: #c7d2fe; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    @media (prefers-color-scheme: light) { a { color: #1d4ed8; } }
-    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 18px; }
-    header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(16px); background: rgba(7,10,18,0.9); border-bottom: 1px solid var(--border); }
-    @media (prefers-color-scheme: light) { header { background: rgba(255,255,255,0.92); } }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
-    .brand { display: inline-flex; gap: 12px; align-items: center; font-weight: 800; color: var(--text); }
-    .brand img { width: 60px; height: 60px; }
-    .nav a { font-weight: 700; }
-    .hero { padding: 70px 0 36px; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 18px; box-shadow: var(--shadow); }
-    .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
-    .btn { border: 0; border-radius: 14px; padding: 12px 18px; font-weight: 800; cursor: pointer; }
-    .btn-primary { background: linear-gradient(135deg, #60a5fa, #8b5cf6); color: #fff; }
-    .btn-secondary { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid var(--border); }
-    @media (prefers-color-scheme: light) { .btn-secondary { background: rgba(37,99,235,0.08); color: #1e293b; } }
-    h1 { margin: 8px 0; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.02em; }
-    h2 { margin: 0 0 12px; font-size: clamp(22px, 3vw, 30px); }
-    p { margin: 0 0 12px; color: var(--muted); }
-    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); font-size: 13px; color: var(--text); }
-    @media (prefers-color-scheme: light) { .pill { background: rgba(255,255,255,0.82); color: #0f172a; } }
-    .grid { display: grid; gap: 14px; }
-    @media (min-width: 720px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 720px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
-    .shots { display: grid; gap: 14px; }
-    @media (min-width: 720px) { .shots { grid-template-columns: repeat(3, 1fr); } }
-    .phone { position: relative; aspect-ratio: 9/19.5; background: #0f172a; border-radius: 24px; border: 10px solid #111827; overflow: hidden; box-shadow: var(--shadow); }
-    .phone img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .list { display: grid; gap: 10px; }
-    .list-item { padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); }
-    @media (prefers-color-scheme: light) { .list-item { background: rgba(255,255,255,0.94); } }
-    footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); background: rgba(0,0,0,0.08); }
-    @media (prefers-color-scheme: light) { footer { background: rgba(255,255,255,0.86); } }
+    :root{color-scheme:light dark;--bg:#07091c;--surface:rgba(11,15,38,.82);--surface2:rgba(14,19,46,.92);--text:#e2e8f0;--muted:#94a3b8;--border:rgba(255,255,255,.09);--shadow:0 16px 48px rgba(0,0,0,.45);--blue:#60a5fa;--page-bg:radial-gradient(ellipse 70% 50% at 15% 5%,rgba(59,130,246,.15) 0%,transparent 100%),radial-gradient(ellipse 55% 45% at 85% 90%,rgba(139,92,246,.12) 0%,transparent 100%),#07091c;}
+    @media(prefers-color-scheme:light){:root{--bg:#f4f6ff;--surface:rgba(255,255,255,.9);--surface2:rgba(255,255,255,.98);--text:#0f172a;--muted:#475569;--border:rgba(15,23,42,.08);--shadow:0 8px 32px rgba(15,23,42,.1);--blue:#2563eb;--page-bg:radial-gradient(ellipse 70% 50% at 15% 5%,rgba(59,130,246,.07) 0%,transparent 100%),radial-gradient(ellipse 55% 45% at 85% 90%,rgba(139,92,246,.06) 0%,transparent 100%),#eef1ff;}}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;background-image:var(--page-bg);background-attachment:fixed;-webkit-font-smoothing:antialiased;min-height:100vh;}
+    img{max-width:100%;display:block;}
+    a{color:var(--blue);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    h1,h2,h3{color:var(--text);letter-spacing:-.02em;line-height:1.15;}
+    p{margin:0 0 14px;color:var(--muted);}
+    p:last-child{margin-bottom:0;}
+    .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px;}
+
+    /* Nav */
+    .site-header{position:sticky;top:0;z-index:200;background:rgba(5,7,22,.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);}
+    @media(prefers-color-scheme:light){.site-header{background:rgba(238,241,255,.9);}}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px;}
+    .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--text);text-decoration:none;flex-shrink:0;}
+    .brand:hover{text-decoration:none;}
+    .brand img{width:38px;height:38px;border-radius:9px;}
+    .desk-nav{display:none;align-items:center;gap:2px;flex:1;justify-content:flex-end;}
+    .desk-nav a{padding:7px 12px;border-radius:9px;font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;transition:background .12s,color .12s;white-space:nowrap;}
+    .desk-nav a:hover,.desk-nav a[aria-current]{background:rgba(255,255,255,.08);color:var(--text);text-decoration:none;}
+    @media(prefers-color-scheme:light){.desk-nav a:hover,.desk-nav a[aria-current]{background:rgba(0,0,0,.06);}}
+    .nav-cta{margin-left:8px;background:linear-gradient(135deg,#60a5fa,#8b5cf6)!important;color:#fff!important;font-weight:700;padding:8px 16px;border-radius:10px;}
+    .nav-cta:hover{opacity:.88;}
+    .ham{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;padding:0;}
+    .ham span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:transform .22s ease,opacity .18s ease,width .18s ease;transform-origin:center;}
+    .ham[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .ham[aria-expanded=true] span:nth-child(2){opacity:0;width:0;}
+    .ham[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mob-nav{display:none;border-top:1px solid var(--border);background:rgba(4,6,18,.97);}
+    @media(prefers-color-scheme:light){.mob-nav{background:rgba(244,246,255,.98);}}
+    .mob-nav.open{display:block;}
+    .mob-nav a{display:flex;align-items:center;padding:14px 20px;font-weight:600;font-size:15px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);transition:background .1s;}
+    .mob-nav a:last-child{border-bottom:0;}
+    .mob-nav a:hover{background:rgba(255,255,255,.05);text-decoration:none;}
+    @media(prefers-color-scheme:light){.mob-nav a:hover{background:rgba(0,0,0,.04);}}
+    @media(min-width:768px){.desk-nav{display:flex;}.ham{display:none;}}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:12px 22px;border-radius:12px;font-weight:700;font-size:15px;border:0;cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform .08s,opacity .12s,box-shadow .15s;letter-spacing:-.01em;line-height:1;}
+    .btn:hover{text-decoration:none;}
+    .btn:active{transform:scale(.97);}
+    .btn-primary{background:linear-gradient(135deg,#60a5fa,#8b5cf6);color:#fff;box-shadow:0 8px 24px rgba(96,165,250,.3);}
+    .btn-primary:hover{opacity:.9;transform:translateY(-1px);}
+    .btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border);}
+    .btn-ghost:hover{background:var(--surface2);}
+
+    /* Layout */
+    .hero{padding:64px 0 48px;}
+    .hero-grid{display:grid;gap:28px;align-items:start;}
+    @media(min-width:860px){.hero-grid{grid-template-columns:1fr 1fr;gap:36px;}}
+    .eyebrow{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px;background:rgba(96,165,250,.1);color:#60a5fa;border:1px solid rgba(96,165,250,.2);}
+    @media(prefers-color-scheme:light){.eyebrow{background:rgba(37,99,235,.08);color:#2563eb;border-color:rgba(37,99,235,.18);}}
+    h1{font-size:clamp(28px,5vw,48px);margin:0 0 14px;}
+    .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+    .pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:999px;font-size:12px;font-weight:700;background:var(--surface);border:1px solid var(--border);color:var(--muted);}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:22px;box-shadow:var(--shadow);}
+    .list-item{padding:13px 15px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--border);font-size:14px;line-height:1.55;}
+    @media(prefers-color-scheme:light){.list-item{background:rgba(0,0,0,.03);}}
+    .rn-list{display:grid;gap:8px;}
+    .section{padding:56px 0;border-top:1px solid var(--border);}
+    .section h2{font-size:clamp(20px,2.8vw,28px);margin:0 0 10px;}
+    .two-col{display:grid;gap:24px;}
+    @media(min-width:860px){.two-col{grid-template-columns:1fr 1fr;align-items:start;}}
+    .shots{display:grid;gap:14px;}
+    @media(min-width:640px){.shots{grid-template-columns:repeat(3,1fr);}}
+    .phone-frame{aspect-ratio:9/19.5;background:#0d1225;border-radius:22px;border:8px solid #1a2035;overflow:hidden;box-shadow:var(--shadow);}
+    .phone-frame img{width:100%;height:100%;object-fit:cover;}
+    .phone-placeholder{display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);text-align:center;padding:16px;}
+    figcaption{margin-top:10px;font-size:13px;color:var(--muted);}
+    .vid-grid{display:grid;gap:10px;}
+    @media(min-width:640px){.vid-grid{grid-template-columns:repeat(2,1fr);}}
+    .info-box{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:13px;padding:14px 16px;font-size:13px;color:var(--muted);margin-top:14px;}
+    @media(prefers-color-scheme:light){.info-box{background:rgba(37,99,235,.04);border-color:rgba(37,99,235,.12);}}
+
+    .site-footer{padding:32px 0 44px;border-top:1px solid var(--border);color:var(--muted);font-size:14px;background:rgba(0,0,0,.1);}
+    @media(prefers-color-scheme:light){.site-footer{background:rgba(255,255,255,.5);}}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+    .footer-links a{color:var(--muted);transition:color .12s;}
+    .footer-links a:hover{color:var(--text);text-decoration:none;}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
+
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
       <a class="brand" href="index.html">
-        <img src="assets/images/logo.png?v=1" alt="Niwashi Base logo" />
-        <span>Ambulance — iOS</span>
+        <img src="assets/images/logo.png?v=1" alt="Ambulance" width="38" height="38" />
+        <span>Ambulance</span>
       </a>
-      <div class="cta-row" style="margin:0;">
-        <a class="btn btn-secondary" href="android.html">Android</a>
-        <a class="btn btn-secondary" href="whats-new.html">What's New</a>
-        <a class="btn btn-secondary" href="videos.html">Videos</a>
-        <a class="btn btn-secondary" href="index.html">Home</a>
-      </div>
+      <nav class="desk-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="ios.html" aria-current="page">iOS</a>
+        <a href="whats-new.html">What's New</a>
+        <a href="videos.html">Videos</a>
+        <a href="download.html" class="nav-cta">Download</a>
+      </nav>
+      <button class="ham" id="hamBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <nav class="mob-nav" id="mobMenu" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="android.html">Android</a>
+      <a href="ios.html">iOS</a>
+      <a href="whats-new.html">What's New</a>
+      <a href="videos.html">Videos</a>
+      <a href="download.html">Download</a>
+    </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container grid cols-2" style="gap:18px; align-items:start;">
+      <div class="container hero-grid">
         <div>
+          <div class="eyebrow">iOS · v1.0</div>
           <h1>Ambulance for iOS</h1>
-          <p>A collection of Siri Shortcuts that bring clinical reference tools to your iPhone. Installs via RoutineHub — no App Store account needed. Respects your device's light or dark theme.</p>
+          <p>A fast, offline-first iOS app with clinical reference tools built for responders. Installs directly to your Home Screen — no App Store required.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#download">Install iOS Shortcuts</a>
-            <a class="btn btn-secondary" href="#videos">How-to videos</a>
+            <a class="btn btn-primary" href="#download">Get iOS App</a>
+            <a class="btn btn-ghost" href="#videos">How-to videos</a>
           </div>
-          <div class="cta-row" style="margin-top:10px;">
-            <span class="pill">Latest: v1.0</span>
-            <span class="pill">Released Oct 2, 2025</span>
+          <div class="pill-row">
+            <span class="pill">v1.0 — Latest</span>
+            <span class="pill">Oct 2, 2025</span>
             <span class="pill">iOS 15+</span>
           </div>
-        </div>
-        <div class="card" aria-label="Release notes">
-          <h3 style="margin-top:0;">What's new</h3>
-          <div class="list">
-            <div class="list-item"><strong>v1.0</strong> — Initial public release of Ambulance iOS Shortcuts. Clinical reference tools available via iOS Shortcuts platform through RoutineHub.</div>
+          <div class="info-box" style="margin-top:20px;">
+            Open the install link in <strong>Safari</strong> on your iPhone, then use Share → Add to Home Screen.
           </div>
-          <div style="margin-top:10px;"><a href="whats-new.html" style="font-size:14px; color:#c7d2fe;">See full release history →</a></div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 14px;font-size:16px;font-weight:800;">What's new in v1.0</h3>
+          <div class="rn-list">
+            <div class="list-item">Initial public release of Ambulance for iOS</div>
+            <div class="list-item">Clinical reference tools accessible directly on iPhone</div>
+            <div class="list-item">Installs to your Home Screen via direct link</div>
+            <div class="list-item">Supports iPhone light &amp; dark mode</div>
+          </div>
+          <div style="margin-top:14px;">
+            <a href="whats-new.html" style="font-size:14px;font-weight:600;">Full release history →</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="container card" id="download" style="margin-bottom:28px;">
-      <h2 style=”margin-top:0;”>Install iOS Shortcuts</h2>
-      <p>Ambulance for iOS runs as a set of Siri Shortcuts, not a native app. Install directly via the link below — it opens RoutineHub where you can add each shortcut to your Shortcuts app.</p>
-      <div class=”cta-row”>
-        <a class=”btn btn-primary” href=”https://ios.niwashibase.com/install”>Install Shortcuts</a>
-        <a class=”btn btn-secondary” href=”/videos.html”>Watch install guide</a>
-      </div>
-      <p style=”margin-top:12px;”>Need help? Email <a href=”mailto:support@niwashibase.com”>support@niwashibase.com</a> or join the <a href=”https://discord.gg/qc8fK3yd92”>Discord</a>.</p>
-    </section>
-
-    <section class="container" id="screenshots" style="margin-bottom:28px;">
-      <h2>Screenshots</h2>
-      <p>Preview the iOS experience across common tasks.</p>
-      <div class="shots">
-        <figure>
-          <div class="phone"><img src="assets/images/screen-rsi.jpg" alt="RSI checklist on iPhone" /></div>
-          <figcaption class="list-item">RSI checklist &amp; timer</figcaption>
-        </figure>
-        <figure>
-          <div class="phone"><img src="assets/images/screen-pedi.jpg" alt="Pediatric dosing on iPhone" /></div>
-          <figcaption class="list-item">Pediatric dosing by age/weight</figcaption>
-        </figure>
-        <figure>
-          <div class="phone" style="display:flex; align-items:center; justify-content:center;">
-            <span style="color:#475569; font-size:13px; text-align:center; padding:12px;">More screens<br/>coming soon</span>
+    <section class="section" id="download">
+      <div class="container">
+        <div class="two-col">
+          <div>
+            <h2>Install guide</h2>
+            <p>The iOS app installs directly to your iPhone Home Screen in four steps. Must be done in Safari.</p>
           </div>
-          <figcaption class="list-item">More screenshots</figcaption>
-        </figure>
+          <div class="card">
+            <ol style="margin:0;padding-left:20px;display:grid;gap:10px;color:var(--muted);font-size:14px;">
+              <li>Open the link below in <strong style="color:var(--text);">Safari</strong> on your iPhone.</li>
+              <li>Tap the <strong style="color:var(--text);">Share</strong> button (the box with an arrow) at the bottom of Safari.</li>
+              <li>Scroll down and tap <strong style="color:var(--text);">Add to Home Screen</strong>.</li>
+              <li>Tap <strong style="color:var(--text);">Add</strong> — the app appears on your Home Screen immediately.</li>
+            </ol>
+            <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+              <a class="btn btn-primary" href="https://ios.niwashibase.com/install">Get iOS App</a>
+              <a class="btn btn-ghost" href="videos.html">Watch install video</a>
+            </div>
+            <p style="font-size:12px;margin-top:12px;">Other browsers do not support Add to Home Screen — Safari only.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="container card" id="videos" style="margin-bottom:28px;">
-      <h2 style="margin-top:0;">How-to videos</h2>
-      <p>Add your clips here to train crews fast. Replace the placeholders with hosted video links.</p>
-      <div class="grid cols-2" style="gap:12px;">
-        <div class="list-item"><strong>Tour the iOS app</strong><br />Overview of navigation, search, and offline behavior. <a href="videos.html">View all videos</a></div>
-        <div class="list-item"><strong>RSI prep checklist</strong><br />One-minute countdown and SOAPME walkthrough.</div>
-        <div class="list-item"><strong>Pediatric dosing</strong><br />Age/weight quick lookup with color bands.</div>
-        <div class="list-item"><strong>CPR logging</strong><br />How to keep timestamps clean during handoff.</div>
+    <section class="section" id="screenshots">
+      <div class="container">
+        <h2 style="margin:0 0 8px;">Screenshots</h2>
+        <p>The iOS experience across critical tasks.</p>
+        <div class="shots" style="margin-top:24px;">
+          <figure>
+            <div class="phone-frame"><img src="assets/images/screen-rsi.jpg" alt="RSI checklist on iPhone" loading="lazy" /></div>
+            <figcaption>RSI checklist &amp; timer</figcaption>
+          </figure>
+          <figure>
+            <div class="phone-frame"><img src="assets/images/screen-pedi.jpg" alt="Pediatric dosing on iPhone" loading="lazy" /></div>
+            <figcaption>Pediatric dosing by age/weight</figcaption>
+          </figure>
+          <figure>
+            <div class="phone-frame phone-placeholder">More screens<br/>coming soon</div>
+            <figcaption>More screenshots</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="container">
+        <h2 style="margin:0 0 8px;">How-to videos</h2>
+        <p>Installation walkthrough for the iOS app.</p>
+        <div class="vid-grid" style="margin-top:24px;">
+          <div class="list-item"><strong>iOS installation guide</strong><br /><span style="color:var(--muted);">How to install the app and add it to your Home Screen.</span><br /><a href="https://bit.ly/3XuDaDw" target="_blank" rel="noopener noreferrer" style="font-size:13px;font-weight:600;margin-top:6px;display:inline-block;">Watch →</a></div>
+        </div>
+        <div style="margin-top:16px;"><a href="videos.html" style="font-size:14px;font-weight:600;">View all videos →</a></div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-      <span>© <span id="year"></span> Ambulance Project</span>
-      <span><a href="index.html">Home</a> · <a href="android.html">Android</a> · <a href="legal.html">Legal</a></span>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span>© <span id="yr"></span> Ambulance — Niwashi Base</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="whats-new.html">What's New</a>
+        <a href="videos.html">Videos</a>
+        <a href="legal.html">Legal</a>
+      </nav>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('yr').textContent=new Date().getFullYear();
+    (function(){var btn=document.getElementById('hamBtn'),nav=document.getElementById('mobMenu');if(!btn||!nav)return;btn.addEventListener('click',function(){var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open);});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!nav.contains(e.target)){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();
   </script>
 </body>
 </html>
