@@ -4,193 +4,214 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Videos — Ambulance App Tutorials</title>
-  <meta name="description" content="Installation guides and how-to tutorials for the Ambulance app on Android and iOS." />
+  <meta name="description" content="How-to videos for installing and using the Ambulance app on Android and iOS." />
   <link rel="icon" href="assets/images/favicon.ico?v=1" />
   <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #050815;
-      --gradient: radial-gradient(circle at 20% 18%, rgba(37, 99, 235, 0.14), transparent 32%),
-                  radial-gradient(circle at 78% 10%, rgba(139, 92, 246, 0.1), transparent 28%),
-                  linear-gradient(180deg, rgba(6, 9, 18, 0.92) 0%, rgba(5, 8, 21, 0.96) 45%, #040712 100%);
-      --text: #e8ecff;
-      --muted: #cbd5e1;
-      --card: rgba(10, 13, 26, 0.85);
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7f8fd;
-        --gradient: radial-gradient(circle at 18% 18%, rgba(96,165,250,0.15), transparent 34%),
-                    linear-gradient(180deg, #f6f7ff 0%, #eef2ff 50%, #e5e7ff 100%);
-        --text: #0f172a;
-        --muted: #334155;
-        --card: rgba(255,255,255,0.94);
-        --border: rgba(15, 23, 42, 0.08);
-        --shadow: 0 18px 50px rgba(15, 23, 42, 0.16);
-      }
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; background-image: var(--gradient); background-attachment: fixed; -webkit-font-smoothing: antialiased; }
-    a { color: #c7d2fe; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    @media (prefers-color-scheme: light) { a { color: #1d4ed8; } }
-    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 18px; }
-    header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(16px); background: rgba(7,10,18,0.9); border-bottom: 1px solid var(--border); }
-    @media (prefers-color-scheme: light) { header { background: rgba(255,255,255,0.92); } }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
-    .brand { display: inline-flex; gap: 12px; align-items: center; font-weight: 800; color: var(--text); text-decoration: none; }
-    .brand img { width: 60px; height: 60px; }
-    .nav-links { display: flex; gap: 8px; }
-    .btn { border-radius: 14px; padding: 9px 16px; font-weight: 700; cursor: pointer; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border: 0; transition: transform .08s ease, box-shadow .15s ease; }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: linear-gradient(135deg, #60a5fa, #8b5cf6); color: #fff; box-shadow: 0 8px 24px rgba(96,165,250,0.3); }
-    .btn-secondary { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid var(--border); }
-    @media (prefers-color-scheme: light) { .btn-secondary { background: rgba(37,99,235,0.07); color: #1e293b; } }
-    main { padding: 56px 0 80px; }
-    h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.02em; }
-    h2 { margin: 0 0 16px; font-size: clamp(18px, 2.5vw, 24px); }
-    p { margin: 0 0 12px; color: var(--muted); }
-    .platform-label { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 12px; font-weight: 800; font-size: 13px; margin-bottom: 18px; }
-    .android-label { background: rgba(52,211,153,0.1); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
-    .ios-label { background: rgba(96,165,250,0.1); color: #60a5fa; border: 1px solid rgba(96,165,250,0.25); }
-    @media (prefers-color-scheme: light) {
-      .android-label { background: rgba(5,150,105,0.1); color: #059669; border-color: rgba(5,150,105,0.2); }
-      .ios-label { background: rgba(37,99,235,0.1); color: #2563eb; border-color: rgba(37,99,235,0.2); }
-    }
-    .video-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
-    .video-thumb { background: linear-gradient(135deg, rgba(96,165,250,0.12), rgba(139,92,246,0.12)); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); }
-    .play-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(96,165,250,0.18); border: 2px solid rgba(96,165,250,0.35); display: flex; align-items: center; justify-content: center; color: #60a5fa; font-size: 20px; }
-    @media (prefers-color-scheme: light) {
-      .video-thumb { background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(109,40,217,0.06)); }
-      .play-icon { background: rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.25); color: #2563eb; }
-    }
-    .video-body { padding: 16px 18px 18px; }
-    .video-body h3 { margin: 0 0 6px; font-size: 15px; }
-    .video-body p { font-size: 14px; margin: 0 0 12px; }
-    .grid { display: grid; gap: 16px; }
-    @media (min-width: 600px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 900px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
-    .section { padding: 44px 0; border-top: 1px solid var(--border); }
-    .section:first-of-type { border-top: 0; padding-top: 0; }
-    footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); background: rgba(0,0,0,0.1); }
-    @media (prefers-color-scheme: light) { footer { background: rgba(255,255,255,0.86); } }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    :root{color-scheme:light dark;--bg:#07091c;--surface:rgba(11,15,38,.82);--surface2:rgba(14,19,46,.92);--text:#e2e8f0;--muted:#94a3b8;--border:rgba(255,255,255,.09);--shadow:0 16px 48px rgba(0,0,0,.45);--blue:#60a5fa;--green:#34d399;--page-bg:radial-gradient(ellipse 70% 50% at 15% 5%,rgba(59,130,246,.13) 0%,transparent 100%),radial-gradient(ellipse 55% 45% at 85% 90%,rgba(139,92,246,.1) 0%,transparent 100%),#07091c;}
+    @media(prefers-color-scheme:light){:root{--bg:#f4f6ff;--surface:rgba(255,255,255,.9);--surface2:rgba(255,255,255,.98);--text:#0f172a;--muted:#475569;--border:rgba(15,23,42,.08);--shadow:0 8px 32px rgba(15,23,42,.1);--blue:#2563eb;--green:#059669;--page-bg:radial-gradient(ellipse 70% 50% at 15% 5%,rgba(59,130,246,.07) 0%,transparent 100%),radial-gradient(ellipse 55% 45% at 85% 90%,rgba(139,92,246,.06) 0%,transparent 100%),#eef1ff;}}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;background-image:var(--page-bg);background-attachment:fixed;-webkit-font-smoothing:antialiased;min-height:100vh;}
+    img{max-width:100%;display:block;}
+    a{color:var(--blue);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    h1,h2,h3{color:var(--text);letter-spacing:-.02em;line-height:1.15;}
+    p{margin:0 0 14px;color:var(--muted);}
+    p:last-child{margin-bottom:0;}
+    .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px;}
+
+    .site-header{position:sticky;top:0;z-index:200;background:rgba(5,7,22,.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);}
+    @media(prefers-color-scheme:light){.site-header{background:rgba(238,241,255,.9);}}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px;}
+    .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--text);text-decoration:none;flex-shrink:0;}
+    .brand:hover{text-decoration:none;}
+    .brand img{width:38px;height:38px;border-radius:9px;}
+    .desk-nav{display:none;align-items:center;gap:2px;flex:1;justify-content:flex-end;}
+    .desk-nav a{padding:7px 12px;border-radius:9px;font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;transition:background .12s,color .12s;white-space:nowrap;}
+    .desk-nav a:hover,.desk-nav a[aria-current]{background:rgba(255,255,255,.08);color:var(--text);text-decoration:none;}
+    @media(prefers-color-scheme:light){.desk-nav a:hover,.desk-nav a[aria-current]{background:rgba(0,0,0,.06);}}
+    .nav-cta{margin-left:8px;background:linear-gradient(135deg,#60a5fa,#8b5cf6)!important;color:#fff!important;font-weight:700;padding:8px 16px;border-radius:10px;}
+    .nav-cta:hover{opacity:.88;}
+    .ham{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;padding:0;}
+    .ham span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:transform .22s ease,opacity .18s ease,width .18s ease;transform-origin:center;}
+    .ham[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .ham[aria-expanded=true] span:nth-child(2){opacity:0;width:0;}
+    .ham[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mob-nav{display:none;border-top:1px solid var(--border);background:rgba(4,6,18,.97);}
+    @media(prefers-color-scheme:light){.mob-nav{background:rgba(244,246,255,.98);}}
+    .mob-nav.open{display:block;}
+    .mob-nav a{display:flex;align-items:center;padding:14px 20px;font-weight:600;font-size:15px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);transition:background .1s;}
+    .mob-nav a:last-child{border-bottom:0;}
+    .mob-nav a:hover{background:rgba(255,255,255,.05);text-decoration:none;}
+    @media(prefers-color-scheme:light){.mob-nav a:hover{background:rgba(0,0,0,.04);}}
+    @media(min-width:768px){.desk-nav{display:flex;}.ham{display:none;}}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 18px;border-radius:11px;font-weight:700;font-size:14px;border:0;cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform .08s,opacity .12s;letter-spacing:-.01em;line-height:1;}
+    .btn:hover{text-decoration:none;opacity:.88;}
+    .btn-primary{background:linear-gradient(135deg,#60a5fa,#8b5cf6);color:#fff;}
+    .btn-android{background:linear-gradient(135deg,#34d399,#10b981);color:#021a10;}
+
+    main{padding:64px 0 80px;}
+    h1{font-size:clamp(28px,4vw,44px);margin:0 0 8px;}
+    .lead{font-size:16px;color:var(--muted);margin:0 0 44px;}
+    .section{margin-bottom:52px;}
+    .platform-label{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px;}
+    .label-android{background:rgba(52,211,153,.1);color:#34d399;border:1px solid rgba(52,211,153,.22);}
+    .label-ios{background:rgba(96,165,250,.1);color:#60a5fa;border:1px solid rgba(96,165,250,.22);}
+    @media(prefers-color-scheme:light){.label-android{background:rgba(5,150,105,.08);color:#059669;border-color:rgba(5,150,105,.18);}.label-ios{background:rgba(37,99,235,.08);color:#2563eb;border-color:rgba(37,99,235,.18);}}
+    .section h2{font-size:clamp(19px,2.5vw,24px);margin:0 0 6px;}
+    .section > p{margin:0 0 20px;}
+    .vid-grid{display:grid;gap:14px;}
+    @media(min-width:600px){.vid-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(min-width:960px){.vid-grid.cols-4{grid-template-columns:repeat(4,1fr);}}
+    .vid-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.3);}
+    @media(prefers-color-scheme:light){.vid-card{box-shadow:0 4px 16px rgba(15,23,42,.09);}}
+    .vid-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,rgba(96,165,250,.1),rgba(139,92,246,.08));display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);}
+    .play-btn{width:52px;height:52px;border-radius:50%;background:rgba(96,165,250,.15);border:2px solid rgba(96,165,250,.3);display:flex;align-items:center;justify-content:center;color:#60a5fa;font-size:18px;padding-left:3px;}
+    @media(prefers-color-scheme:light){.play-btn{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.22);color:#2563eb;}}
+    .android-thumb{background:linear-gradient(135deg,rgba(52,211,153,.1),rgba(16,185,129,.06));}
+    .android-play{background:rgba(52,211,153,.15);border-color:rgba(52,211,153,.3);color:#34d399;}
+    @media(prefers-color-scheme:light){.android-play{background:rgba(5,150,105,.1);border-color:rgba(5,150,105,.22);color:#059669;}}
+    .vid-body{padding:16px 18px 18px;}
+    .vid-body h3{font-size:14px;margin:0 0 5px;}
+    .vid-body p{font-size:13px;margin:0 0 10px;}
+
+    .site-footer{padding:32px 0 44px;border-top:1px solid var(--border);color:var(--muted);font-size:14px;background:rgba(0,0,0,.1);}
+    @media(prefers-color-scheme:light){.site-footer{background:rgba(255,255,255,.5);}}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+    .footer-links a{color:var(--muted);transition:color .12s;}
+    .footer-links a:hover{color:var(--text);text-decoration:none;}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
+
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
       <a class="brand" href="index.html">
-        <img src="assets/images/logo.png?v=1" alt="Niwashi Base logo" />
+        <img src="assets/images/logo.png?v=1" alt="Ambulance" width="38" height="38" />
         <span>Ambulance</span>
       </a>
-      <div class="nav-links">
-        <a class="btn btn-secondary" href="whats-new.html">What's New</a>
-        <a class="btn btn-primary" href="download.html">Download</a>
-      </div>
+      <nav class="desk-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="ios.html">iOS</a>
+        <a href="whats-new.html">What's New</a>
+        <a href="videos.html" aria-current="page">Videos</a>
+        <a href="download.html" class="nav-cta">Download</a>
+      </nav>
+      <button class="ham" id="hamBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <nav class="mob-nav" id="mobMenu" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="android.html">Android</a>
+      <a href="ios.html">iOS</a>
+      <a href="whats-new.html">What's New</a>
+      <a href="videos.html">Videos</a>
+      <a href="download.html">Download</a>
+    </nav>
   </header>
 
   <main>
     <div class="container">
-      <div style="margin-bottom: 44px;">
-        <h1>How-to Videos</h1>
-        <p>Step-by-step guides for installing and using Ambulance on Android and iOS.</p>
+      <h1>How-to Videos</h1>
+      <p class="lead">Step-by-step tutorials for installing and using Ambulance on Android and iOS.</p>
+
+      <!-- Android -->
+      <div class="section">
+        <div class="platform-label label-android">Android</div>
+        <h2>Android tutorials</h2>
+        <p>Installation guide plus full usage walkthroughs for key clinical tools.</p>
+        <div class="vid-grid cols-4">
+
+          <div class="vid-card">
+            <div class="vid-thumb android-thumb">
+              <div class="play-btn android-play">▶</div>
+            </div>
+            <div class="vid-body">
+              <h3>How to install the app</h3>
+              <p>Step-by-step APK installation guide.</p>
+              <a class="btn btn-android" href="https://bit.ly/3XuDaDw" target="_blank" rel="noopener noreferrer">Watch</a>
+            </div>
+          </div>
+
+          <div class="vid-card">
+            <div class="vid-thumb android-thumb">
+              <div class="play-btn android-play">▶</div>
+            </div>
+            <div class="vid-body">
+              <h3>How to use the app — Part 1</h3>
+              <p>Navigation, CPG, RSI, and medications.</p>
+              <a class="btn btn-android" href="https://bit.ly/3XMa7wx" target="_blank" rel="noopener noreferrer">Watch</a>
+            </div>
+          </div>
+
+          <div class="vid-card">
+            <div class="vid-thumb android-thumb">
+              <div class="play-btn android-play">▶</div>
+            </div>
+            <div class="vid-body">
+              <h3>How to use the app — Part 2</h3>
+              <p>Pediatric dosing, offline mode, advanced features.</p>
+              <a class="btn btn-android" href="https://bit.ly/3ZreE8L" target="_blank" rel="noopener noreferrer">Watch</a>
+            </div>
+          </div>
+
+          <div class="vid-card">
+            <div class="vid-thumb android-thumb">
+              <div class="play-btn android-play">▶</div>
+            </div>
+            <div class="vid-body">
+              <h3>How to use the CPR logger</h3>
+              <p>Timestamps and handoff documentation.</p>
+              <a class="btn btn-android" href="https://bit.ly/3B2quMr" target="_blank" rel="noopener noreferrer">Watch</a>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <!-- Android Videos -->
-      <section class="section">
-        <div class="platform-label android-label">Android</div>
-        <h2>Android tutorials</h2>
-        <p>Installation walkthrough plus in-depth usage guides covering key tools.</p>
-        <div class="grid cols-3" style="margin-top: 8px;">
-
-          <div class="video-card">
-            <div class="video-thumb">
-              <div class="play-icon">▶</div>
-            </div>
-            <div class="video-body">
-              <h3>How to install the app</h3>
-              <p>Step-by-step APK installation guide, including how to enable unknown sources and verify the download.</p>
-              <a class="btn btn-primary" href="https://bit.ly/3XuDaDw" target="_blank" rel="noopener noreferrer">Watch video</a>
-            </div>
-          </div>
-
-          <div class="video-card">
-            <div class="video-thumb">
-              <div class="play-icon">▶</div>
-            </div>
-            <div class="video-body">
-              <h3>How to use the app — Part 1</h3>
-              <p>Overview of navigation, CPG protocols, RSI checklist, and searching for medications.</p>
-              <a class="btn btn-primary" href="https://bit.ly/3XMa7wx" target="_blank" rel="noopener noreferrer">Watch video</a>
-            </div>
-          </div>
-
-          <div class="video-card">
-            <div class="video-thumb">
-              <div class="play-icon">▶</div>
-            </div>
-            <div class="video-body">
-              <h3>How to use the app — Part 2</h3>
-              <p>Pediatric dosing, WAFFLES, offline mode, and advanced features walkthrough.</p>
-              <a class="btn btn-primary" href="https://bit.ly/3ZreE8L" target="_blank" rel="noopener noreferrer">Watch video</a>
-            </div>
-          </div>
-
-          <div class="video-card">
-            <div class="video-thumb">
-              <div class="play-icon">▶</div>
-            </div>
-            <div class="video-body">
-              <h3>How to use the CPR logger</h3>
-              <p>Capturing precise 24-hour timestamps during CPR for clean documentation and handoff.</p>
-              <a class="btn btn-primary" href="https://bit.ly/3B2quMr" target="_blank" rel="noopener noreferrer">Watch video</a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- iOS Videos -->
-      <section class="section">
-        <div class="platform-label ios-label">iOS Shortcuts</div>
+      <!-- iOS -->
+      <div class="section">
+        <div class="platform-label label-ios">iOS</div>
         <h2>iOS install guide</h2>
-        <p>How to install the Ambulance iOS Shortcuts using the direct link or RoutineHub.</p>
-        <div class="grid cols-3" style="margin-top: 8px;">
+        <p>How to install Ambulance on your iPhone and add it to your Home Screen.</p>
+        <div class="vid-grid">
 
-          <div class="video-card">
-            <div class="video-thumb">
-              <div class="play-icon">▶</div>
+          <div class="vid-card">
+            <div class="vid-thumb">
+              <div class="play-btn">▶</div>
             </div>
-            <div class="video-body">
+            <div class="vid-body">
               <h3>iOS installation guide</h3>
-              <p>Step-by-step walkthrough for installing Ambulance Shortcuts on iPhone, including RoutineHub setup.</p>
-              <a class="btn btn-primary" href="https://bit.ly/3XuDaDw" target="_blank" rel="noopener noreferrer">Watch video</a>
+              <p>How to install Ambulance on iPhone and add it to your Home Screen via Safari.</p>
+              <a class="btn btn-primary" href="https://bit.ly/3XuDaDw" target="_blank" rel="noopener noreferrer">Watch</a>
             </div>
           </div>
 
         </div>
-      </section>
+      </div>
 
     </div>
   </main>
 
-  <footer>
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Ambulance Project — Niwashi Base</span>
-      <nav>
-        <a href="index.html">Home</a> ·
-        <a href="android.html">Android</a> ·
-        <a href="ios.html">iOS</a> ·
-        <a href="whats-new.html">What's New</a> ·
+      <span>© <span id="yr"></span> Ambulance — Niwashi Base</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="android.html">Android</a>
+        <a href="ios.html">iOS</a>
+        <a href="whats-new.html">What's New</a>
         <a href="legal.html">Legal</a>
       </nav>
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('yr').textContent=new Date().getFullYear();
+    (function(){var btn=document.getElementById('hamBtn'),nav=document.getElementById('mobMenu');if(!btn||!nav)return;btn.addEventListener('click',function(){var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open);});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!nav.contains(e.target)){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();
+  </script>
 </body>
 </html>
