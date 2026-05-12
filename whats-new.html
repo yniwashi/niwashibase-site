@@ -3,126 +3,138 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>What's New — Ambulance App Release History</title>
+  <title>What's New — Ambulance Release History</title>
   <meta name="description" content="Full release history and changelog for the Ambulance app on Android and iOS." />
   <link rel="icon" href="assets/images/favicon.ico?v=1" />
   <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #050815;
-      --gradient: radial-gradient(circle at 20% 18%, rgba(37, 99, 235, 0.16), transparent 32%),
-                  linear-gradient(180deg, rgba(6, 9, 18, 0.92) 0%, rgba(5, 8, 21, 0.96) 45%, #040712 100%);
-      --text: #e8ecff;
-      --muted: #cbd5e1;
-      --card: rgba(10, 13, 26, 0.85);
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7f8fd;
-        --gradient: radial-gradient(circle at 18% 18%, rgba(96,165,250,0.15), transparent 34%),
-                    linear-gradient(180deg, #f6f7ff 0%, #eef2ff 50%, #e5e7ff 100%);
-        --text: #0f172a;
-        --muted: #334155;
-        --card: rgba(255,255,255,0.94);
-        --border: rgba(15, 23, 42, 0.08);
-        --shadow: 0 18px 50px rgba(15, 23, 42, 0.16);
-      }
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; background-image: var(--gradient); background-attachment: fixed; -webkit-font-smoothing: antialiased; }
-    a { color: #c7d2fe; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    @media (prefers-color-scheme: light) { a { color: #1d4ed8; } }
-    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 18px; }
-    header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(16px); background: rgba(7,10,18,0.9); border-bottom: 1px solid var(--border); }
-    @media (prefers-color-scheme: light) { header { background: rgba(255,255,255,0.92); } }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
-    .brand { display: inline-flex; gap: 12px; align-items: center; font-weight: 800; color: var(--text); text-decoration: none; }
-    .brand img { width: 60px; height: 60px; }
-    .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
-    .btn { border-radius: 14px; padding: 9px 16px; font-weight: 700; cursor: pointer; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; border: 0; }
-    .btn-secondary { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid var(--border); }
-    .btn-primary { background: linear-gradient(135deg, #60a5fa, #8b5cf6); color: #fff; }
-    @media (prefers-color-scheme: light) { .btn-secondary { background: rgba(37,99,235,0.07); color: #1e293b; } }
-    main { padding: 56px 0 80px; }
-    h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.02em; }
-    h2 { margin: 0 0 20px; font-size: clamp(18px, 2.5vw, 24px); }
-    p { margin: 0 0 12px; color: var(--muted); }
-    .platform-label { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 12px; font-weight: 800; font-size: 13px; margin-bottom: 18px; }
-    .android-label { background: rgba(52,211,153,0.1); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
-    .ios-label { background: rgba(96,165,250,0.1); color: #60a5fa; border: 1px solid rgba(96,165,250,0.25); }
-    @media (prefers-color-scheme: light) {
-      .android-label { background: rgba(5,150,105,0.1); color: #059669; border-color: rgba(5,150,105,0.2); }
-      .ios-label { background: rgba(37,99,235,0.1); color: #2563eb; border-color: rgba(37,99,235,0.2); }
-    }
-    .release { border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; background: rgba(255,255,255,0.03); margin-bottom: 12px; }
-    @media (prefers-color-scheme: light) { .release { background: rgba(255,255,255,0.8); } }
-    .release-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
-    .version-tag { font-size: 15px; font-weight: 800; color: var(--text); }
-    .date-tag { font-size: 13px; color: var(--muted); }
-    .latest-tag { padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; background: rgba(34,197,94,0.12); color: #22c55e; border: 1px solid rgba(34,197,94,0.25); }
-    .changes { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
-    .changes li { display: flex; align-items: start; gap: 8px; font-size: 14px; color: var(--muted); }
-    .changes li::before { content: "—"; color: #60a5fa; font-weight: 700; flex-shrink: 0; }
-    @media (prefers-color-scheme: light) { .changes li::before { color: #2563eb; } }
-    .cols-layout { display: grid; gap: 40px; }
-    @media (min-width: 860px) { .cols-layout { grid-template-columns: 1.4fr 1fr; } }
-    footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); background: rgba(0,0,0,0.1); }
-    @media (prefers-color-scheme: light) { footer { background: rgba(255,255,255,0.86); } }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    :root{color-scheme:light dark;--bg:#07091c;--surface:rgba(11,15,38,.82);--surface2:rgba(14,19,46,.92);--text:#e2e8f0;--muted:#94a3b8;--border:rgba(255,255,255,.09);--shadow:0 16px 48px rgba(0,0,0,.45);--blue:#60a5fa;--green:#34d399;--page-bg:radial-gradient(ellipse 70% 50% at 15% 5%,rgba(59,130,246,.13) 0%,transparent 100%),radial-gradient(ellipse 55% 45% at 85% 90%,rgba(139,92,246,.1) 0%,transparent 100%),#07091c;}
+    @media(prefers-color-scheme:light){:root{--bg:#f4f6ff;--surface:rgba(255,255,255,.9);--surface2:rgba(255,255,255,.98);--text:#0f172a;--muted:#475569;--border:rgba(15,23,42,.08);--shadow:0 8px 32px rgba(15,23,42,.1);--blue:#2563eb;--green:#059669;--page-bg:radial-gradient(ellipse 70% 50% at 15% 5%,rgba(59,130,246,.07) 0%,transparent 100%),radial-gradient(ellipse 55% 45% at 85% 90%,rgba(139,92,246,.06) 0%,transparent 100%),#eef1ff;}}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;background-image:var(--page-bg);background-attachment:fixed;-webkit-font-smoothing:antialiased;min-height:100vh;}
+    img{max-width:100%;display:block;}
+    a{color:var(--blue);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    h1,h2,h3{color:var(--text);letter-spacing:-.02em;line-height:1.15;}
+    p{margin:0 0 14px;color:var(--muted);}
+    p:last-child{margin-bottom:0;}
+    .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px;}
+
+    .site-header{position:sticky;top:0;z-index:200;background:rgba(5,7,22,.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);}
+    @media(prefers-color-scheme:light){.site-header{background:rgba(238,241,255,.9);}}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px;}
+    .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--text);text-decoration:none;flex-shrink:0;}
+    .brand:hover{text-decoration:none;}
+    .brand img{width:38px;height:38px;border-radius:9px;}
+    .desk-nav{display:none;align-items:center;gap:2px;flex:1;justify-content:flex-end;}
+    .desk-nav a{padding:7px 12px;border-radius:9px;font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;transition:background .12s,color .12s;white-space:nowrap;}
+    .desk-nav a:hover,.desk-nav a[aria-current]{background:rgba(255,255,255,.08);color:var(--text);text-decoration:none;}
+    @media(prefers-color-scheme:light){.desk-nav a:hover,.desk-nav a[aria-current]{background:rgba(0,0,0,.06);}}
+    .nav-cta{margin-left:8px;background:linear-gradient(135deg,#60a5fa,#8b5cf6)!important;color:#fff!important;font-weight:700;padding:8px 16px;border-radius:10px;}
+    .nav-cta:hover{opacity:.88;}
+    .ham{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;padding:0;}
+    .ham span{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:transform .22s ease,opacity .18s ease,width .18s ease;transform-origin:center;}
+    .ham[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .ham[aria-expanded=true] span:nth-child(2){opacity:0;width:0;}
+    .ham[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mob-nav{display:none;border-top:1px solid var(--border);background:rgba(4,6,18,.97);}
+    @media(prefers-color-scheme:light){.mob-nav{background:rgba(244,246,255,.98);}}
+    .mob-nav.open{display:block;}
+    .mob-nav a{display:flex;align-items:center;padding:14px 20px;font-weight:600;font-size:15px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);transition:background .1s;}
+    .mob-nav a:last-child{border-bottom:0;}
+    .mob-nav a:hover{background:rgba(255,255,255,.05);text-decoration:none;}
+    @media(prefers-color-scheme:light){.mob-nav a:hover{background:rgba(0,0,0,.04);}}
+    @media(min-width:768px){.desk-nav{display:flex;}.ham{display:none;}}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 18px;border-radius:11px;font-weight:700;font-size:14px;border:0;cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform .08s,opacity .12s;letter-spacing:-.01em;line-height:1;}
+    .btn:hover{text-decoration:none;}
+    .btn-primary{background:linear-gradient(135deg,#60a5fa,#8b5cf6);color:#fff;}
+    .btn-primary:hover{opacity:.9;}
+
+    main{padding:64px 0 80px;}
+    h1{font-size:clamp(28px,4vw,44px);margin:0 0 8px;}
+    .lead{font-size:16px;color:var(--muted);margin:0 0 44px;}
+    .cols{display:grid;gap:32px;}
+    @media(min-width:860px){.cols{grid-template-columns:1.5fr 1fr;align-items:start;}}
+    .platform-label{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px;}
+    .label-android{background:rgba(52,211,153,.1);color:#34d399;border:1px solid rgba(52,211,153,.22);}
+    .label-ios{background:rgba(96,165,250,.1);color:#60a5fa;border:1px solid rgba(96,165,250,.22);}
+    @media(prefers-color-scheme:light){.label-android{background:rgba(5,150,105,.08);color:#059669;border-color:rgba(5,150,105,.18);}.label-ios{background:rgba(37,99,235,.08);color:#2563eb;border-color:rgba(37,99,235,.18);}}
+    .release{border:1px solid var(--border);border-radius:16px;padding:18px 20px;background:rgba(255,255,255,.03);margin-bottom:10px;}
+    @media(prefers-color-scheme:light){.release{background:rgba(255,255,255,.8);}}
+    .rh{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+    .ver{font-size:15px;font-weight:800;color:var(--text);}
+    .date{font-size:13px;color:var(--muted);}
+    .latest-tag{padding:3px 9px;border-radius:999px;font-size:11px;font-weight:800;background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2);}
+    ul.changes{list-style:none;margin:0;padding:0;display:grid;gap:6px;}
+    ul.changes li{display:flex;align-items:start;gap:8px;font-size:14px;color:var(--muted);}
+    ul.changes li::before{content:"–";color:var(--blue);font-weight:700;flex-shrink:0;}
+    .ios-note{margin-top:18px;padding:15px;background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.14);border-radius:13px;font-size:13px;color:var(--muted);}
+    @media(prefers-color-scheme:light){.ios-note{background:rgba(37,99,235,.04);border-color:rgba(37,99,235,.11);}}
+
+    .site-footer{padding:32px 0 44px;border-top:1px solid var(--border);color:var(--muted);font-size:14px;background:rgba(0,0,0,.1);}
+    @media(prefers-color-scheme:light){.site-footer{background:rgba(255,255,255,.5);}}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+    .footer-links a{color:var(--muted);transition:color .12s;}
+    .footer-links a:hover{color:var(--text);text-decoration:none;}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
+
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
       <a class="brand" href="index.html">
-        <img src="assets/images/logo.png?v=1" alt="Niwashi Base logo" />
+        <img src="assets/images/logo.png?v=1" alt="Ambulance" width="38" height="38" />
         <span>Ambulance</span>
       </a>
-      <div class="nav-links">
-        <a class="btn btn-secondary" href="android.html">Android</a>
-        <a class="btn btn-secondary" href="ios.html">iOS</a>
-        <a class="btn btn-primary" href="download.html">Download</a>
-      </div>
+      <nav class="desk-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="ios.html">iOS</a>
+        <a href="whats-new.html" aria-current="page">What's New</a>
+        <a href="videos.html">Videos</a>
+        <a href="download.html" class="nav-cta">Download</a>
+      </nav>
+      <button class="ham" id="hamBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <nav class="mob-nav" id="mobMenu" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="android.html">Android</a>
+      <a href="ios.html">iOS</a>
+      <a href="whats-new.html">What's New</a>
+      <a href="videos.html">Videos</a>
+      <a href="download.html">Download</a>
+    </nav>
   </header>
 
   <main>
     <div class="container">
-      <div style="margin-bottom: 40px;">
-        <h1>What's New</h1>
-        <p>Full release history for Ambulance on Android and iOS. Latest versions listed first.</p>
-      </div>
+      <h1>What's New</h1>
+      <p class="lead">Full release history for Ambulance on Android and iOS. Latest versions listed first.</p>
 
-      <div class="cols-layout">
+      <div class="cols">
 
-        <!-- Android column -->
+        <!-- Android -->
         <div>
-          <div class="platform-label android-label">Android</div>
+          <div class="platform-label label-android">Android</div>
 
           <div class="release">
-            <div class="release-header">
-              <span class="version-tag">v2.0</span>
-              <span class="date-tag">29 August 2025</span>
-              <span class="latest-tag">Latest</span>
-            </div>
+            <div class="rh"><span class="ver">v2.0</span><span class="date">29 August 2025</span><span class="latest-tag">Latest</span></div>
             <ul class="changes">
               <li>Updated to Clinical Practice Guidelines CPG v2.4</li>
               <li>Completely redesigned CCP Pediatrics UI</li>
-              <li>RSI button now includes SOAPME checklist, Shock Index, CPG RSI Reference, and 1-minute countdown with voice</li>
-              <li>Droperidol added to formulary; Ibuprofen removed</li>
-              <li>LTA replaced with SGA in airway tools</li>
+              <li>RSI now includes SOAPME checklist, Shock Index, CPG RSI Reference &amp; 1-minute voice countdown</li>
+              <li>Droperidol added to formulary; Ibuprofen removed. LTA replaced with SGA</li>
               <li>New tools: RBS Converter, MAP Calculator, Pediatric Sepsis Screening Tool</li>
-              <li>Hospital display: nearest HOS and top 4 nearest sites</li>
+              <li>Hospital display: nearest HOS + top 4 nearest sites</li>
             </ul>
           </div>
 
           <div class="release">
-            <div class="release-header">
-              <span class="version-tag">v1.9</span>
-            </div>
+            <div class="rh"><span class="ver">v1.9</span></div>
             <ul class="changes">
               <li>SOP v4.4 integration</li>
               <li>WAFFLES dosing fixes</li>
@@ -132,10 +144,7 @@
           </div>
 
           <div class="release">
-            <div class="release-header">
-              <span class="version-tag">v1.8</span>
-              <span class="date-tag">20 November 2024</span>
-            </div>
+            <div class="rh"><span class="ver">v1.8</span><span class="date">20 November 2024</span></div>
             <ul class="changes">
               <li>CPG v2.3 and CPM v4.0 integration</li>
               <li>Updated SOAPME to v3.1</li>
@@ -145,13 +154,10 @@
           </div>
 
           <div class="release">
-            <div class="release-header">
-              <span class="version-tag">v1.7</span>
-              <span class="date-tag">10 September 2024</span>
-            </div>
+            <div class="rh"><span class="ver">v1.7</span><span class="date">10 September 2024</span></div>
             <ul class="changes">
-              <li>Care Tools added for pediatric emergencies</li>
-              <li>Infusions section</li>
+              <li>Care Tools for pediatric emergencies</li>
+              <li>Infusions section added</li>
               <li>CPG v2.2</li>
               <li>New medications: TXA, Ibuprofen for CCPs</li>
               <li>CPR module completely overhauled</li>
@@ -159,13 +165,10 @@
           </div>
 
           <div class="release">
-            <div class="release-header">
-              <span class="version-tag">v1.6</span>
-              <span class="date-tag">6 June 2023</span>
-            </div>
+            <div class="rh"><span class="ver">v1.6</span><span class="date">6 June 2023</span></div>
             <ul class="changes">
               <li>CPG v2.1, SOP v4.3</li>
-              <li>Pediatric infusions added</li>
+              <li>Pediatric infusions</li>
               <li>Meds Calculator</li>
               <li>Overtime Logger</li>
               <li>CPR Timer improvements</li>
@@ -173,10 +176,7 @@
           </div>
 
           <div class="release">
-            <div class="release-header">
-              <span class="version-tag">v1.5</span>
-              <span class="date-tag">18 January 2023</span>
-            </div>
+            <div class="rh"><span class="ver">v1.5</span><span class="date">18 January 2023</span></div>
             <ul class="changes">
               <li>CPG v2.0</li>
               <li>CPR Timer (trial)</li>
@@ -187,10 +187,7 @@
           </div>
 
           <div class="release">
-            <div class="release-header">
-              <span class="version-tag">v1.4</span>
-              <span class="date-tag">17 March 2022</span>
-            </div>
+            <div class="rh"><span class="ver">v1.4</span><span class="date">17 March 2022</span></div>
             <ul class="changes">
               <li>Vital Signs added to Pediatrics</li>
               <li>Formulary additions</li>
@@ -200,10 +197,7 @@
           </div>
 
           <div class="release">
-            <div class="release-header">
-              <span class="version-tag">v1.3</span>
-              <span class="date-tag">12 January 2022</span>
-            </div>
+            <div class="rh"><span class="ver">v1.3</span><span class="date">12 January 2022</span></div>
             <ul class="changes">
               <li>AS Call feature</li>
               <li>New pediatric medications</li>
@@ -213,10 +207,7 @@
           </div>
 
           <div class="release">
-            <div class="release-header">
-              <span class="version-tag">v1.2</span>
-              <span class="date-tag">16 December 2021</span>
-            </div>
+            <div class="rh"><span class="ver">v1.2</span><span class="date">16 December 2021</span></div>
             <ul class="changes">
               <li>Terms &amp; Conditions added</li>
               <li>CPG v1.7</li>
@@ -226,26 +217,22 @@
           </div>
         </div>
 
-        <!-- iOS column -->
+        <!-- iOS -->
         <div>
-          <div class="platform-label ios-label">iOS Shortcuts</div>
+          <div class="platform-label label-ios">iOS</div>
 
           <div class="release">
-            <div class="release-header">
-              <span class="version-tag">v1.0</span>
-              <span class="date-tag">2 October 2025</span>
-              <span class="latest-tag">Latest</span>
-            </div>
+            <div class="rh"><span class="ver">v1.0</span><span class="date">2 October 2025</span><span class="latest-tag">Latest</span></div>
             <ul class="changes">
-              <li>Initial public release of Ambulance iOS Shortcuts</li>
-              <li>Clinical reference tools via the iOS Shortcuts platform</li>
-              <li>Available via direct install link or RoutineHub</li>
+              <li>Initial public release of Ambulance for iOS</li>
+              <li>Clinical reference tools accessible directly on iPhone</li>
+              <li>Installs to your Home Screen via direct link</li>
             </ul>
           </div>
 
-          <div style="margin-top: 24px; padding: 16px; border-radius: 14px; background: rgba(96,165,250,0.06); border: 1px solid rgba(96,165,250,0.15);">
-            <p style="margin: 0; font-size: 14px;">The iOS version is a collection of Siri Shortcuts, not a native App Store app. Install using the link below or from RoutineHub.</p>
-            <a class="btn btn-primary" href="ios.html" style="margin-top: 12px; display: inline-flex;">iOS install guide</a>
+          <div class="ios-note">
+            <p style="margin:0;">Ambulance for iOS installs directly to your iPhone Home Screen — no App Store required. Open the install link in Safari to get started.</p>
+            <a class="btn btn-primary" href="ios.html" style="margin-top:14px;display:inline-flex;">iOS install guide</a>
           </div>
         </div>
 
@@ -253,19 +240,21 @@
     </div>
   </main>
 
-  <footer>
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Ambulance Project — Niwashi Base</span>
-      <nav>
-        <a href="index.html">Home</a> ·
-        <a href="android.html">Android</a> ·
-        <a href="ios.html">iOS</a> ·
-        <a href="videos.html">Videos</a> ·
+      <span>© <span id="yr"></span> Ambulance — Niwashi Base</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="android.html">Android</a>
+        <a href="ios.html">iOS</a>
+        <a href="videos.html">Videos</a>
         <a href="legal.html">Legal</a>
       </nav>
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('yr').textContent=new Date().getFullYear();
+    (function(){var btn=document.getElementById('hamBtn'),nav=document.getElementById('mobMenu');if(!btn||!nav)return;btn.addEventListener('click',function(){var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open);});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!nav.contains(e.target)){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();
+  </script>
 </body>
 </html>
