@@ -109,12 +109,14 @@
     .hero-grid{display:grid;gap:40px;align-items:center;}
     @media(min-width:960px){.hero-grid{grid-template-columns:1.15fr 1fr;gap:48px;}}
     .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;border:1px solid var(--border);background:rgba(96,165,250,.08);color:#bae6fd;font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+    @media(prefers-color-scheme:light){.eyebrow{background:rgba(37,99,235,.06);color:#1d4ed8;border-color:rgba(37,99,235,.15);}}
     .h1{font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:-.025em;margin:0 0 16px;color:#fff;}
     @media(prefers-color-scheme:light){.h1{color:var(--text);}}
     .hero-sub{font-size:clamp(16px,2.5vw,19px);color:var(--muted);max-width:56ch;margin:0 0 24px;}
     .cta-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
     .trust-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
     .hero-panel{background:linear-gradient(140deg,rgba(96,165,250,.08),rgba(11,17,36,.92));border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:var(--shadow);}
+    @media(prefers-color-scheme:light){.hero-panel{background:linear-gradient(140deg,rgba(37,99,235,.06),rgba(255,255,255,.95));border-color:rgba(37,99,235,.12);}}
     .stat-grid{display:grid;gap:10px;}
     .stat-item{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:13px;background:rgba(255,255,255,.05);border:1px solid var(--border);}
     @media(prefers-color-scheme:light){.stat-item{background:rgba(0,0,0,.03);}}
@@ -160,6 +162,7 @@
     .tl-step{display:flex;gap:14px;align-items:start;padding:14px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;}
     @media(prefers-color-scheme:light){.tl-step{background:rgba(0,0,0,.03);}}
     .tl-badge{min-width:38px;height:38px;border-radius:10px;background:rgba(96,165,250,.1);color:#60a5fa;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+    @media(prefers-color-scheme:light){.tl-badge{background:rgba(37,99,235,.08);color:#2563eb;}}
     .tl-step strong{display:block;font-size:14px;margin-bottom:3px;}
     .tl-step p{font-size:13px;margin:0;}
 
