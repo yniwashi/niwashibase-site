@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.niwashibase.com/sitemap.xml
