@@ -35,7 +35,7 @@
     }
   };
 
-  if (location.hash === "#privacy") {
+  if (location.hash === "#privacy" || document.body.getAttribute("data-open-tab") === "privacy") {
     var privacyButton = document.querySelector("[data-tab='privacy']");
     if (privacyButton) window.switchLegalTab("privacy", privacyButton);
   }
@@ -68,8 +68,8 @@
     var params = new URLSearchParams(window.location.search);
     var platform = params.get("platform");
     if (!platform && document.referrer) {
-      if (/ios\.html(?:$|[?#])/.test(document.referrer)) platform = "ios";
-      if (/android\.html(?:$|[?#])/.test(document.referrer)) platform = "android";
+      if (/(?:ios\.html|\/ios\/?)(?:$|[?#])/.test(document.referrer)) platform = "ios";
+      if (/(?:android\.html|\/android\/?)(?:$|[?#])/.test(document.referrer)) platform = "android";
     }
     switchPlatformTab(platform);
   }
