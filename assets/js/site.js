@@ -111,12 +111,6 @@
       }
     }
 
-    var count = document.createElement("div");
-    count.className = "gallery-count";
-    count.setAttribute("aria-hidden", "true");
-    count.innerHTML = '<span class="gallery-count-icon"><span></span><span></span><span></span><span></span></span><span>' + slides.length + ' Photos</span>';
-    gallery.insertBefore(count, viewport);
-
     if (dotsWrap) {
       slides.forEach(function (_, i) {
         var dot = document.createElement("button");

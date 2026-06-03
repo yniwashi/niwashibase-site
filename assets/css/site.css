@@ -753,34 +753,6 @@ ol {
   cursor: grabbing;
 }
 
-.gallery-count {
-  display: inline-flex;
-  align-items: center;
-  justify-self: end;
-  gap: 9px;
-  color: var(--blue);
-  font-size: 15px;
-  font-weight: 900;
-  letter-spacing: 0;
-  max-width: 100%;
-  justify-self: center;
-  white-space: nowrap;
-}
-
-.gallery-count-icon {
-  display: grid;
-  grid-template-columns: repeat(2, 8px);
-  gap: 3px;
-}
-
-.gallery-count-icon span {
-  width: 8px;
-  height: 8px;
-  border-radius: 3px;
-  background: currentColor;
-  box-shadow: 0 0 18px color-mix(in srgb, var(--blue), transparent 55%);
-}
-
 .gallery-track {
   --shot-w: clamp(190px, 61vw, 242px);
   --stack-shift: -34px;
@@ -881,11 +853,6 @@ ol {
 }
 
 @media (min-width: 900px) {
-  .gallery-count {
-    font-size: 18px;
-    justify-self: center;
-  }
-
   .gallery-track {
     --shot-w: clamp(184px, 18vw, 228px);
     --stack-shift: -38px;
