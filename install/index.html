@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Install Ambulance App</title>
+
+<!-- Open Graph (WhatsApp, Discord, FB, iMessage) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ambulance">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Install Ambulance (iOS)">
+<meta property="og:description" content="Add the Ambulance app to your iPhone. Clinical tools and references.">
+<meta property="og:url" content="https://ios.niwashibase.com/install">
+<meta property="og:image" content="https://ios.niwashibase.com/install/images/og/ambulance-install-1200x630.png">
+<meta property="og:image:secure_url" content="https://ios.niwashibase.com/install/images/og/ambulance-install-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Install Ambulance on iPhone">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Install Ambulance (iOS)">
+<meta name="twitter:description" content="Add the Ambulance app to your iPhone. Clinical tools and references.">
+<meta name="twitter:image" content="https://ios.niwashibase.com/install/images/og/ambulance-install-1200x630.png">
+<!-- Optional if you have an @handle -->
+<!-- <meta name="twitter:site" content="@YourHandle"> -->
+
+<link rel="canonical" href="https://ios.niwashibase.com/install">
+
+  <!-- Theme color -->
+  <meta id="theme-color" name="theme-color" content="#eef6ff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef6ff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#071524">
+
+  <style>
+    :root{
+      color-scheme: light dark;
+      --radius:14px;
+      --speed:.22s;
+      --bg:#ffffff;
+      --surface:#ffffff;
+      --surface-2:#f5f8fc;
+      --border:#d9e3ee;
+      --text:#101828;
+      --muted:#526174;
+      --accent:#0b6fe8;
+      --accent-dark:#0757b8;
+      --accent-soft:#e8f3ff;
+      --green:#3ddc84;
+      --green-dark:#23a960;
+      --shadow:0 14px 36px rgba(16,24,40,.12);
+      --shadow-2:0 16px 34px rgba(7,87,184,.24);
+      --gap:8px;
+    }
+    body{
+      margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,system-ui,Arial,sans-serif;
+      background:linear-gradient(180deg,#eef6ff 0,#f8fbff 360px,#ffffff 100%);
+      color:var(--text);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+    .wrap{max-width:760px; margin:0 auto; padding:28px clamp(16px,4vw,28px) 44px; display:flex; flex-direction:column; gap:24px}
+
+    /* Hero / logo */
+    .hero{display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center}
+    .hero-logo{width:88px; height:88px; object-fit:contain; border-radius:16px}
+    .title{font-size:clamp(26px,5vw,34px);font-weight:850;margin:0;color:var(--text);line-height:1.12}
+
+    /* Intro / feature list */
+    .intro{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px 16px; box-shadow:var(--shadow)}
+    .features{display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; margin-top:10px}
+    .chip{background:var(--surface-2); border:1px solid var(--border); border-radius:999px; padding:8px 12px; font-weight:700; font-size:13px; text-align:center}
+
+    /* Centered CTA */
+    .cta{display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center}
+    .btn-download{
+      display:inline-flex; align-items:center; gap:10px; justify-content:center;
+      font-weight:800; font-size:17px; color:#fff; text-decoration:none;
+      background:linear-gradient(180deg,var(--accent),var(--accent-dark));
+      padding:14px 22px; border-radius:14px; box-shadow:var(--shadow-2);
+      min-width:280px;
+    }
+    .btn-download:hover{box-shadow:var(--shadow-2); transform:translateY(-1px)}
+    .cta-sub{font-size:13px; color:var(--muted)}
+    .apple{ width:20px; height:20px; display:inline-block; }
+
+    /* Steps */
+    .steps{display:flex; flex-direction:column; gap:24px}
+    .step + .step{ margin-top:24px; } /* fallback spacing in case of nesting */
+    .step{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      box-shadow:var(--shadow)
+    }
+    .step h3{margin:0;font-size:16px;color:var(--text)}
+    .step p{margin:0;font-size:14px;color:var(--muted)}
+    .steps img{
+      display:block;
+      max-width:100%;
+      height:auto;            /* keep natural aspect ratio */
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,.12)
+    }
+
+    /* Video (optional) */
+    .video{aspect-ratio:16/9;max-width:100%;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+    iframe,video{width:100%;height:100%;border:none}
+
+    .muted{color:var(--muted)}
+
+    /* Media card for the demo video */
+.media-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Dark surround so the black video blends nicely in light mode too */
+.video-frame{
+  background: #071524;           /* creates a tasteful bezel around the phone */
+  border-radius: 12px;
+  padding: 8px;               /* thickness of the bezel */
+}
+
+/* The video itself */
+.media-card video{
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 19.5;
+  height: auto;
+  border-radius: 10px;        /* inner corner radius to match the bezel */
+  outline: none;
+}
+
+/* Optional small caption */
+.media-caption{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+strong{color:var(--text)}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#071524;
+    --surface:#0f2338;
+    --surface-2:#0b1d30;
+    --border:#223a53;
+    --text:#eef5ff;
+    --muted:#aec0d3;
+    --accent:#2f8cff;
+    --accent-dark:#176bd4;
+    --accent-soft:#102d4d;
+    --green:#20c987;
+    --green-dark:#0b8f5d;
+    --shadow:0 14px 36px rgba(0,0,0,.24);
+    --shadow-2:0 16px 34px rgba(0,0,0,.32);
+  }
+
+  body{
+    background:linear-gradient(180deg,#071524 0,#0b1d30 380px,#071524 100%);
+  }
+
+  .hero-logo,
+  .steps img{
+    border:1px solid var(--border);
+  }
+
+  .video-frame{
+    background:#000;
+  }
+
+  .shortcut-warning{
+    border-color:#68302c !important;
+    color:#ffb4ad !important;
+    background:#3c1715 !important;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Hero -->
+    <header class="hero">
+      <img class="hero-logo" src="images/logo.png" alt="App Logo">
+      <h1 class="title">Install Ambulance App</h1>
+      <p class="muted" style="max-width:56ch">
+        Get quick access to tools like <strong>CPR Timer</strong>, <strong>WAAFELLS</strong>,
+        <strong>Pediatrics Calculations</strong>, <strong>RSI Checklist</strong>,
+        <strong>GCS/APGAR/SAT scores</strong>, <strong>MAP Calculator</strong>, and more.
+        It also supports running actions via the <strong>Shortcuts</strong> app.
+      </p>
+    </header>
+
+    <!-- Centered Download CTA -->
+    <div class="cta">
+      <a class="btn-download" href="https://ios.niwashibase.com/install/dl?file=AmbulanceApp.mobileconfig&amp;v=1">
+        <svg class="apple" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="currentColor" d="M212.1 167.1c-4.3 9.8-6.5 14.6-12.2 23.6-7.9 12.4-19.1 27.9-33 28-12.3.1-15.5-8-32.2-8c-16.7 0-20.3 8-32.6 7.9-13.9-.1-24.5-14.1-32.4-26.4-22.2-33.9-24.6-73.7-10.8-94.8 9.7-15 25-23.9 42.5-24.1 13.3-.3 25.9 8.9 32.2 8.9 6.1 0 21.9-11 36.9-9.4 6.3.3 24.1 2.6 35.4 19.8-1 0-21.3 12.4-21.1 36.8.3 29.2 25.6 38.8 27.3 39.7zM156.1 51c6.3-7.6 10.7-18.3 9.5-28.9-9.2.4-20.2 6.2-26.7 13.8-5.9 6.8-11.1 17.7-9.7 28.1 10.2.8 20.6-5.2 26.9-13z"/>
+        </svg>
+        Download Ambulance App
+      </a>
+      <div class="cta-sub">Configuration Profile</div>
+      <p class="muted" style="margin-top:6px">If the download doesn’t start, use Safari on iPhone/iPad.</p>
+
+<p class="shortcut-warning" style="
+  margin-top:12px;
+  padding:12px 14px;
+  border:1px solid #ffd0cc;
+  border-radius:14px;
+  font-weight:700;
+  text-align:center;
+  color:#b42318;
+  background:#fff0ee;
+  box-shadow:var(--shadow);
+">
+  ⚠️ Important: Delete all your old shortcuts - they’re no longer supported.
+  Use the new <strong>Ambulance App</strong> and download the new <strong>Ambulance Shortcut</strong>, which replaces and combines all previous shortcuts.
+</p>
+
+
+
+    </div>
+
+    <!-- Demo Video -->
+     <h2 style="font-size:20px; font-weight:700; margin-top:32px; margin-bottom:8px;">
+      📹 Quick Video Guide
+    </h2>
+<section class="media-card">
+  <h3 style="margin:0;font-size:16px">How to Download & Install the Ambulance App on iPhone</h3>
+  <div class="video-frame">
+    <video
+      controls
+      playsinline
+      preload="metadata"
+      poster="images/demo-poster.jpeg"
+    >
+      <source src="https://www.dropbox.com/scl/fi/zif1rcvgbzazkq6shmqef/demo.mp4?rlkey=1s5vn596uqdag7u4uwqvoxxza&st=e2adcoo9&raw=1" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="media-caption">
+    Watch this quick guide to learn how to download and install the Ambulance App configuration profile on your iPhone.
+  </div>
+</section>
+
+
+    <!-- Steps -->
+    <h2 style="font-size:20px; font-weight:700; margin-top:40px; margin-bottom:8px;">
+      ✅ Step-by-Step Instructions
+    </h2>
+    <section class="steps">
+      <div class="step">
+        <h3>1. Tap “Download Ambulance App” button above.</h3>
+      </div>
+
+      <div class="step">
+        <h3>2. Allow the download</h3>
+        <p>When you see “<em>ios.niwashibase.com</em> is trying to download a configuration profile…”, tap <strong>Allow</strong>.</p>
+        <img src="images/step2.png?v=1.1" alt="Allow profile download">
+      </div>
+
+      <div class="step">
+        <h3>3. Profile Downloaded</h3>
+        <p>Safari shows “<em>Profile Downloaded</em>”. Tap <strong>Close</strong>.</p>
+        <img src="images/step3.png?v=1.1" alt="Profile downloaded alert">
+      </div>
+
+      <div class="step">
+        <h3>4. Open Settings &amp; Go to General</h3>
+        <p>Open the <strong>Settings</strong> app. In Settings, tap <strong>General</strong>.</p>
+        <img src="images/step4.png?v=1.1" alt="Open Settings and General">
+      </div>
+
+      <div class="step">
+        <h3>5. VPN &amp; Device Management</h3>
+        <p>Scroll down and tap <strong>VPN &amp; Device Management</strong>.</p>
+        <img src="images/step5.png?v=1.1" alt="VPN & Device Management">
+      </div>
+
+      <div class="step">
+        <h3>6. Downloaded Profile</h3>
+        <p>Under <strong>Downloaded Profile</strong>, tap <strong>Ambulance App</strong>. If it’s missing, return here and download again.</p>
+        <img src="images/step6.png?v=1.1" alt="Downloaded Profile appears">
+      </div>
+
+      <div class="step">
+        <h3>7. Install</h3>
+        <p>Tap <strong>Install</strong> at the top right.</p>
+        <img src="images/step7.png?v=1.1" alt="Tap Install">
+      </div>
+
+      <div class="step">
+        <h3>8. Enter Passcode</h3>
+        <p>Enter your iPhone passcode when prompted.</p>
+        <img src="images/step8.png?v=1.1" alt="Enter passcode">
+      </div>
+
+      <div class="step">
+        <h3>9. Confirm Install</h3>
+        <p>On the “<strong>Warning</strong>” screen, tap <strong>Install</strong> at the top right.</p>
+        <img src="images/step9.png?v=1.2" alt="Warning screen - Install">
+      </div>
+
+      <div class="step">
+        <h3>10. Confirm Install Again</h3>
+        <p>On the “<strong>Install Profile</strong>” screen, tap <strong>Install</strong>.</p>
+        <img src="images/step10.png?v=1.1" alt="Install confirmation">
+      </div>
+
+      <div class="step">
+        <h3>11. Profile Installed</h3>
+        <p>You’ll see <strong>Profile Installed</strong>. Tap <strong>Done</strong>. The app icon will now appear in your App Library / Home Screen.</p>
+        <img src="images/step11.png?v=1.2" alt="Profile installed success">
+      </div>
+    </section>
+
+
+
+
+
+  </div>
+</body>
+</html>

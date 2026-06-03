@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What's New - Ambulance App</title>
+  <meta name="description" content="Current release notes and app update highlights for Ambulance on Android and iPhone." />
+  <base href="../" />
+  <link rel="icon" href="assets/images/favicon.ico?v=1" />
+  <link rel="stylesheet" href="assets/css/site.css?v=14" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.png?v=1" alt="Ambulance" width="38" height="38" />
+        <span>Ambulance</span>
+      </a>
+      <nav class="desk-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="ios.html">iOS</a>
+        <a href="whats-new/" aria-current="page">What's New</a>
+      </nav>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span></button>
+    </div>
+    <nav class="mob-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="android.html">Android</a>
+      <a href="ios.html">iOS</a>
+      <a href="whats-new/">What's New</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <h1>What's New</h1>
+        <p>Release notes by platform. Choose Android or iOS, then expand a version for the full notes.</p>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container">
+        <div class="tabs platform-tabs" role="tablist" aria-label="Release notes platform">
+          <button class="tab-button active" type="button" data-platform-tab="android" role="tab" aria-selected="true" aria-controls="android-releases">Android</button>
+          <button class="tab-button" type="button" data-platform-tab="ios" role="tab" aria-selected="false" aria-controls="ios-releases">iOS</button>
+        </div>
+
+        <section class="tab-panel active" id="android-releases" data-platform-panel="android" role="tabpanel">
+          <div class="split">
+            <div>
+              <div class="section-header">
+                <h2>Android Release Notes</h2>
+                <p>Current release first. Older verified history is collapsed below.</p>
+              </div>
+              <div class="actions">
+                <a class="btn green small" href="https://update.niwashibase.com/apk">Download Android App</a>
+                <a class="btn secondary small" href="android.html">Android page</a>
+              </div>
+            </div>
+
+            <div>
+              <article class="release">
+                <div class="release-head">
+                  <strong>v2.1</strong>
+                  <span class="badge green">Latest Android</span>
+                  <span class="badge green">Released May 27, 2026</span>
+                </div>
+                <ul>
+                  <li>New access flow for Ambulance staff and other users.</li>
+                  <li>Redesigned home screen with grouped sections, notices, and clearer dashboard layout.</li>
+                  <li>Major CPR Timer rebuild with background support, audio cues, history, export, and backup/restore.</li>
+                  <li>CPG v2.5, rebuilt search, Guidelines PDF text search, and qSOFA.</li>
+                  <li>New Shift Schedule, Visual Guides, Burn Surface Area, and Adult Ventilator Settings.</li>
+                  <li>Updated pediatric tools, Overtime, AS-Call, HOS, Websites, and Report Issue.</li>
+                </ul>
+
+                <details class="release-details">
+                  <summary>Read more</summary>
+                  <div class="release-detail-grid">
+                    <section>
+                      <h3>Access and home</h3>
+                      <ul>
+                        <li>New Ambulance Staff access flow.</li>
+                        <li>New Other User access flow with limited supported features.</li>
+                        <li>Personalized home screen greeting.</li>
+                        <li>New dashboard design with clearer sections, updated colors, spacing, and layout.</li>
+                        <li>Greeting banner can be changed and has a subtle tap animation.</li>
+                        <li>Notice bell now shows unread Notices.</li>
+                      </ul>
+                    </section>
+                    <section>
+                      <h3>CPR Timer</h3>
+                      <ul>
+                        <li>CPR timer can continue while the app is in the background or the phone is locked.</li>
+                        <li>CPR notification added with quick actions: Start/Pause, Shock, and ROSC.</li>
+                        <li>CPR introduction screens added for first-time users and can be replayed from Settings.</li>
+                        <li>New CPR settings and fresh layout.</li>
+                        <li>Improved adrenaline prompt workflow.</li>
+                        <li>New CPR audio with Female and Male voices.</li>
+                        <li>Audio reminders added for adrenaline and amiodarone, with amiodarone reminders after the 3rd and 5th shocks.</li>
+                        <li>Clearer action feedback, CPR history, event timeline, PDF/CSV/JSON export, backup/restore, and improved ROSC restart handling.</li>
+                      </ul>
+                    </section>
+                    <section>
+                      <h3>Clinical tools</h3>
+                      <ul>
+                        <li>WAAFELSS display, concentration wording, CPR layout, pediatric tube-size display, rounding, and validation improved.</li>
+                        <li>qSOFA added and Scores now use a cleaner dropdown selector.</li>
+                        <li>Score order updated: GCS, APGAR, SAT, qSOFA, Westley, PGCS.</li>
+                        <li>Shift Schedule added with Team Calendar, Date Lookup, and Coverage tools.</li>
+                        <li>Pediatric medication screens improved with normal vitals, better layout, concentration, and draw-up volume display.</li>
+                        <li>Adult Ventilator Settings added with Normal Lungs, Asthma/COPD, and APO/ARDS.</li>
+                      </ul>
+                    </section>
+                    <section>
+                      <h3>Operations and calculators</h3>
+                      <ul>
+                        <li>Visual Guides added for Defibrillation Pad Placement, ECG Lead Placement, and Burn Surface Area.</li>
+                        <li>Burn Surface Area Calculator added for adult, child, and infant body diagrams.</li>
+                        <li>Search and Guidelines improved with better result cards, faster navigation, and PDF search.</li>
+                        <li>Overtime rebuilt with salary saving, history, filters, exports, backup/restore, and normal/Ramadan calculations.</li>
+                        <li>AS-Call, HOS, and Websites improved with call confirmation, HOS behavior updates, website icons, search, and filters.</li>
+                        <li>Report Issue redesigned with problem type, app area, optional description, support report sharing, and optional support contact number.</li>
+                        <li>In-app Notices, App Intro, smoother startup, older-device support, improved layouts, better button feedback, bug fixes, and reliability improvements.</li>
+                      </ul>
+                    </section>
+                  </div>
+                </details>
+              </article>
+
+              <details class="release-history">
+                <summary>Older Android history</summary>
+                <div class="history-list">
+                  <details class="release-details">
+                    <summary>v2.0 · August 29, 2025</summary>
+                    <ul>
+                      <li>Stay Connected added for Discord, WhatsApp, Telegram, app help, bug reports, and news.</li>
+                      <li>Bug fixes for smoother and more reliable performance.</li>
+                      <li>CPG v2.4 integrated.</li>
+                      <li>CCP Pediatrics completely redesigned.</li>
+                      <li>CPR Logs now display in 24-hour format.</li>
+                      <li>Droperidol added and Ibuprofen removed from the formulary.</li>
+                      <li>SOAPME replaced by RSI with SOAPME checklist, Shock Index, CPG RSI reference, and 1-minute voice countdown.</li>
+                      <li>Airway updated: LTA replaced with SGA.</li>
+                      <li>WAAFELSS updated for accuracy.</li>
+                      <li>Pediatric Sepsis Screening Tool added.</li>
+                      <li>App Search updated with the latest updates.</li>
+                      <li>RBS Converter and MAP Calculator added.</li>
+                      <li>HOS updated with nearest HOS, top 4 nearest sites, and updated HOS list.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v1.9 · December 27, 2024</summary>
+                    <ul>
+                      <li>Stay Connected added for Discord, WhatsApp, Telegram, app help, bug reports, and news.</li>
+                      <li>Bug fixes and performance boost.</li>
+                      <li>SOP v4.4 integrated.</li>
+                      <li>WAFFLES dosing issues fixed and WAFFLES added for APs and CCPs.</li>
+                      <li>Care Tools dosing issues fixed and View Reference button added.</li>
+                      <li>Pediatrics AP dosing issues fixed and WAFFLES integration added.</li>
+                      <li>CCP dosing issues fixed.</li>
+                      <li>CCPs can calculate pediatric doses based on age or weight.</li>
+                      <li>Proportion Calculator added.</li>
+                      <li>App Search updated with the latest updates.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v1.8 · November 20, 2024</summary>
+                    <ul>
+                      <li>General stability and performance improvements.</li>
+                      <li>Redesigned UI to support a wider range of Android devices.</li>
+                      <li>SOAPME updated to RSI Checklist v3.1.</li>
+                      <li>Stay Connected replaced feedback by email and added Discord, WhatsApp, Telegram, and email support paths.</li>
+                      <li>CPG v2.3 integrated.</li>
+                      <li>CPM v4.0 integrated.</li>
+                      <li>AS-Call updated with latest phone numbers.</li>
+                      <li>Flowcharts and medications updated to align with the new CPG.</li>
+                      <li>Website-opening bugs fixed.</li>
+                      <li>Notification alerts added.</li>
+                      <li>Language setting now keeps the app in English to avoid CPR Timer issues in other languages.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v1.7 · September 10, 2024</summary>
+                    <ul>
+                      <li>General stability and performance improvements.</li>
+                      <li>Redesigned UI to support a wider range of Android devices.</li>
+                      <li>Improved app search functionality.</li>
+                      <li>Care Tools added for pediatric emergencies.</li>
+                      <li>Infusions section added for adult and pediatric infusion guides.</li>
+                      <li>SOAPME updated to RSI Checklist v1.3.</li>
+                      <li>Stay Connected added for app updates, ideas, bug reports, and support.</li>
+                      <li>CPG v2.2 integrated.</li>
+                      <li>AS-Call, Pediatrics, Flowcharts, medications, and Websites updated.</li>
+                      <li>TXA and Ibuprofen added for Critical Care Paramedics.</li>
+                      <li>Notification alerts and English language behavior added.</li>
+                      <li>CPR module received major UI improvements and bug fixes.</li>
+                      <li>WAFFLES button added inside CPR Timer.</li>
+                      <li>Mute and Unmute CPR sound added.</li>
+                      <li>Save Report added for CPR session time logs.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v1.6 · June 6, 2023</summary>
+                    <ul>
+                      <li>Bug fixes, new UI design, stability, and performance improvements.</li>
+                      <li>CPG updated to v2.1 and related sections updated.</li>
+                      <li>SOP updated to v4.3 and related sections updated.</li>
+                      <li>Ketamine and Fentanyl infusion added for pediatrics.</li>
+                      <li>Atrovent added for pediatrics.</li>
+                      <li>Search fixed for more accurate results.</li>
+                      <li>Meds Calculator added for Infusion Rate and Dose Volume.</li>
+                      <li>Overtime and Overtime Logger added.</li>
+                      <li>Delete buttons added for CPR Timer logs and overtime logs.</li>
+                      <li>Save as text removed from CPR log saving; screenshot workflow used instead.</li>
+                      <li>Handover section removed.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v1.5 · January 18, 2023</summary>
+                    <ul>
+                      <li>Bug fixes, new UI design, stability, and performance improvements.</li>
+                      <li>CPG updated to v2.0 and related sections updated.</li>
+                      <li>AS-Call updated with new numbers.</li>
+                      <li>Overtime Calculator added.</li>
+                      <li>Feedback button added.</li>
+                      <li>Websites added for important work websites.</li>
+                      <li>CPR Timer trial version added as a CPR timer, metronome, and timekeeper/logger.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v1.4 · March 17, 2022</summary>
+                    <ul>
+                      <li>Bug fixes, new UI design, stability, and performance improvements.</li>
+                      <li>Vital Signs added to Pediatrics.</li>
+                      <li>Formulary added for all medications to Flowcharts.</li>
+                      <li>Search added across the app.</li>
+                      <li>Home button added.</li>
+                      <li>New update alert box added instead of update button.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v1.3 · January 12, 2022</summary>
+                    <ul>
+                      <li>Bug fixes, new UI design, stability, and performance improvements.</li>
+                      <li>AS Call added for Ambulance Service work phone numbers.</li>
+                      <li>New CCP pediatric medications added: Paracetamol, Ondansetron, and Glucagon.</li>
+                      <li>Medication dosing errors fixed.</li>
+                      <li>Scores added: GCS, APGAR, SAT, Westley, and PGCS.</li>
+                      <li>Files added: CPG, PAT, SOP, and CPM.</li>
+                      <li>Search by page number added for CPG, PAT, SOP, and CPM PDF files.</li>
+                      <li>Formulary CPG page can open by clicking the drug name or find icon.</li>
+                      <li>Notifications feature added.</li>
+                      <li>App size reduced to around 50 MB.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v1.2 · December 16, 2021</summary>
+                    <ul>
+                      <li>Bug fixes, stability, and performance improvements.</li>
+                      <li>Terms &amp; Conditions and Disclaimer added.</li>
+                      <li>Updated CPG v1.7 file added.</li>
+                      <li>COVID-19 CCP flowchart updated.</li>
+                      <li>RSI Checklist grammar errors fixed.</li>
+                      <li>WAAFLES updated according to the PAT.</li>
+                      <li>Formulary CPG page can open by clicking the drug name or find icon.</li>
+                      <li>Calculator button inside Pediatrics-CCP updated.</li>
+                      <li>App title became clickable to view the latest updates.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v1.1 · November 10, 2020</summary>
+                    <ul>
+                      <li>Bug fixes and performance improvement.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v1.0 · October 20, 2019</summary>
+                    <ul>
+                      <li>Initial release.</li>
+                    </ul>
+                  </details>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="ios-releases" data-platform-panel="ios" role="tabpanel">
+          <div class="split">
+            <div>
+              <div class="section-header">
+                <h2>iOS Release Notes</h2>
+                <p>Current release first. Older verified history is collapsed below.</p>
+              </div>
+              <div class="actions">
+                <a class="btn small" href="https://ios.niwashibase.com/install/dl?file=AmbulanceApp.mobileconfig&amp;v=1">Download iOS App</a>
+                <a class="btn secondary small" href="ios.html">iOS page</a>
+                <a class="btn secondary small" href="install/index.html">Installation Guide</a>
+              </div>
+            </div>
+
+            <div>
+              <article class="release">
+                <div class="release-head">
+                  <strong>v0.3</strong>
+                  <span class="badge">Latest iOS</span>
+                  <span class="badge">Released May 03, 2026</span>
+                </div>
+                <ul>
+                  <li>CPG updated to v2.5 with new flowcharts and medications.</li>
+                  <li>SOP v4.4 added with search, browsing, SOP numbers, and sections.</li>
+                  <li>Global Search added for the app, CPG, SOP, Formulary, and Flowcharts.</li>
+                  <li>RSI Checklist updated to v4.0.</li>
+                  <li>Bug fixes and performance improvements for a smoother experience.</li>
+                </ul>
+
+                <details class="release-details">
+                  <summary>Read more</summary>
+                  <ul>
+                    <li><strong>CPG updated to v2.5.</strong> The CPG has been updated to the latest version, including the new flowcharts and medications.</li>
+                    <li><strong>SOP v4.4 added.</strong> Added SOP access with search, browsing, SOP numbers, and sections.</li>
+                    <li><strong>Global Search added.</strong> Search everything from one place: CPG, SOP, Formulary, Flowcharts, and more.</li>
+                    <li><strong>RSI Checklist updated to v4.0.</strong> Checked items now highlight the checkbox and text in green for better visibility.</li>
+                    <li><strong>Bug fixes and performance improvements.</strong> General fixes and enhancements for a smoother experience.</li>
+                  </ul>
+                </details>
+              </article>
+
+              <details class="release-history">
+                <summary>Older iOS history</summary>
+                <div class="history-list">
+                  <details class="release-details">
+                    <summary>v0.2 · January 4, 2026</summary>
+                    <ul>
+                      <li>iOS updates apply remotely; users do not need to install or update anything.</li>
+                      <li>CPR Timer received major improvements.</li>
+                      <li>CPR sessions are now saved automatically when a session ends.</li>
+                      <li>View Logs added for saved CPR sessions.</li>
+                      <li>Retrieve Log added for unsaved CPR logs if the app is closed by mistake during CPR.</li>
+                      <li>PDF export added for saved and retrieved CPR logs.</li>
+                      <li>Log management added to delete a specific log or clear all logs.</li>
+                      <li>Accidental back button presses are prevented while a CPR session is active.</li>
+                      <li>CCP Pediatric added a View Formulary button to view the selected medication inside the CPG.</li>
+                      <li>Formulary added to select available medications and view them directly in the CPG.</li>
+                      <li>Flowcharts added to access and view clinical flowcharts inside the CPG.</li>
+                      <li>CPG Wizard Smart Search added for keyword or phrase search across symptoms, conditions, abbreviations, and protocols.</li>
+                    </ul>
+                  </details>
+
+                  <details class="release-details">
+                    <summary>v0.1 · October 2, 2025</summary>
+                    <ul>
+                      <li>Initial iOS release for iPhone and iPad.</li>
+                      <li>Users were asked to delete previous shortcuts and use the new master Ambulance shortcut.</li>
+                      <li>Two modes added: App Mode and Shortcuts Mode.</li>
+                      <li>CPR Timer included.</li>
+                      <li>WAAFELSS included.</li>
+                      <li>CCP Pediatrics included.</li>
+                      <li>RSI Checklist included.</li>
+                      <li>RBS Converter and MAP Calculator included.</li>
+                      <li>Care Tools and Estimated Weight included.</li>
+                      <li>GCS, APGAR, and SAT scores included.</li>
+                      <li>Useful Websites included.</li>
+                      <li>Installation guide with screenshots and video tutorial made available.</li>
+                      <li>Shortcuts Mode supports previous shortcuts through the unified master Ambulance shortcut.</li>
+                    </ul>
+                  </details>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span>&copy; <span id="yr"></span> Ambulance - niwashibase</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="android.html">Android</a>
+        <a href="ios.html">iOS</a>
+        <a href="legal.html">Legal</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=4"></script>
+</body>
+</html>
