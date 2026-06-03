@@ -82,19 +82,27 @@
 
     var current = 0;
     var resumeAt = 0;
+    var pointerStartX = null;
     var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    function centerSlide(index, behavior) {
+    function showSlide(index) {
       current = (index + slides.length) % slides.length;
-      var slide = slides[current];
-      var left = slide.offsetLeft - (viewport.clientWidth - slide.clientWidth) / 2;
-      viewport.scrollTo({ left: left, behavior: behavior || "smooth" });
       setActive(current);
     }
 
     function setActive(index) {
       slides.forEach(function (slide, i) {
+        var offset = (i - index + slides.length) % slides.length;
+        var stack = "hidden";
+        if (offset === 0) stack = "active";
+        else if (offset === 1) stack = "next";
+        else if (offset === 2) stack = "next-2";
+        else if (offset === slides.length - 1) stack = "prev";
+        else if (offset === slides.length - 2) stack = "prev-2";
+
+        slide.dataset.stack = stack;
         slide.classList.toggle("active", i === index);
+        slide.setAttribute("aria-hidden", i === index ? "false" : "true");
       });
       if (dotsWrap) {
         dotsWrap.querySelectorAll(".gallery-dot").forEach(function (dot, i) {
@@ -103,21 +111,11 @@
       }
     }
 
-    function nearestSlide() {
-      var center = viewport.scrollLeft + viewport.clientWidth / 2;
-      var best = 0;
-      var bestDistance = Infinity;
-      slides.forEach(function (slide, i) {
-        var slideCenter = slide.offsetLeft + slide.clientWidth / 2;
-        var distance = Math.abs(slideCenter - center);
-        if (distance < bestDistance) {
-          best = i;
-          bestDistance = distance;
-        }
-      });
-      current = best;
-      setActive(best);
-    }
+    var count = document.createElement("div");
+    count.className = "gallery-count";
+    count.setAttribute("aria-hidden", "true");
+    count.innerHTML = '<span class="gallery-count-icon"><span></span><span></span><span></span><span></span></span><span>' + slides.length + ' Photos</span>';
+    gallery.insertBefore(count, viewport);
 
     if (dotsWrap) {
       slides.forEach(function (_, i) {
@@ -127,39 +125,55 @@
         dot.setAttribute("aria-label", "Show screenshot " + (i + 1));
         dot.addEventListener("click", function () {
           resumeAt = Date.now() + 5000;
-          centerSlide(i);
+          showSlide(i);
         });
         dotsWrap.appendChild(dot);
       });
     }
 
-    viewport.addEventListener("scroll", function () {
-      window.clearTimeout(viewport._galleryScrollTimer);
-      viewport._galleryScrollTimer = window.setTimeout(nearestSlide, 80);
+    slides.forEach(function (slide, i) {
+      slide.addEventListener("click", function () {
+        if (i === current) return;
+        resumeAt = Date.now() + 5000;
+        showSlide(i);
+      });
     });
 
-    viewport.addEventListener("pointerdown", function () {
+    viewport.addEventListener("pointerdown", function (event) {
+      pointerStartX = event.clientX;
       resumeAt = Date.now() + 5000;
+    });
+
+    viewport.addEventListener("pointerup", function (event) {
+      if (pointerStartX === null) return;
+      var delta = event.clientX - pointerStartX;
+      pointerStartX = null;
+      if (Math.abs(delta) < 36) return;
+      showSlide(delta < 0 ? current + 1 : current - 1);
+    });
+
+    viewport.addEventListener("pointercancel", function () {
+      pointerStartX = null;
     });
 
     viewport.addEventListener("keydown", function (event) {
       if (event.key === "ArrowRight") {
         event.preventDefault();
         resumeAt = Date.now() + 5000;
-        centerSlide(current + 1);
+        showSlide(current + 1);
       } else if (event.key === "ArrowLeft") {
         event.preventDefault();
         resumeAt = Date.now() + 5000;
-        centerSlide(current - 1);
+        showSlide(current - 1);
       }
     });
 
-    centerSlide(0, "auto");
+    showSlide(0);
 
     if (!reduceMotion) {
       window.setInterval(function () {
         if (Date.now() < resumeAt) return;
-        centerSlide(current + 1);
+        showSlide(current + 1);
       }, 2800);
     }
   });
