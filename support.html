@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef6ff" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#071524" />
+  <title>Support - Ambulance App</title>
+  <meta name="description" content="Get support for the Ambulance App on Android and iOS, including install, update, access, and issue reporting help." />
+  <link rel="icon" href="assets/images/favicon.ico?v=1" />
+  <link rel="stylesheet" href="assets/css/site.css?v=30" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
+      <a class="brand" href="./">
+        <img src="assets/images/logo.png?v=1" alt="Ambulance" width="38" height="38" />
+        <span>Ambulance</span>
+      </a>
+      <nav class="desk-nav" aria-label="Site navigation">
+        <a href="./">Home</a>
+        <a href="android/">Android</a>
+        <a href="ios/">iOS</a>
+        <a href="whats-new/">What's New</a>
+        <a href="support/" aria-current="page">Support</a>
+      </nav>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span></button>
+    </div>
+    <nav class="mob-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="./">Home</a>
+      <a href="android/">Android</a>
+      <a href="ios/">iOS</a>
+      <a href="whats-new/">What's New</a>
+      <a href="support/">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <h1>Support</h1>
+        <p>Help with install, updates, access, bug reports, and finding app features on Android and iOS.</p>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container support-page">
+        <div class="callout">
+          <p><strong>Notification tip:</strong> mute the Ask Charlie channel in Discord and Telegram if you do not want notifications when Charlie welcomes new members or other users chat with him.</p>
+        </div>
+
+        <div class="support-strip support-hero">
+          <div>
+            <h2>Ask Charlie</h2>
+            <p>Charlie is the Ambulance App support bot on Discord and Telegram. Ask about install, updates, access, release notes, or finding features in the app.</p>
+          </div>
+          <img src="assets/images/charlie.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="support-channel-intro">
+          <h2>Support Channels</h2>
+          <p>Choose the channel that is easiest for you. Use email for detailed reports, and use Discord or Telegram if you want to ask Charlie.</p>
+        </div>
+
+        <div class="support-grid support-grid-large" aria-label="Support channels">
+          <a class="support-card" href="mailto:support@niwashibase.com">
+            <img class="support-icon" src="assets/images/email.png" alt="" aria-hidden="true" />
+            <span><strong>Email</strong></span>
+          </a>
+          <a class="support-card" href="https://discord.gg/qc8fK3yd92" target="_blank" rel="noopener noreferrer">
+            <img class="support-icon" src="assets/images/discord.png" alt="" aria-hidden="true" />
+            <span><strong>Discord</strong></span>
+          </a>
+          <a class="support-card" href="https://t.me/+EAcWKnoaRq05YzY0" target="_blank" rel="noopener noreferrer">
+            <img class="support-icon" src="assets/images/telegram.png" alt="" aria-hidden="true" />
+            <span><strong>Telegram</strong></span>
+          </a>
+          <a class="support-card" href="https://whatsapp.com/channel/0029VadgCTH0QeamMlpEvX0x" target="_blank" rel="noopener noreferrer">
+            <img class="support-icon" src="assets/images/whatsapp.png" alt="" aria-hidden="true" />
+            <span><strong>WhatsApp</strong></span>
+          </a>
+        </div>
+
+        <section class="support-form-card" id="support-email" aria-labelledby="issue-report-title">
+          <div class="section-header">
+            <h2 id="issue-report-title">Prepare Support Email</h2>
+            <p>This form only prepares an email on your device. Nothing is sent until you review and send it from your email app.</p>
+          </div>
+
+          <form class="support-form" data-support-form>
+            <div class="form-grid">
+              <label class="field">
+                <span>App OS</span>
+                <select name="platform" required>
+                  <option value="">Choose app OS</option>
+                  <option>Android</option>
+                  <option>iOS</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Main problem</span>
+                <select name="problem" required data-other-select data-other-target="problemOtherField">
+                  <option value="">Choose problem</option>
+                  <option>App crashed</option>
+                  <option>Feature not working</option>
+                  <option>Data not loading</option>
+                  <option>Wrong calculation/result</option>
+                  <option>PDF/search problem</option>
+                  <option>Notification problem</option>
+                  <option>Install/update problem</option>
+                  <option>Access problem</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label class="field conditional-field" id="problemOtherField" hidden>
+                <span>Other problem <em>80 characters max</em></span>
+                <input name="problem_other" type="text" maxlength="80" autocomplete="off" placeholder="Describe the problem type" />
+              </label>
+
+              <label class="field">
+                <span>App area</span>
+                <select name="area" required data-other-select data-other-target="areaOtherField">
+                  <option value="">Choose area</option>
+                  <option>Pediatrics</option>
+                  <option>Guidelines/PDF</option>
+                  <option>CPR</option>
+                  <option>Overtime</option>
+                  <option>AS-Call</option>
+                  <option>HOS</option>
+                  <option>Websites</option>
+                  <option>Main screen</option>
+                  <option>Install/update</option>
+                  <option>Access</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label class="field conditional-field" id="areaOtherField" hidden>
+                <span>Other app area <em>80 characters max</em></span>
+                <input name="area_other" type="text" maxlength="80" autocomplete="off" placeholder="Describe the app area" />
+              </label>
+
+              <label class="field">
+                <span>App version <em>optional</em></span>
+                <input name="version" type="text" inputmode="text" autocomplete="off" placeholder="Example: 2.1 or 0.3" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Description</span>
+              <textarea name="description" rows="6" required placeholder="Tell support what happened, what you expected, and any error message you saw."></textarea>
+            </label>
+
+            <label class="field">
+              <span>Contact number or email <em>optional</em></span>
+              <input name="contact" type="text" inputmode="text" autocomplete="off" placeholder="Only if you want a reply" />
+            </label>
+
+            <div class="form-actions">
+              <button class="btn" type="submit">Prepare Email</button>
+              <p class="form-note" data-support-form-status>Do not include patient identifiers, clinical case details, passwords, or private staff data.</p>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span>&copy; <span id="yr"></span> Ambulance - niwashibase</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="./">Home</a>
+        <a href="android/">Android</a>
+        <a href="ios/">iOS</a>
+        <a href="whats-new/">What's New</a>
+        <a href="legal/">Legal</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=6"></script>
+</body>
+</html>

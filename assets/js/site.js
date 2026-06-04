@@ -74,6 +74,68 @@
     switchPlatformTab(platform);
   }
 
+  document.querySelectorAll("[data-support-form]").forEach(function (form) {
+    var params = new URLSearchParams(window.location.search);
+    var os = params.get("os");
+    var osSelect = form.querySelector("select[name='platform']");
+    if (osSelect) {
+      if (os === "android") osSelect.value = "Android";
+      if (os === "ios") osSelect.value = "iOS";
+    }
+
+    form.querySelectorAll("[data-other-select]").forEach(function (select) {
+      var field = document.getElementById(select.getAttribute("data-other-target"));
+      var input = field ? field.querySelector("input") : null;
+      var syncOtherField = function () {
+        var show = select.value === "Other";
+        if (!field || !input) return;
+        field.hidden = !show;
+        input.required = show;
+        if (!show) input.value = "";
+      };
+
+      select.addEventListener("change", syncOtherField);
+      syncOtherField();
+    });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var data = new FormData(form);
+      var value = function (name) {
+        return String(data.get(name) || "").trim();
+      };
+      var fallback = function (text) {
+        return text || "Not provided";
+      };
+
+      var body = [
+        "Ambulance App Issue Report",
+        "",
+        "App OS: " + fallback(value("platform")),
+        "Main problem: " + fallback(value("problem") === "Other" ? value("problem_other") : value("problem")),
+        "App area: " + fallback(value("area") === "Other" ? value("area_other") : value("area")),
+        "App version: " + fallback(value("version")),
+        "Contact: " + fallback(value("contact")),
+        "",
+        "Description:",
+        fallback(value("description")),
+        "",
+        "Sent from: niwashibase.com support page"
+      ].join("\n");
+
+      var mailto = "mailto:support@niwashibase.com"
+        + "?subject=" + encodeURIComponent("Ambulance App Issue Report")
+        + "&body=" + encodeURIComponent(body);
+
+      var status = form.querySelector("[data-support-form-status]");
+      if (status) {
+        status.textContent = "Your email app should open. Review and send the message from there.";
+      }
+      window.location.href = mailto;
+    });
+  });
+
   document.querySelectorAll("[data-gallery]").forEach(function (gallery) {
     var viewport = gallery.querySelector("[data-gallery-viewport]");
     var slides = Array.prototype.slice.call(gallery.querySelectorAll(".gallery-slide"));
