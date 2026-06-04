@@ -321,6 +321,20 @@ ol {
   margin-top: 22px;
 }
 
+.full-width-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.full-width-actions.two-up {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.full-width-actions .btn {
+  width: 100%;
+}
+
 .centered-cta {
   justify-content: center;
 }
@@ -489,6 +503,19 @@ ol {
   padding: 0 14px;
   border-radius: 13px;
   font-size: 13px;
+}
+
+.icon-btn {
+  gap: 9px;
+}
+
+.icon-btn img {
+  width: 22px;
+  height: 22px;
+  padding: 2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .92);
+  object-fit: contain;
 }
 
 .panel,
@@ -755,6 +782,77 @@ ol {
   object-fit: contain;
 }
 
+.charlie-profile {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: 12px;
+}
+
+.charlie-profile img {
+  width: 92px;
+  height: 92px;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
+.charlie-profile h2 {
+  font-size: 24px;
+}
+
+.command-list {
+  display: grid;
+  gap: 10px;
+}
+
+.command-list div {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 8px 18px rgba(16, 24, 40, .05);
+}
+
+.command-list code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid #b7d6fb;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.command-list span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.charlie-capabilities {
+  border-top: 0;
+  padding-top: 16px;
+}
+
+.charlie-page .hero {
+  padding-bottom: 12px;
+}
+
+.notification-tip {
+  margin: 0 auto 28px;
+  max-width: 760px;
+}
+
 .support-grid-large {
   margin-top: 0;
 }
@@ -862,14 +960,15 @@ ol {
 }
 
 .form-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
   gap: 12px;
 }
 
+.form-actions .btn {
+  width: 100%;
+}
+
 .form-note {
-  flex: 1 1 260px;
   margin: 0;
   font-size: 13px;
 }
@@ -1075,6 +1174,11 @@ ol {
 
 .section.compact {
   padding: 30px 0;
+}
+
+.section.charlie-capabilities {
+  border-top: 0;
+  padding-top: 8px;
 }
 
 .section-header {
@@ -1621,6 +1725,12 @@ ol {
   .support-card:hover {
     background: #142b45;
     border-color: #3a6c9f;
+  }
+
+  .command-list code {
+    color: #ffd98c;
+    border-color: #6d4a14;
+    background: #35250b;
   }
 
   .platform-button.android {
