@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Page Not Found | Ambulance</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef6ff" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#071524" />
+  <link rel="icon" href="/assets/images/favicon.ico?v=1" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #eef6ff;
+      --surface: #ffffff;
+      --surface-2: #f5f8fc;
+      --border: #d9e3ee;
+      --text: #101828;
+      --muted: #526174;
+      --brand: #0b6fe8;
+      --brand-dark: #0757b8;
+      --shadow: 0 18px 46px rgba(16, 24, 40, .14);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #071524;
+        --surface: #102036;
+        --surface-2: #0d1b2d;
+        --border: #26415f;
+        --text: #f3f8ff;
+        --muted: #b8c6d8;
+        --brand: #5da2ff;
+        --brand-dark: #2f81f7;
+        --shadow: 0 20px 52px rgba(0, 0, 0, .38);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      padding:
+        calc(env(safe-area-inset-top) + 18px)
+        calc(env(safe-area-inset-right) + 16px)
+        calc(env(safe-area-inset-bottom) + 18px)
+        calc(env(safe-area-inset-left) + 16px);
+      background:
+        radial-gradient(circle at top, color-mix(in srgb, var(--brand) 16%, transparent), transparent 34rem),
+        linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--bg) 86%, #ffffff));
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      display: grid;
+      min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 36px);
+      place-items: center;
+    }
+
+    .card {
+      width: min(100%, 680px);
+      overflow: hidden;
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .logo {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 18px;
+      object-fit: contain;
+      transform: scaleX(-1);
+    }
+
+    .status {
+      margin: 0 0 6px;
+      color: var(--brand);
+      font-size: clamp(58px, 16vw, 96px);
+      font-weight: 950;
+      line-height: .9;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(28px, 7vw, 42px);
+      font-weight: 950;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 39rem;
+      margin: 14px auto 0;
+      color: var(--muted);
+      font-size: clamp(15px, 3.6vw, 17px);
+      font-weight: 650;
+      line-height: 1.55;
+    }
+
+    .actions,
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .btn,
+    .link-card {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      border-radius: 14px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .btn {
+      padding: 14px 18px;
+      background: linear-gradient(180deg, var(--brand), var(--brand-dark));
+      box-shadow: 0 12px 24px rgba(11, 111, 232, .24);
+      color: #ffffff;
+    }
+
+    .btn.secondary,
+    .link-card {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      box-shadow: none;
+      color: var(--text);
+    }
+
+    .link-section {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .link-section h2 {
+      margin: 0;
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 950;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .link-card {
+      justify-content: flex-start;
+      gap: 12px;
+      min-height: 76px;
+      padding: 12px;
+    }
+
+    .link-card.full {
+      grid-column: 1 / -1;
+    }
+
+    .link-card img {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .link-card strong,
+    .link-card span {
+      display: block;
+    }
+
+    .link-card strong {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .link-card span {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .hint {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    a:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--brand) 52%, #ffffff);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding:
+          calc(env(safe-area-inset-top) + 12px)
+          calc(env(safe-area-inset-right) + 10px)
+          calc(env(safe-area-inset-bottom) + 12px)
+          calc(env(safe-area-inset-left) + 10px);
+      }
+
+      .card {
+        padding: 24px 14px 18px;
+        border-radius: 16px;
+      }
+
+      .actions,
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card" aria-labelledby="not-found-title">
+      <img class="logo" src="/assets/images/logo.png?v=1" alt="Ambulance" />
+      <p class="status">404</p>
+      <h1 id="not-found-title">Page not found</h1>
+      <p>The page may have moved, the link may be old, or the address may have been typed incorrectly.</p>
+
+      <div class="actions" aria-label="Primary links">
+        <a class="btn" href="/">Return Home</a>
+        <a class="btn secondary" href="/support/">Get Support</a>
+      </div>
+
+      <div class="link-section" aria-label="Helpful links">
+        <h2>Helpful links</h2>
+        <div class="link-grid">
+          <a class="link-card" href="/android/">
+            <img src="/assets/images/android_logo.png" alt="" aria-hidden="true" />
+            <span><strong>Android</strong><span>Download or update the Android app.</span></span>
+          </a>
+          <a class="link-card" href="/ios/">
+            <picture>
+              <source srcset="/assets/images/apple_logo_white.png" media="(prefers-color-scheme: dark)" />
+              <img src="/assets/images/apple_logo_black.png" alt="" aria-hidden="true" />
+            </picture>
+            <span><strong>iOS</strong><span>Install the iOS app on your iPhone.</span></span>
+          </a>
+          <a class="link-card" href="/whats-new/">
+            <img src="/assets/images/logo.png?v=1" alt="" aria-hidden="true" />
+            <span><strong>What's New</strong><span>Read the latest Android and iOS release notes.</span></span>
+          </a>
+          <a class="link-card" href="/charlie/">
+            <img src="/assets/images/charlie.png" alt="" aria-hidden="true" />
+            <span><strong>Charlie</strong><span>Learn about the Ambulance support bot.</span></span>
+          </a>
+          <a class="link-card full" href="/legal/">
+            <img src="/assets/images/favicon.ico?v=1" alt="" aria-hidden="true" />
+            <span><strong>Legal</strong><span>Open Terms, Privacy, and medical-use information.</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hint">If you followed a link from inside the app, open Support and include the page address so it can be checked.</div>
+    </section>
+  </main>
+</body>
+</html>
